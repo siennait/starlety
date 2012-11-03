@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2CD784D016457AB200059330 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784CF16457AB200059330 /* UIKit.framework */; };
+		2CD784D216457AB200059330 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D116457AB200059330 /* Foundation.framework */; };
+		2CD784D416457AB200059330 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D316457AB200059330 /* CoreGraphics.framework */; };
+		2CD784DA16457AB200059330 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784D816457AB200059330 /* InfoPlist.strings */; };
+		2CD784DC16457AB300059330 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD784DB16457AB200059330 /* main.m */; };
+		2CD784E016457AB300059330 /* siennaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD784DF16457AB300059330 /* siennaAppDelegate.m */; };
+		2CD784E216457AB300059330 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784E116457AB300059330 /* Default.png */; };
+		2CD784E416457AB300059330 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784E316457AB300059330 /* Default@2x.png */; };
+		2CD784E616457AB300059330 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784E516457AB300059330 /* Default-568h@2x.png */; };
+		2CD784E916457AB300059330 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784E716457AB300059330 /* MainStoryboard_iPhone.storyboard */; };
+		2CD784EC16457AB300059330 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784EA16457AB300059330 /* MainStoryboard_iPad.storyboard */; };
+		2CD784EF16457AB300059330 /* siennaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD784EE16457AB300059330 /* siennaViewController.m */; };
+		2CD784F716457AB300059330 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784F616457AB300059330 /* SenTestingKit.framework */; };
+		2CD784F816457AB300059330 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784CF16457AB200059330 /* UIKit.framework */; };
+		2CD784F916457AB300059330 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D116457AB200059330 /* Foundation.framework */; };
+		2CD7850116457AB300059330 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784FF16457AB300059330 /* InfoPlist.strings */; };
+		2CD7850416457AB300059330 /* FollowPlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7850316457AB300059330 /* FollowPlacesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2CD784FA16457AB300059330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CD784C216457AB200059330 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CD784CA16457AB200059330;
+			remoteInfo = FollowPlaces;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2CD784CB16457AB200059330 /* FollowPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CD784CF16457AB200059330 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2CD784D116457AB200059330 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2CD784D316457AB200059330 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2CD784D716457AB200059330 /* FollowPlaces-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FollowPlaces-Info.plist"; sourceTree = "<group>"; };
+		2CD784D916457AB200059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CD784DB16457AB200059330 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2CD784DD16457AB300059330 /* FollowPlaces-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FollowPlaces-Prefix.pch"; sourceTree = "<group>"; };
+		2CD784DE16457AB300059330 /* siennaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = siennaAppDelegate.h; sourceTree = "<group>"; };
+		2CD784DF16457AB300059330 /* siennaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = siennaAppDelegate.m; sourceTree = "<group>"; };
+		2CD784E116457AB300059330 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2CD784E316457AB300059330 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2CD784E516457AB300059330 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2CD784E816457AB300059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		2CD784EB16457AB300059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		2CD784ED16457AB300059330 /* siennaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = siennaViewController.h; sourceTree = "<group>"; };
+		2CD784EE16457AB300059330 /* siennaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = siennaViewController.m; sourceTree = "<group>"; };
+		2CD784F516457AB300059330 /* FollowPlacesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FollowPlacesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CD784F616457AB300059330 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2CD784FE16457AB300059330 /* FollowPlacesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FollowPlacesTests-Info.plist"; sourceTree = "<group>"; };
+		2CD7850016457AB300059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2CD7850216457AB300059330 /* FollowPlacesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowPlacesTests.h; sourceTree = "<group>"; };
+		2CD7850316457AB300059330 /* FollowPlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowPlacesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CD784C816457AB200059330 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CD784D016457AB200059330 /* UIKit.framework in Frameworks */,
+				2CD784D216457AB200059330 /* Foundation.framework in Frameworks */,
+				2CD784D416457AB200059330 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CD784F116457AB300059330 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CD784F716457AB300059330 /* SenTestingKit.framework in Frameworks */,
+				2CD784F816457AB300059330 /* UIKit.framework in Frameworks */,
+				2CD784F916457AB300059330 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CD784C016457AB200059330 = {
+			isa = PBXGroup;
+			children = (
+				2CD784D516457AB200059330 /* FollowPlaces */,
+				2CD784FC16457AB300059330 /* FollowPlacesTests */,
+				2CD784CE16457AB200059330 /* Frameworks */,
+				2CD784CC16457AB200059330 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2CD784CC16457AB200059330 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CD784CB16457AB200059330 /* FollowPlaces.app */,
+				2CD784F516457AB300059330 /* FollowPlacesTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CD784CE16457AB200059330 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CD784CF16457AB200059330 /* UIKit.framework */,
+				2CD784D116457AB200059330 /* Foundation.framework */,
+				2CD784D316457AB200059330 /* CoreGraphics.framework */,
+				2CD784F616457AB300059330 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CD784D516457AB200059330 /* FollowPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				2CD784DE16457AB300059330 /* siennaAppDelegate.h */,
+				2CD784DF16457AB300059330 /* siennaAppDelegate.m */,
+				2CD784E716457AB300059330 /* MainStoryboard_iPhone.storyboard */,
+				2CD784EA16457AB300059330 /* MainStoryboard_iPad.storyboard */,
+				2CD784ED16457AB300059330 /* siennaViewController.h */,
+				2CD784EE16457AB300059330 /* siennaViewController.m */,
+				2CD784D616457AB200059330 /* Supporting Files */,
+			);
+			path = FollowPlaces;
+			sourceTree = "<group>";
+		};
+		2CD784D616457AB200059330 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CD784D716457AB200059330 /* FollowPlaces-Info.plist */,
+				2CD784D816457AB200059330 /* InfoPlist.strings */,
+				2CD784DB16457AB200059330 /* main.m */,
+				2CD784DD16457AB300059330 /* FollowPlaces-Prefix.pch */,
+				2CD784E116457AB300059330 /* Default.png */,
+				2CD784E316457AB300059330 /* Default@2x.png */,
+				2CD784E516457AB300059330 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CD784FC16457AB300059330 /* FollowPlacesTests */ = {
+			isa = PBXGroup;
+			children = (
+				2CD7850216457AB300059330 /* FollowPlacesTests.h */,
+				2CD7850316457AB300059330 /* FollowPlacesTests.m */,
+				2CD784FD16457AB300059330 /* Supporting Files */,
+			);
+			path = FollowPlacesTests;
+			sourceTree = "<group>";
+		};
+		2CD784FD16457AB300059330 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CD784FE16457AB300059330 /* FollowPlacesTests-Info.plist */,
+				2CD784FF16457AB300059330 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CD784CA16457AB200059330 /* FollowPlaces */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CD7850716457AB300059330 /* Build configuration list for PBXNativeTarget "FollowPlaces" */;
+			buildPhases = (
+				2CD784C716457AB200059330 /* Sources */,
+				2CD784C816457AB200059330 /* Frameworks */,
+				2CD784C916457AB200059330 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FollowPlaces;
+			productName = FollowPlaces;
+			productReference = 2CD784CB16457AB200059330 /* FollowPlaces.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2CD784F416457AB300059330 /* FollowPlacesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CD7850A16457AB300059330 /* Build configuration list for PBXNativeTarget "FollowPlacesTests" */;
+			buildPhases = (
+				2CD784F016457AB300059330 /* Sources */,
+				2CD784F116457AB300059330 /* Frameworks */,
+				2CD784F216457AB300059330 /* Resources */,
+				2CD784F316457AB300059330 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CD784FB16457AB300059330 /* PBXTargetDependency */,
+			);
+			name = FollowPlacesTests;
+			productName = FollowPlacesTests;
+			productReference = 2CD784F516457AB300059330 /* FollowPlacesTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CD784C216457AB200059330 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = sienna;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Luchian Chivoiu";
+			};
+			buildConfigurationList = 2CD784C516457AB200059330 /* Build configuration list for PBXProject "FollowPlaces" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2CD784C016457AB200059330;
+			productRefGroup = 2CD784CC16457AB200059330 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CD784CA16457AB200059330 /* FollowPlaces */,
+				2CD784F416457AB300059330 /* FollowPlacesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CD784C916457AB200059330 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CD784DA16457AB200059330 /* InfoPlist.strings in Resources */,
+				2CD784E216457AB300059330 /* Default.png in Resources */,
+				2CD784E416457AB300059330 /* Default@2x.png in Resources */,
+				2CD784E616457AB300059330 /* Default-568h@2x.png in Resources */,
+				2CD784E916457AB300059330 /* MainStoryboard_iPhone.storyboard in Resources */,
+				2CD784EC16457AB300059330 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CD784F216457AB300059330 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CD7850116457AB300059330 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CD784F316457AB300059330 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CD784C716457AB200059330 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CD784DC16457AB300059330 /* main.m in Sources */,
+				2CD784E016457AB300059330 /* siennaAppDelegate.m in Sources */,
+				2CD784EF16457AB300059330 /* siennaViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CD784F016457AB300059330 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CD7850416457AB300059330 /* FollowPlacesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CD784FB16457AB300059330 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CD784CA16457AB200059330 /* FollowPlaces */;
+			targetProxy = 2CD784FA16457AB300059330 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2CD784D816457AB200059330 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CD784D916457AB200059330 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2CD784E716457AB300059330 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CD784E816457AB300059330 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		2CD784EA16457AB300059330 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CD784EB16457AB300059330 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		2CD784FF16457AB300059330 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CD7850016457AB300059330 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2CD7850516457AB300059330 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CD7850616457AB300059330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CD7850816457AB300059330 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FollowPlaces/FollowPlaces-Prefix.pch";
+				INFOPLIST_FILE = "FollowPlaces/FollowPlaces-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2CD7850916457AB300059330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FollowPlaces/FollowPlaces-Prefix.pch";
+				INFOPLIST_FILE = "FollowPlaces/FollowPlaces-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2CD7850B16457AB300059330 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FollowPlaces.app/FollowPlaces";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FollowPlaces/FollowPlaces-Prefix.pch";
+				INFOPLIST_FILE = "FollowPlacesTests/FollowPlacesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2CD7850C16457AB300059330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FollowPlaces.app/FollowPlaces";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FollowPlaces/FollowPlaces-Prefix.pch";
+				INFOPLIST_FILE = "FollowPlacesTests/FollowPlacesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CD784C516457AB200059330 /* Build configuration list for PBXProject "FollowPlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CD7850516457AB300059330 /* Debug */,
+				2CD7850616457AB300059330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CD7850716457AB300059330 /* Build configuration list for PBXNativeTarget "FollowPlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CD7850816457AB300059330 /* Debug */,
+				2CD7850916457AB300059330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2CD7850A16457AB300059330 /* Build configuration list for PBXNativeTarget "FollowPlacesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CD7850B16457AB300059330 /* Debug */,
+				2CD7850C16457AB300059330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2CD784C216457AB200059330 /* Project object */;
+}
