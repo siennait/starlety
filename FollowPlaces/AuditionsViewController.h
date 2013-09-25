@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface AuditionsViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
