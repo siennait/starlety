@@ -50,14 +50,14 @@
     return [[user objectForKey:@"IdUser"] intValue]>0;
 }
 
--(void)commandWithParams:(NSMutableDictionary*)params onCompletion:(JSONResponseBlock)completionBlock {
+-(void)commandWithParams:(NSMutableDictionary*)params onCompletion:(JSONResponseBlock)completionBlock APIPath:(NSString*) ApiPath {
 	NSData* uploadFile = nil;
 //	if ([params objectForKey:@"file"]) {
 //		uploadFile = (NSData*)[params objectForKey:@"file"];
 //		[params removeObjectForKey:@"file"];
 //	}
     self.parameterEncoding=AFJSONParameterEncoding;//AFJSONParameterEncoding;
-    [self postPath:kAPIPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self postPath:ApiPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //success!
         completionBlock(responseObject);
         
