@@ -50,8 +50,8 @@
     return [[user objectForKey:@"IdUser"] intValue]>0;
 }
 
--(void)commandWithParams:(NSMutableDictionary*)params onCompletion:(JSONResponseBlock)completionBlock APIPath:(NSString*) ApiPath {
-	NSData* uploadFile = nil;
+-(void)commandWithParams:(NSMutableDictionary*)params  APIPath:(NSString*) ApiPath onCompletion:(JSONResponseBlock)completionBlock {
+//	NSData* uploadFile = nil;
 //	if ([params objectForKey:@"file"]) {
 //		uploadFile = (NSData*)[params objectForKey:@"file"];
 //		[params removeObjectForKey:@"file"];
@@ -83,6 +83,25 @@
 //        completionBlock([NSDictionary dictionaryWithObject:[error localizedDescription] forKey:@"error"]);
 //    }];
 //    [operation start];
+}
+
+-(void)getCommand:(NSMutableDictionary*)params  APIPath:(NSString*) ApiPath onCompletion:(JSONResponseBlock)completionBlock {
+
+    self.parameterEncoding=AFJSONParameterEncoding;
+    [self getPath:ApiPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //success!
+       
+        NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        //[NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        completionBlock(json);
+    
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+      
+        
+        completionBlock([NSDictionary dictionaryWithObject:[error localizedDescription] forKey:@"error"]);
+    }];
+    
+  
 }
 
 -(NSURL*)urlForImageWithId:(NSNumber*)IdPhoto isThumb:(BOOL)isThumb {

@@ -673,7 +673,7 @@ CGFloat				 animatedDistance;
                                   ,[self.Usernametextfield text], @"Email"
                                   ,[self.Passwordtextfield text], @"Password1",nil];
    
-    [[API sharedInstance] commandWithParams:params onCompletion:^(NSDictionary *json) {
+    [[API sharedInstance] commandWithParams:params APIPath:(@"/Api/Users") onCompletion:^(NSMutableArray *json) {
 		
 		if (![json objectForKey:@"error"]) {
 			//success
@@ -687,7 +687,7 @@ CGFloat				 animatedDistance;
 				[self performSegueWithIdentifier:@"ShowLogin" sender:nil];
 			}
 		}
-	}];
+	} ];
     
     
 }

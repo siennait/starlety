@@ -15,6 +15,7 @@
 @end
 
 @implementation AuditionsViewController
+@synthesize userId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -73,7 +74,7 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
-
+/*
 - (void)moviePlayBackDidFinish:(NSNotification *)notification {
     
     [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
@@ -83,9 +84,9 @@
     self.movieController = nil;
     
 }
-
+*/
 - (void)viewDidAppear:(BOOL)animated {
-    
+    /*
     self.movieController = [[MPMoviePlayerController alloc] init];
     [self.movieController setContentURL:self.movieURL];
     
@@ -99,7 +100,7 @@
                                                object:self.movieController];
     [self.movieController prepareToPlay];
     [self.movieController play];
-    
+    */
 }
 
 - (NSData *)generatePostDataForData:(NSData *)uploadData
@@ -134,7 +135,7 @@
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     
     // Setup the request:
-    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", kAPIHost, @"/Api/Videos/", @"sienna" ]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", kAPIHost, @"/Api/Videos/", userId ]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
     [uploadRequest setHTTPMethod:@"POST"];
     [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
@@ -157,5 +158,17 @@
         NSLog(@"fail");
     }
     
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+
+{
+    
+    // Append the new data to receivedData.
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Audition uploaded! The audition was also saved on your photo album." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    // receivedData is an instance variable declared elsewhere.
+        
 }
 @end

@@ -9,7 +9,8 @@
 #import "AFHTTPClient.h"
 #import "AFNetworking.h"
 
-typedef void (^JSONResponseBlock)(NSDictionary* json);
+typedef void (^JSONResponseBlock)(NSMutableArray* json);
+//changed it on 4 oct 2013 from NSDictionary to NS MutableArray
 
 @interface API : AFHTTPClient
 
@@ -19,7 +20,8 @@ typedef void (^JSONResponseBlock)(NSDictionary* json);
 //check whether there's an authorized user
 -(BOOL)isAuthorized;
 //send an API command to the server
--(void)commandWithParams:(NSMutableDictionary*)params onCompletion:(JSONResponseBlock)completionBlock;
+-(void)commandWithParams:(NSMutableDictionary*)params  APIPath:(NSString*) ApiPath onCompletion:(JSONResponseBlock)completionBlock ;
+-(void)getCommand:(NSMutableDictionary*)params  APIPath:(NSString*) ApiPath onCompletion:(JSONResponseBlock)completionBlock ;
 -(NSURL*)urlForImageWithId:(NSNumber*)IdPhoto isThumb:(BOOL)isThumb;
 
 @end

@@ -549,6 +549,58 @@
         <image name="1352416674_video.png" width="24" height="24"/>
         <image name="logo.jpg" width="104" height="88"/>
     </resources>
+    <classes>
+        <class className="AuditionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AuditionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="TakeVideo:"/>
+            </relationships>
+        </class>
+        <class className="ExploreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExploreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Logout:"/>
+                <relationship kind="action" name="Takephoto:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="DoneToolbar:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="LoginClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="textFieldDidBeginEditing:" candidateClass="UITextField"/>
+                <relationship kind="action" name="textFieldDidEndEditing:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="EmailTextfield" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="KeyboardToolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="PasswordTextfield" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Logout:"/>
+            </relationships>
+        </class>
+        <class className="SignupTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="DoneToolbar:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="JoinClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="textFieldDidBeginEditing:" candidateClass="UITextField"/>
+                <relationship kind="action" name="textFieldDidEndEditing:" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="FirstNametextfield" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="KeyboardToolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="LastNametextfield" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="Passwordtextfield" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ProfilePicture" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="Usernametextfield" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="siennaViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/siennaViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

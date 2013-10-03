@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "AuditionsViewController.h"
+#import "API.h"
 
 @interface LoginViewController ()
 
@@ -130,7 +132,25 @@
 
  
 - (IBAction)LoginClick:(UIBarButtonItem *)sender {
-    [self performSegueWithIdentifier: @"LoginSegue" sender: self];
+    
+    
+    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[self.EmailTextfield text], @"Email",[self.PasswordTextfield text], @"Password", nil];
+    
+    [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSMutableArray *json)  {
+		
+		if (![json valueForKey:@"sienna" ]) {
+				
+		} else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Username and password are incorrect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+		}
+        
+        
+        
+	}];
+
+    
 }
 
 - (IBAction)DoneToolbar:(UIBarButtonItem *)sender {
@@ -175,6 +195,17 @@
     [self setPasswordTextfield:nil];
     [self setKeyboardToolbar:nil];
     [super viewDidUnload];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"LoginSegue"]) {
+        UINavigationController *myNC = (UINavigationController *) [segue destinationViewController];
+        AuditionsViewController *myVC = (AuditionsViewController*)myNC.viewControllers[0];
+        
+        //  [segue destinationViewController];
+       myVC.userId = @"newloginuser";// set your properties here
+    }
 }
 
 @end

@@ -11,6 +11,8 @@
 		2C0D449A17E81F4E000AACC2 /* Titlu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C0D449817E81F4E000AACC2 /* Titlu.jpg */; };
 		2C0D449D17E82083000AACC2 /* Titlu poza.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C0D449B17E82083000AACC2 /* Titlu poza.png */; };
 		2C0D449E17E82083000AACC2 /* Titlu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C0D449C17E82083000AACC2 /* Titlu.png */; };
+		2C0F5E0817F2F11A00A7E393 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0F5E0717F2F11A00A7E393 /* MediaPlayer.framework */; };
+		2C0F5E0B17F2F12800A7E393 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0F5E0A17F2F12800A7E393 /* MobileCoreServices.framework */; };
 		2C15D57C17F2E0DD006704DE /* AuditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D57B17F2E0DD006704DE /* AuditionsViewController.m */; };
 		2C2663621649908E00D53221 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2663611649908E00D53221 /* ExploreViewController.m */; };
 		2C2663641649936300D53221 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C2663631649936300D53221 /* icon.png */; };
@@ -92,6 +94,8 @@
 		2C0D449817E81F4E000AACC2 /* Titlu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Titlu.jpg; path = Images/Titlu.jpg; sourceTree = "<group>"; };
 		2C0D449B17E82083000AACC2 /* Titlu poza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Titlu poza.png"; path = "Images/Titlu poza.png"; sourceTree = "<group>"; };
 		2C0D449C17E82083000AACC2 /* Titlu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Titlu.png; path = Images/Titlu.png; sourceTree = "<group>"; };
+		2C0F5E0717F2F11A00A7E393 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		2C0F5E0A17F2F12800A7E393 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2C15D57A17F2E0DD006704DE /* AuditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditionsViewController.h; sourceTree = "<group>"; };
 		2C15D57B17F2E0DD006704DE /* AuditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditionsViewController.m; sourceTree = "<group>"; };
 		2C2663601649908E00D53221 /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0F5E0B17F2F12800A7E393 /* MobileCoreServices.framework in Frameworks */,
+				2C0F5E0817F2F11A00A7E393 /* MediaPlayer.framework in Frameworks */,
 				2C74EB8A165BDB80006D6B21 /* CoreImage.framework in Frameworks */,
 				2C74EB88165BDB71006D6B21 /* SystemConfiguration.framework in Frameworks */,
 				2C58373B164EE13A002255F9 /* MapKit.framework in Frameworks */,
@@ -272,8 +278,6 @@
 		2CD784C016457AB200059330 = {
 			isa = PBXGroup;
 			children = (
-				2C74EB89165BDB80006D6B21 /* CoreImage.framework */,
-				2C74EB87165BDB71006D6B21 /* SystemConfiguration.framework */,
 				2C583735164E8FBC002255F9 /* 1352415176_photo.png */,
 				2C583734164E8FB9002255F9 /* 1352415173_photo.png */,
 				2C583733164E8FB4002255F9 /* 1352415164_photo.png */,
@@ -313,6 +317,10 @@
 		2CD784CE16457AB200059330 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C74EB89165BDB80006D6B21 /* CoreImage.framework */,
+				2C74EB87165BDB71006D6B21 /* SystemConfiguration.framework */,
+				2C0F5E0A17F2F12800A7E393 /* MobileCoreServices.framework */,
+				2C0F5E0717F2F11A00A7E393 /* MediaPlayer.framework */,
 				2C58373A164EE13A002255F9 /* MapKit.framework */,
 				2CD784CF16457AB200059330 /* UIKit.framework */,
 				2CD784D116457AB200059330 /* Foundation.framework */,
