@@ -138,8 +138,8 @@
     
     [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSMutableArray *json)  {
 		
-		if (![json valueForKey:@"sienna" ]) {
-				
+		if ([json valueForKey:@"Logged" ]) {
+				[self performSegueWithIdentifier: @"LoginSegue" sender: self];
 		} else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Username and password are incorrect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
