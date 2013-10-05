@@ -137,8 +137,7 @@
     NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[self.EmailTextfield text], @"Email",[self.PasswordTextfield text], @"Password", nil];
     
     [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSMutableArray *json)  {
-		
-		if ([json valueForKey:@"Logged" ]) {
+		if ([[[json valueForKey:@"Logged" ] stringValue] isEqualToString:@"1"]) {
 				[self performSegueWithIdentifier: @"LoginSegue" sender: self];
 		} else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Username and password are incorrect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
