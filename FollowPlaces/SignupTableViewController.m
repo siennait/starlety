@@ -673,9 +673,9 @@ CGFloat				 animatedDistance;
                                   ,[self.Usernametextfield text], @"Email"
                                   ,[self.Passwordtextfield text], @"Password1",nil];
    
-    [[API sharedInstance] commandWithParams:params APIPath:(@"/Api/Users") onCompletion:^(NSMutableArray *json) {
+    [[API sharedInstance] commandWithParams:params APIPath:(@"/Api/Users") onCompletion:^(NSDictionary *json) {
 		
-        if(![json isKindOfClass:[NSDictionary class]])
+        if(![json isKindOfClass:[NSDictionary class]]||![json objectForKey:@"error"])
 		{
             //if (![json valueForKey:@"error"]) {
 			//success
@@ -684,13 +684,13 @@ CGFloat				 animatedDistance;
 		} else {
 			
 			NSString* errorMsg = [json valueForKey:@"error"];
-			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMsg delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             [alert release];
             
-			if ([@"Authorization required" compare:errorMsg]==NSOrderedSame) {
-				[self performSegueWithIdentifier:@"ShowLogin" sender:nil];
-			}
+			//if ([@"Authorization required" compare:errorMsg]==NSOrderedSame) {
+			//	[self performSegueWithIdentifier:@"ShowLogin" sender:nil];
+			//}
 		}
 	} ];
     

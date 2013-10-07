@@ -9,7 +9,7 @@
 #import "AFHTTPClient.h"
 #import "AFNetworking.h"
 
-typedef void (^JSONResponseBlock)(NSMutableArray* json);
+typedef void (^JSONResponseBlock)(NSDictionary* json);
 //changed it on 4 oct 2013 from NSDictionary to NS MutableArray
 
 @interface API : AFHTTPClient

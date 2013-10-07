@@ -142,7 +142,7 @@
     [activity release];
     [activity startAnimating];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSMutableArray *json)  {
+    [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSDictionary *json)  {
 		if ([[[json valueForKey:@"Logged" ] stringValue] isEqualToString:@"1"]) {
 				[self performSegueWithIdentifier: @"LoginSegue" sender: self];
 		} else {

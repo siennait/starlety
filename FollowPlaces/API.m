@@ -63,7 +63,8 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //failure :(
-        
+       // NSMutableArray *errorArray = [[NSMutableArray alloc]init];
+        //[errorArray addObject:[error localizedDescription]];
         completionBlock([NSDictionary dictionaryWithObject:[error localizedDescription] forKey:@"error"]);
     }];
    
@@ -91,7 +92,7 @@
     [self getPath:ApiPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //success!
        
-        NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         //[NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         completionBlock(json);
     
