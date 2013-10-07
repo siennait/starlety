@@ -135,7 +135,13 @@
     
     
     NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[self.EmailTextfield text], @"Email",[self.PasswordTextfield text], @"Password", nil];
-    
+    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(100, 100, 80, 80)];
+    [activity setBackgroundColor:[UIColor clearColor]];
+    [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [self.view addSubview:activity];
+    [activity release];
+    [activity startAnimating];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSMutableArray *json)  {
 		if ([[[json valueForKey:@"Logged" ] stringValue] isEqualToString:@"1"]) {
 				[self performSegueWithIdentifier: @"LoginSegue" sender: self];
@@ -144,8 +150,8 @@
             [alert show];
             [alert release];
 		}
-        
-        
+        [activity stopAnimating];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
 	}];
 

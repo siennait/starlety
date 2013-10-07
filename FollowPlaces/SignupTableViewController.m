@@ -675,14 +675,19 @@ CGFloat				 animatedDistance;
    
     [[API sharedInstance] commandWithParams:params APIPath:(@"/Api/Users") onCompletion:^(NSMutableArray *json) {
 		
-		if (![json objectForKey:@"error"]) {
+        if(![json isKindOfClass:[NSDictionary class]])
+		{
+            //if (![json valueForKey:@"error"]) {
 			//success
 			[[[UIAlertView alloc]initWithTitle:@"Success!" message:@"You have been registered! You can log in now." delegate:nil cancelButtonTitle:@"Yay!" otherButtonTitles: nil] show];
 			
 		} else {
 			
-			NSString* errorMsg = [json objectForKey:@"error"];
-			[UIAlertView error:errorMsg];
+			NSString* errorMsg = [json valueForKey:@"error"];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMsg delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+            
 			if ([@"Authorization required" compare:errorMsg]==NSOrderedSame) {
 				[self performSegueWithIdentifier:@"ShowLogin" sender:nil];
 			}
