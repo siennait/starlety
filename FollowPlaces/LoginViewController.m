@@ -17,7 +17,7 @@
 
 @implementation LoginViewController
 
-
+@synthesize userId;
 @synthesize EmailTextfield;
 @synthesize PasswordTextfield;
 @synthesize KeyboardToolbar;
@@ -35,7 +35,7 @@
 {
     EmailTextfield.inputAccessoryView=KeyboardToolbar;
     PasswordTextfield.inputAccessoryView=KeyboardToolbar;
-    
+    self.userId = [[NSString alloc] init];
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -151,6 +151,7 @@
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSDictionary *json)  {
             if ([[[json valueForKey:@"Logged" ] stringValue] isEqualToString:@"1"]) {
+                self.userId = [[json valueForKey:@"UserId"] stringValue];
 				[self performSegueWithIdentifier: @"LoginSegue" sender: self];
             } else {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Username and password are incorrect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -205,6 +206,8 @@
     [EmailTextfield release];
     [PasswordTextfield release];
     [KeyboardToolbar release];
+    [userId release];
+    
     //[_LogInButton release];
     [super dealloc];
 }
@@ -224,7 +227,8 @@
         AuditionsViewController *myVC = (AuditionsViewController*)myNC.viewControllers[0];
         
         //  [segue destinationViewController];
-       myVC.userId = @"newloginuser";// set your properties here
+       myVC.userId = self.userId;// set your properties here
+         [userId release];
     }
 }
 

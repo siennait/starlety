@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 
-@interface LoginViewController : UITableViewController//<MBProgressHUDDelegate> {
+@interface LoginViewController : UITableViewController<MBProgressHUDDelegate> {
     	//MBProgressHUD *HUD;
-//}
+}
 - (IBAction)LoginClick:(UIBarButtonItem *)sender;
 
 //@property (retain, nonatomic) IBOutlet UIBarButtonItem *LogInButton;
 @property (retain, nonatomic) IBOutlet UITextField *EmailTextfield;
 @property (retain, nonatomic) IBOutlet UITextField *PasswordTextfield;
+@property (nonatomic) NSString* userId;
+
 
 - (IBAction)DoneToolbar:(UIBarButtonItem *)sender;
 - (IBAction)textFieldDidBeginEditing:(UITextField *)textField;
