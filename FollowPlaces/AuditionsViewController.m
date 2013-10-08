@@ -29,6 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:self.userId delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 	// Do any additional setup after loading the view.
 }
 

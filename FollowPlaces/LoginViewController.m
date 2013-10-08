@@ -151,7 +151,7 @@
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSDictionary *json)  {
             if ([[[json valueForKey:@"Logged" ] stringValue] isEqualToString:@"1"]) {
-                self.userId = [[json valueForKey:@"UserId"] stringValue];
+                self.userId = [json valueForKey:@"UserId"];
 				[self performSegueWithIdentifier: @"LoginSegue" sender: self];
             } else {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Username and password are incorrect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

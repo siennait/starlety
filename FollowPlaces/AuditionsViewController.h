@@ -14,7 +14,7 @@
 
 @property (copy,   nonatomic) NSURL *movieURL;
 @property (strong, nonatomic) MPMoviePlayerController *movieController;
-@property (nonatomic) NSString* userId;
+@property (copy, nonatomic) NSString* userId;
 
 - (IBAction)TakeVideo:(id)sender;
 
