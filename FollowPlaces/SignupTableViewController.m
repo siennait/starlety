@@ -14,6 +14,7 @@
 #import "UIImagescaleandrotate.h"
 #import "API.h"
 
+
 //#import "ASIHTTPRequest.h"
 //#import "ASIFormDataRequest.h"
 //#import "JSON.h"
@@ -673,6 +674,11 @@ CGFloat				 animatedDistance;
                                   ,[self.Usernametextfield text], @"Email"
                                   ,[self.Passwordtextfield text], @"Password1",nil];
    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    sender.enabled = false;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        
     [[API sharedInstance] commandWithParams:params APIPath:(@"/Api/Users") onCompletion:^(NSDictionary *json) {
 		
         if(![json isKindOfClass:[NSDictionary class]]||![json objectForKey:@"error"])
@@ -680,7 +686,6 @@ CGFloat				 animatedDistance;
             //if (![json valueForKey:@"error"]) {
 			//success
 			[[[UIAlertView alloc]initWithTitle:@"Success!" message:@"You have been registered! You can log in now." delegate:nil cancelButtonTitle:@"Yay!" otherButtonTitles: nil] show];
-			
 		} else {
 			
 			NSString* errorMsg = [json valueForKey:@"error"];
@@ -692,8 +697,15 @@ CGFloat				 animatedDistance;
 			//	[self performSegueWithIdentifier:@"ShowLogin" sender:nil];
 			//}
 		}
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            sender.enabled = true;
+        });
 	} ];
     
+    });
     
 }
 @end

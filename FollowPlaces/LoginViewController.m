@@ -10,6 +10,7 @@
 #import "AuditionsViewController.h"
 #import "API.h"
 
+
 @interface LoginViewController ()
 
 @end
@@ -135,25 +136,37 @@
     
     
     NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[self.EmailTextfield text], @"Email",[self.PasswordTextfield text], @"Password", nil];
-    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(100, 100, 80, 80)];
+    /*
+     UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(100, 100, 80, 80)];
     [activity setBackgroundColor:[UIColor clearColor]];
     [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     [self.view addSubview:activity];
     [activity release];
     [activity startAnimating];
+    */
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSDictionary *json)  {
-		if ([[[json valueForKey:@"Logged" ] stringValue] isEqualToString:@"1"]) {
+    sender.enabled = false;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSDictionary *json)  {
+            if ([[[json valueForKey:@"Logged" ] stringValue] isEqualToString:@"1"]) {
 				[self performSegueWithIdentifier: @"LoginSegue" sender: self];
-		} else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Username and password are incorrect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-            [alert release];
-		}
-        [activity stopAnimating];
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        
-	}];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Username and password are incorrect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+                [alert release];
+            }
+            //[activity stopAnimating];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                sender.enabled = true;
+            });
+        }];
+       
+    });
+    
 
     
 }
@@ -192,6 +205,7 @@
     [EmailTextfield release];
     [PasswordTextfield release];
     [KeyboardToolbar release];
+    //[_LogInButton release];
     [super dealloc];
 }
 - (void)viewDidUnload {
@@ -199,6 +213,7 @@
     [self setEmailTextfield:nil];
     [self setPasswordTextfield:nil];
     [self setKeyboardToolbar:nil];
+   // [self setLogInButton:nil];
     [super viewDidUnload];
 }
 

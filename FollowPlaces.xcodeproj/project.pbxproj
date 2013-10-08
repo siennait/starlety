@@ -14,6 +14,8 @@
 		2C0F5E0817F2F11A00A7E393 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0F5E0717F2F11A00A7E393 /* MediaPlayer.framework */; };
 		2C0F5E0B17F2F12800A7E393 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0F5E0A17F2F12800A7E393 /* MobileCoreServices.framework */; };
 		2C15D57C17F2E0DD006704DE /* AuditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D57B17F2E0DD006704DE /* AuditionsViewController.m */; };
+		2C22C3F3180411960009CE63 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F2180411960009CE63 /* MBProgressHUD.m */; };
+		2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F1180411960009CE63 /* MBProgressHUD.h */; };
 		2C2663621649908E00D53221 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2663611649908E00D53221 /* ExploreViewController.m */; };
 		2C2663641649936300D53221 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C2663631649936300D53221 /* icon.png */; };
 		2C26636C1649EBE300D53221 /* SignupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C26636B1649EBE300D53221 /* SignupTableViewController.m */; };
@@ -80,6 +82,8 @@
 		2C0F5E0A17F2F12800A7E393 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2C15D57A17F2E0DD006704DE /* AuditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditionsViewController.h; sourceTree = "<group>"; };
 		2C15D57B17F2E0DD006704DE /* AuditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditionsViewController.m; sourceTree = "<group>"; };
+		2C22C3F1180411960009CE63 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2C22C3F2180411960009CE63 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		2C2663601649908E00D53221 /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
 		2C2663611649908E00D53221 /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 		2C2663631649936300D53221 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -184,6 +188,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C22C3ED1804110D0009CE63 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2C22C3F1180411960009CE63 /* MBProgressHUD.h */,
+				2C22C3F2180411960009CE63 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		2C58373F165148BB002255F9 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +293,7 @@
 				2C58373F165148BB002255F9 /* TextFields */,
 				2C266391164C74E500D53221 /* Images */,
 				2C2663631649936300D53221 /* icon.png */,
+				2C22C3ED1804110D0009CE63 /* MBProgressHUD */,
 				2CD7850D164588BA00059330 /* logo.jpg */,
 				2CD784DE16457AB300059330 /* siennaAppDelegate.h */,
 				2CD784DF16457AB300059330 /* siennaAppDelegate.m */,
@@ -470,6 +484,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C22C3F3180411960009CE63 /* MBProgressHUD.m in Sources */,
+				2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */,
 				2CD784DC16457AB300059330 /* main.m in Sources */,
 				2CD784E016457AB300059330 /* siennaAppDelegate.m in Sources */,
 				2CD784EF16457AB300059330 /* siennaViewController.m in Sources */,
@@ -598,6 +614,7 @@
 		2CD7850816457AB300059330 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FollowPlaces/FollowPlaces-Prefix.pch";
@@ -613,11 +630,13 @@
 		2CD7850916457AB300059330 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FollowPlaces/FollowPlaces-Prefix.pch";
 				INFOPLIST_FILE = "FollowPlaces/FollowPlaces-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
