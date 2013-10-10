@@ -7,6 +7,8 @@
 //
 
 #import "AuditionsViewController.h"
+#import <unistd.h>
+
 
 #define kAPIHost @"http://86.124.72.174"
 
@@ -15,7 +17,8 @@
 @end
 
 @implementation AuditionsViewController
-@synthesize userId;
+
+//@synthesize userId = _userId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,9 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:self.userId delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
+
 	// Do any additional setup after loading the view.
 }
 
@@ -42,6 +43,8 @@
 }
 
 - (IBAction)TakeVideo:(id)sender {
+
+    
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
@@ -61,7 +64,9 @@
         
         NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
         NSData *webData = [NSData dataWithContentsOfURL:videoURL];
-       [self post:webData];
+     
+      
+        [self post:webData];
       //  [webData release];
     }
     
@@ -132,13 +137,22 @@
 {
     
     NSLog(@"POSTING");
+    //HUD = [[MBProgressHUD alloc] initWithView:self.view];
+	//[self.view addSubview:HUD];
+	
+    HUD = [[MBProgressHUD showHUDAddedTo:self.view animated:YES] retain];
+    //HUD.mode = MBProgressHUDModeDeterminate;
+    
+	HUD.delegate = self;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     
     // Generate the postdata:
     NSData *postData = [self generatePostDataForData: fileData];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
+  
+    //self.userId = [[NSString alloc] init];
     // Setup the request:
-    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", kAPIHost, @"/Api/Videos/", userId ]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", kAPIHost, @"/Api/Videos/?userId=", [LoginInfo sharedInstance].userId]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
     [uploadRequest setHTTPMethod:@"POST"];
     [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
@@ -146,6 +160,8 @@
     
     // Execute the reqest:
     NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
+    
+   
     
     if (conn)
     {
@@ -161,17 +177,46 @@
         NSLog(@"fail");
     }
     
+    
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+- (void)dealloc {
+    
 
+   // [self.userId release];
+    
+    //[_LogInButton release];
+    [super dealloc];
+}
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+	expectedLength = MAX([response expectedContentLength], 1);
+	currentLength = 0;
+    HUD.mode = MBProgressHUDModeDeterminate;
+
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    HUD.mode = MBProgressHUDModeDeterminate;
+	currentLength += [data length];
+	HUD.progress = currentLength / (float)expectedLength;
+    }
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"/Images/37x-Checkmark.png"]] autorelease];
+	HUD.mode = MBProgressHUDModeCustomView;
+	[HUD hide:YES afterDelay:2];
     
     // Append the new data to receivedData.
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Audition uploaded! The audition was also saved on your photo album." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    [alert release];
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Audition uploaded! The audition was also saved on your photo album." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //[alert show];
+    //[alert release];
     // receivedData is an instance variable declared elsewhere.
-        
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	[HUD hide:YES];
 }
 @end

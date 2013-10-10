@@ -16,6 +16,8 @@
 		2C15D57C17F2E0DD006704DE /* AuditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C15D57B17F2E0DD006704DE /* AuditionsViewController.m */; };
 		2C22C3F3180411960009CE63 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F2180411960009CE63 /* MBProgressHUD.m */; };
 		2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F1180411960009CE63 /* MBProgressHUD.h */; };
+		2C22C3F81806CCA60009CE63 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F71806CCA60009CE63 /* LoginInfo.m */; };
+		2C22C3F91806D6840009CE63 /* LoginInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F61806CCA60009CE63 /* LoginInfo.h */; };
 		2C2663621649908E00D53221 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2663611649908E00D53221 /* ExploreViewController.m */; };
 		2C2663641649936300D53221 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C2663631649936300D53221 /* icon.png */; };
 		2C26636C1649EBE300D53221 /* SignupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C26636B1649EBE300D53221 /* SignupTableViewController.m */; };
@@ -84,6 +86,8 @@
 		2C15D57B17F2E0DD006704DE /* AuditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditionsViewController.m; sourceTree = "<group>"; };
 		2C22C3F1180411960009CE63 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2C22C3F2180411960009CE63 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2C22C3F61806CCA60009CE63 /* LoginInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInfo.h; sourceTree = "<group>"; };
+		2C22C3F71806CCA60009CE63 /* LoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfo.m; sourceTree = "<group>"; };
 		2C2663601649908E00D53221 /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
 		2C2663611649908E00D53221 /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 		2C2663631649936300D53221 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -315,6 +319,8 @@
 				2CF7199C17E62D4900DDF05C /* Annotation.m */,
 				2C15D57A17F2E0DD006704DE /* AuditionsViewController.h */,
 				2C15D57B17F2E0DD006704DE /* AuditionsViewController.m */,
+				2C22C3F61806CCA60009CE63 /* LoginInfo.h */,
+				2C22C3F71806CCA60009CE63 /* LoginInfo.m */,
 			);
 			path = FollowPlaces;
 			sourceTree = "<group>";
@@ -484,6 +490,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C22C3F91806D6840009CE63 /* LoginInfo.h in Sources */,
+				2C22C3F81806CCA60009CE63 /* LoginInfo.m in Sources */,
 				2C22C3F3180411960009CE63 /* MBProgressHUD.m in Sources */,
 				2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */,
 				2CD784DC16457AB300059330 /* main.m in Sources */,

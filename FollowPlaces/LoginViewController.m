@@ -11,6 +11,7 @@
 #import "API.h"
 
 
+
 @interface LoginViewController ()
 
 @end
@@ -150,6 +151,11 @@
     sender.enabled = false;
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSDictionary *json)  {
+            if ([json valueForKey:@"error" ]) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[json valueForKey:@"error" ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+                [alert release];
+            } else {
             if ([[[json valueForKey:@"Logged" ] stringValue] isEqualToString:@"1"]) {
                 self.userId = [json valueForKey:@"UserId"];
 				[self performSegueWithIdentifier: @"LoginSegue" sender: self];
@@ -157,6 +163,7 @@
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"Username and password are incorrect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
                 [alert release];
+            }
             }
             //[activity stopAnimating];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -225,10 +232,15 @@
     if ([[segue identifier] isEqualToString:@"LoginSegue"]) {
         UINavigationController *myNC = (UINavigationController *) [segue destinationViewController];
         AuditionsViewController *myVC = (AuditionsViewController*)myNC.viewControllers[0];
-        
+
         //  [segue destinationViewController];
-       myVC.userId = self.userId;// set your properties here
-         [userId release];
+      // myVC.userId = [[NSString alloc]init];
+        [LoginInfo sharedInstance].userId = self.userId;
+       //myVC.userId = self.userId;// set your properties here
+       // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Got Server Response" message:myVC.userId delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        //[alert show];
+        //[alert release];
+        // [userId release];
     }
 }
 

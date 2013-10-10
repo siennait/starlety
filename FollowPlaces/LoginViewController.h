@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
+#import "LoginInfo.h"
 
 @interface LoginViewController : UITableViewController<MBProgressHUDDelegate> {
     	//MBProgressHUD *HUD;

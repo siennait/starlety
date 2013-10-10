@@ -9,12 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "MBProgressHUD.h"
+#import "LoginInfo.h"
 
-@interface AuditionsViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface AuditionsViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, MBProgressHUDDelegate> {
+	MBProgressHUD *HUD;
+    
+	long long expectedLength;
+	long long currentLength;
+    
+}
+
 
 @property (copy,   nonatomic) NSURL *movieURL;
 @property (strong, nonatomic) MPMoviePlayerController *movieController;
-@property (copy, nonatomic) NSString* userId;
+
 
 - (IBAction)TakeVideo:(id)sender;
 
