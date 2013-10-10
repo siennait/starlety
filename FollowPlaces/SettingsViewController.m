@@ -56,6 +56,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex != [alertView cancelButtonIndex]) {
+        [[LoginInfo sharedInstance] logout];
         [self performSegueWithIdentifier: @"SettingsLogout" sender: self];
         //NSLog(@"Launching the store");
         //replace appname with any specific name you want

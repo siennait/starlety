@@ -14,5 +14,5 @@
 @property (strong , nonatomic) NSString* userId;
     
 + (LoginInfo*) sharedInstance;
-
+- (void) logout;
 @end

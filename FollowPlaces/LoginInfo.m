@@ -23,4 +23,8 @@
     return myInstance;
 }
 
+- (void) logout {
+    [userId release];
+    userId = [[NSString alloc] init];
+}
 @end
