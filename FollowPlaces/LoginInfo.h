@@ -12,7 +12,8 @@
 @interface LoginInfo : NSObject
 
 @property (strong , nonatomic) NSString* userId;
-    
+@property  (nonatomic, strong) NSMutableArray *auditionData;
+
 + (LoginInfo*) sharedInstance;
 - (void) logout;
 @end

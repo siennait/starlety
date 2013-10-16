@@ -13,6 +13,7 @@
 @implementation LoginInfo
 
 @synthesize userId;
+@synthesize auditionData;
 
 + (LoginInfo*) sharedInstance {
     static LoginInfo *myInstance = nil;
@@ -25,6 +26,8 @@
 
 - (void) logout {
     [userId release];
+    [auditionData release];
     userId = [[NSString alloc] init];
+    auditionData = [[NSMutableArray alloc] init];
 }
 @end

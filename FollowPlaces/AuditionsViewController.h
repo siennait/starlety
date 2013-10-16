@@ -11,20 +11,18 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "MBProgressHUD.h"
 #import "LoginInfo.h"
+#import <MapKit/MKAnnotation.h>
+#import <CoreLocation/CLAvailability.h>
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CLLocationManager.h>
+#import "LoginInfo.h"
 
-@interface AuditionsViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, MBProgressHUDDelegate> {
-	MBProgressHUD *HUD;
+@interface AuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource> {
+
     
-	long long expectedLength;
-	long long currentLength;
+    
     
 }
 
-
-@property (copy,   nonatomic) NSURL *movieURL;
-@property (strong, nonatomic) MPMoviePlayerController *movieController;
-
-
-- (IBAction)TakeVideo:(id)sender;
-
+//@property (strong) NSMutableArray *tableData;
 @end

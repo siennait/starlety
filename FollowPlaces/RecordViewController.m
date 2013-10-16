@@ -1,24 +1,19 @@
 //
-//  AuditionsViewController.m
+//  RecordViewController.m
 //  FollowPlaces
 //
-//  Created by Luchian Chivoiu on 25/09/2013.
+//  Created by Luchian Chivoiu on 16/10/2013.
 //  Copyright (c) 2013 Luchian Chivoiu. All rights reserved.
 //
 
-#import "AuditionsViewController.h"
-#import <unistd.h>
-
+#import "RecordViewController.h"
 #define kAPIHost @"http://86.124.72.174:8080"
 
-@interface AuditionsViewController ()
+@interface RecordViewController ()
 
 @end
 
-@implementation AuditionsViewController
-
-//@synthesize userId = _userId;
-
+@implementation RecordViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,29 +27,10 @@
 - (void)viewDidLoad
 {
 
-   
+}
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewDidLoad];
-
-     [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
-     [LoginInfo sharedInstance].auditionData = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-    
-
-	// Do any additional setup after loading the view.
-}
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-/*
-- (IBAction)TakeVideo:(id)sender {
-
-    
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
@@ -62,6 +38,19 @@
     picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
     
     [self presentViewController:picker animated:YES completion:NULL];
+	// Do any additional setup after loading the view.
+}
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)TakeVideo:(id)sender {
+    
+    
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -74,10 +63,10 @@
         
         NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
         NSData *webData = [NSData dataWithContentsOfURL:videoURL];
-     
-      
+        
+        
         [self post:webData];
-      //  [webData release];
+        //  [webData release];
     }
     
     self.movieURL = info[UIImagePickerControllerMediaURL];
@@ -92,36 +81,8 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
-*/
-/*
-- (void)moviePlayBackDidFinish:(NSNotification *)notification {
-    
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-    
-    [self.movieController stop];
-    [self.movieController.view removeFromSuperview];
-    self.movieController = nil;
-    
-}
-*/
-- (void)viewDidAppear:(BOOL)animated {
-       /*
-    self.movieController = [[MPMoviePlayerController alloc] init];
-    [self.movieController setContentURL:self.movieURL];
-    
-    [self.movieController.view setFrame:CGRectMake( 0, 40, 320, 456)];
-    
-    [self.view addSubview:self.movieController.view];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(moviePlayBackDidFinish:)
-                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-                                               object:self.movieController];
-    [self.movieController prepareToPlay];
-    [self.movieController play];
-    */
-}
-/*
+
+
 - (NSData *)generatePostDataForData:(NSData *)uploadData
 {
     // Generate the post header:
@@ -160,14 +121,14 @@
     // Generate the postdata:
     NSData *postData = [self generatePostDataForData: fileData];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-  
+    
     //self.userId = [[NSString alloc] init];
     // Setup the request:
     
     CLLocationCoordinate2D coordinate = [self getLocation];
     NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
     NSString *longitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
-  
+    
     
     NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@&latitude=%@&longitude=%@", kAPIHost, @"/Api/Videos/?userId=", [LoginInfo sharedInstance].userId, latitude, longitude]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
     [uploadRequest setHTTPMethod:@"POST"];
@@ -178,7 +139,7 @@
     // Execute the reqest:
     NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
     
-   
+    
     
     if (conn)
     {
@@ -195,32 +156,31 @@
     }
     
     
-}*/
-/*
+}
+
 - (void)dealloc {
     
-
-   // [self.userId release];
+    
+    // [self.userId release];
     
     //[_LogInButton release];
     [super dealloc];
 }
-*/
-/*
+
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
 	expectedLength = MAX([response expectedContentLength], 1);
 	currentLength = 0;
     HUD.mode = MBProgressHUDModeDeterminate;
-
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     HUD.mode = MBProgressHUDModeDeterminate;
 	currentLength += [data length];
 	HUD.progress = currentLength / (float)expectedLength;
-    }
+}
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"/Images/37x-Checkmark.png"]] autorelease];
@@ -248,36 +208,6 @@
     CLLocationCoordinate2D coordinate = [location coordinate];
     
     return coordinate;
-}
-*/
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-   return [[LoginInfo sharedInstance].auditionData count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-       
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    cell.textLabel.text = [[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"1352416674_video.png"];
-
-    return cell;
-}
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Remove the row from data model
-    [[LoginInfo sharedInstance].auditionData removeObjectAtIndex:indexPath.row];
-    
-    // Request table view to reload
-    [tableView reloadData];
 }
 
 @end
