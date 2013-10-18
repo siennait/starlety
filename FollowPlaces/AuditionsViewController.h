@@ -16,6 +16,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocationManager.h>
 #import "LoginInfo.h"
+#import "API.h"
 
 @interface AuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource> {
 
@@ -23,6 +24,7 @@
     
     
 }
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 
 //@property (strong) NSMutableArray *tableData;
 @end

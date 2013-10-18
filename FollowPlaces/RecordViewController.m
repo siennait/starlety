@@ -177,11 +177,17 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    HUD.mode = MBProgressHUDModeDeterminate;
-	currentLength += [data length];
-	HUD.progress = currentLength / (float)expectedLength;
+    
 }
 
+- (void)connection:(NSURLConnection *)connection   didSendBodyData:(NSInteger)bytesWritten
+ totalBytesWritten:(NSInteger)totalBytesWritten
+totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
+{
+    HUD.mode = MBProgressHUDModeDeterminate;
+	currentLength = totalBytesWritten;
+	HUD.progress = currentLength / (float)totalBytesExpectedToWrite;
+}
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"/Images/37x-Checkmark.png"]] autorelease];
 	HUD.mode = MBProgressHUDModeCustomView;

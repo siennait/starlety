@@ -9,6 +9,7 @@
 #import "AuditionsViewController.h"
 #import <unistd.h>
 
+
 #define kAPIHost @"http://86.124.72.174:8080"
 
 @interface AuditionsViewController ()
@@ -18,7 +19,7 @@
 @implementation AuditionsViewController
 
 //@synthesize userId = _userId;
-
+@synthesize tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,13 +37,26 @@
     [super viewDidLoad];
 
      [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
-     [LoginInfo sharedInstance].auditionData = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-    
-
-	// Do any additional setup after loading the view.
+    [[API sharedInstance] getCommand:nil  APIPath:@"/Api/GetVideos"  onCompletion:^(NSDictionary *json)  {
+        if ([json valueForKey:@"error" ]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[json valueForKey:@"error" ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+        } else {
+                //self.userId = [json valueForKey:@"UserId"];
+			for(id video in [json valueForKey:@"videos"]   )
+            {
+                [[LoginInfo sharedInstance].auditionData addObject:[video valueForKey:@"ID"]];
+            }
+            [tableView reloadData];
+        }
+        //[activity stopAnimating];
+       
+    }];	// Do any additional setup after loading the view.
 }
 - (void)viewDidUnload
 {
+    [self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -280,4 +294,8 @@
     [tableView reloadData];
 }
 
+- (void)dealloc {
+    [tableView release];
+    [super dealloc];
+}
 @end
