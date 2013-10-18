@@ -51,12 +51,10 @@
 		2CD784D416457AB200059330 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D316457AB200059330 /* CoreGraphics.framework */; };
 		2CD784DA16457AB200059330 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784D816457AB200059330 /* InfoPlist.strings */; };
 		2CD784DC16457AB300059330 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD784DB16457AB200059330 /* main.m */; };
-		2CD784E016457AB300059330 /* siennaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD784DF16457AB300059330 /* siennaAppDelegate.m */; };
 		2CD784E216457AB300059330 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784E116457AB300059330 /* Default.png */; };
 		2CD784E416457AB300059330 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784E316457AB300059330 /* Default@2x.png */; };
 		2CD784E616457AB300059330 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784E516457AB300059330 /* Default-568h@2x.png */; };
 		2CD784E916457AB300059330 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784E716457AB300059330 /* MainStoryboard_iPhone.storyboard */; };
-		2CD784EF16457AB300059330 /* siennaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD784EE16457AB300059330 /* siennaViewController.m */; };
 		2CD784F716457AB300059330 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784F616457AB300059330 /* SenTestingKit.framework */; };
 		2CD784F816457AB300059330 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784CF16457AB200059330 /* UIKit.framework */; };
 		2CD784F916457AB300059330 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D116457AB200059330 /* Foundation.framework */; };
@@ -148,14 +146,10 @@
 		2CD784D916457AB200059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CD784DB16457AB200059330 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CD784DD16457AB300059330 /* FollowPlaces-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FollowPlaces-Prefix.pch"; sourceTree = "<group>"; };
-		2CD784DE16457AB300059330 /* siennaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = siennaAppDelegate.h; sourceTree = "<group>"; };
-		2CD784DF16457AB300059330 /* siennaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = siennaAppDelegate.m; sourceTree = "<group>"; };
 		2CD784E116457AB300059330 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2CD784E316457AB300059330 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2CD784E516457AB300059330 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2CD784E816457AB300059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		2CD784ED16457AB300059330 /* siennaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = siennaViewController.h; sourceTree = "<group>"; };
-		2CD784EE16457AB300059330 /* siennaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = siennaViewController.m; sourceTree = "<group>"; };
 		2CD784F516457AB300059330 /* FollowPlacesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FollowPlacesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD784F616457AB300059330 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2CD784FE16457AB300059330 /* FollowPlacesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FollowPlacesTests-Info.plist"; sourceTree = "<group>"; };
@@ -306,11 +300,7 @@
 				2C2663631649936300D53221 /* icon.png */,
 				2C22C3ED1804110D0009CE63 /* MBProgressHUD */,
 				2CD7850D164588BA00059330 /* logo.jpg */,
-				2CD784DE16457AB300059330 /* siennaAppDelegate.h */,
-				2CD784DF16457AB300059330 /* siennaAppDelegate.m */,
 				2CD784E716457AB300059330 /* MainStoryboard_iPhone.storyboard */,
-				2CD784ED16457AB300059330 /* siennaViewController.h */,
-				2CD784EE16457AB300059330 /* siennaViewController.m */,
 				2CD784D616457AB200059330 /* Supporting Files */,
 				2C2663601649908E00D53221 /* ExploreViewController.h */,
 				2C2663611649908E00D53221 /* ExploreViewController.m */,
@@ -504,8 +494,6 @@
 				2C22C3F3180411960009CE63 /* MBProgressHUD.m in Sources */,
 				2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */,
 				2CD784DC16457AB300059330 /* main.m in Sources */,
-				2CD784E016457AB300059330 /* siennaAppDelegate.m in Sources */,
-				2CD784EF16457AB300059330 /* siennaViewController.m in Sources */,
 				2C2663621649908E00D53221 /* ExploreViewController.m in Sources */,
 				2C26636C1649EBE300D53221 /* SignupTableViewController.m in Sources */,
 				2C583739164E9C36002255F9 /* SettingsViewController.m in Sources */,

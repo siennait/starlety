@@ -15,19 +15,12 @@
 #import "API.h"
 
 
-//#import "ASIHTTPRequest.h"
-//#import "ASIFormDataRequest.h"
-//#import "JSON.h"
-
 @interface SignupTableViewController ()
 
 @end
 
 @implementation SignupTableViewController
 
-//@synthesize thePickerView;
-//@synthesize genderTextField;
-//@synthesize toolbargenderpickerview;
 
 @synthesize FirstNametextfield;
 @synthesize LastNametextfield;
@@ -36,45 +29,16 @@
 @synthesize KeyboardToolbar;
 @synthesize ProfilePicture;
 
-//- (id)initWithStyle:(UITableViewStyle)style
-//{
-//    self = [super initWithStyle:style];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad
 {
-    //thePickerView.showsSelectionIndicator = FALSE;
-   // thePickerView.hidden=TRUE;
-    //One column array example
-//    self.oneColumnList=[[NSArray alloc] initWithObjects:@"Male",@"Female", nil];
-//    
-//    //Two column array example
-////    self.secondColumnList=[[NSArray alloc] initWithObjects:@"Canada", @"United States",@"Mexico",@"England",@"France",@"Greece", @"Slovakia",@"Switzerland", nil];
-//    
-//    genderTextField.inputView=thePickerView;
-//    genderTextField.inputAccessoryView=toolbargenderpickerview;
-    //genderTextField.allowsEditingTextAttributes=NO;
-    //genderTextField.delegate = self;
-    /*
-    UISwipeGestureRecognizer *swipeUP = [[UISwipeGestureRecognizer alloc] initWithTarget:(self) action:(@selector(screenWasSwiped))];
-    swipeUP.numberOfTouchesRequired = 1;
-    swipeUP.direction = UISwipeGestureRecognizerDirectionDown;
-    swipeUP.cancelsTouchesInView=YES;
-    [self.view addGestureRecognizer:swipeUP];
-    */
+
     FirstNametextfield.inputAccessoryView=KeyboardToolbar;
     LastNametextfield.inputAccessoryView=KeyboardToolbar;
     Usernametextfield.inputAccessoryView=KeyboardToolbar;
     Passwordtextfield.inputAccessoryView=KeyboardToolbar;
-//    for (id view in self.view.subviews) {
-//        if ([view isKindOfClass:[UITextField class]]) {
-//            [(UITextField *)view setInputAccessoryView:KeyboardToolbar];
-//        }
-//    }
+
+    
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bannerTapped:)];
     singleTap.numberOfTapsRequired = 1;
     singleTap.numberOfTouchesRequired = 1;
@@ -83,25 +47,10 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-
-//
-//    UIView *myView = [[UIView alloc] initWithFrame:CGRectMake(0, 264, 320, 216)];
-//    UIPickerView *thePickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0,0,320,216)];
-//    thePickerView.dataSource = self;
-//    thePickerView.delegate = self;
-//    [myView addSubview:thePickerView];
-//    [self.view addSubview:myView];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)bannerTapped:(UIGestureRecognizer *)gestureRecognizer {
     NSLog(@"%@", [gestureRecognizer view]);
-    //[fldTitle resignFirstResponder];
 	//show the app menu
 	[[[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Close" destructiveButtonTitle:nil otherButtonTitles:@"Take photo", @"Choose from library", nil]
 	 showInView:self.view];
@@ -123,13 +72,6 @@
     
 
 }
-
-//- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-//{
-//    UIImage *screenshotImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-////    UIImage *scaledImage = [self scaleAndRotateImage:screenshotImage];
-//    UIImage *scaledImage = [screenshotImage roundedCornerImage:3 borderSize:3];
-//}
 
 -(void)effects {
     //apply sepia filter - taken from the Beginning Core Image from iOS5 by Tutorials
@@ -181,30 +123,6 @@
     
     [self presentModalViewController:imagePickerController animated:YES];
     
-//    
-//    self.imagePickerController.sourceType = sourceType;
-//    
-//    if (sourceType == UIImagePickerControllerSourceTypeCamera)
-//    {
-//        // user wants to use the camera interface
-//        //
-//        self.imagePickerController.showsCameraControls = NO;
-//        
-//        if ([[self.imagePickerController.cameraOverlayView subviews] count] == 0)
-//        {
-//            // setup our custom overlay view for the camera
-//            //
-//            // ensure that our custom view's frame fits within the parent frame
-//            CGRect overlayViewFrame = self.imagePickerController.cameraOverlayView.frame;
-//            CGRect newFrame = CGRectMake(0.0,
-//                                         CGRectGetHeight(overlayViewFrame) -
-//                                         self.view.frame.size.height - 10.0,
-//                                         CGRectGetWidth(overlayViewFrame),
-//                                         self.view.frame.size.height + 10.0);
-//            self.view.frame = newFrame;
-//            [self.imagePickerController.cameraOverlayView addSubview:self.view];
-//        }
-//    }
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -215,23 +133,12 @@
         case 1:
             [self choosefromlibrary];
 			break;
-            
-//        case 1:
-//            [self effects];
-//			break;
-//        case 2:
-//            [self uploadPhoto];
-//			break;
-//        case 3:
-//            [self logout];
-//			break;
     }
 }
 
 #pragma mark - Image picker delegate methods
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	UIImage *image20 = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //UIImage *image3 = [image roundedCornerImage:0 borderSize:0];
     if(picker.sourceType == UIImagePickerControllerSourceTypeCamera)
     {
         UIImage *image = [image20 scaleAndRotateImage:picker.sourceType];
@@ -240,10 +147,7 @@
         // Crop the image to a square (yikes, fancy!)
         UIImage *croppedImage = [scaledImage croppedImage:CGRectMake((scaledImage.size.width - ProfilePicture.frame.size.width)/2, (scaledImage.size.height -ProfilePicture.frame.size.height)/2, ProfilePicture.frame.size.width, ProfilePicture.frame.size.height)];
         // Show the photo on the screen
-        
-        
         UIImage *image2 = [scaledImage roundedCornerImage:7 borderSize:0];
-        
         ProfilePicture.image = image2;
 
     }
@@ -268,13 +172,6 @@
     [picker dismissModalViewControllerAnimated:NO];
 }
 
-
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    // Return YES for supported orientations
-//    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-//}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -283,28 +180,6 @@
 //
 #pragma mark - Table view data source
 
-
-
-//
-//- (IBAction)cancel:(id)sender
-//{
-//    //	[self.delegate playerDetailsViewControllerDidCancel:self];
-//}
-//- (IBAction)done:(id)sender
-//{
-//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Alert Title here"
-//                                                   message: @"Alert Message here"
-//                                                  delegate: self
-//                                         cancelButtonTitle:@"Cancel"
-//                                         otherButtonTitles:@"OK",nil];
-//    
-//    
-//    [alert show];
-//    [alert release];
-//    
-//
-//    //	[self.delegate playerDetailsViewControllerDidSave:self];
-//}
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -320,67 +195,10 @@
     }
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Navigation logic may go here. Create and push another view controller.
-//    /*
-//     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-//     // ...
-//     // Pass the selected object to the new view controller.
-//     [self.navigationController pushViewController:detailViewController animated:YES];
-//     [detailViewController release];
-//     */
-//}
 
 - (void)dealloc {
-   // [_FirstnameTextField release];
-   // [thePickerView release];
-   // [genderTextField release];
-//    [toolbargenderpickerview release];
-//    [donetoolbar release];
-
     [FirstNametextfield release];
     [LastNametextfield release];
     [Usernametextfield release];
@@ -391,15 +209,6 @@
     [super dealloc];
 }
 - (void)viewDidUnload {
-    //[self setFirstnameTextField:nil];
-
-    
-//     [self setThePickerView:nil];
-//     [self setGenderTextField:nil];
-//
-//    [self setToolbargenderpickerview:nil];
-//    [self setDonetoolbar:nil];
-
     [self setFirstNametextfield:nil];
     [self setLastNametextfield:nil];
     [self setUsernametextfield:nil];
@@ -412,111 +221,7 @@
 }
 
 
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-//}
 
-/*
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return [_oneColumnList count];
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1; // or 2 or more
-}
-
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row
-            forComponent:(NSInteger)component
-{
-    //For one component (column)
-    //return [oneColumnList objectAtIndex:row];
-    
-    //For mutiple columns
-   
-        return [_oneColumnList objectAtIndex:row];
-        
-    
-    
-    
-    
-}
-
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-
-        self.genderTextField.text=[_oneColumnList objectAtIndex:row];
-        return;
-    
-    
-}
-//- (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component {
-//    // Handle the selection
-//}
-//
-//// tell the picker how many rows are available for a given component
-//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-//    NSUInteger numRows = 5;
-//    
-//    return numRows;
-//}
-//
-//// tell the picker how many components it will have
-//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-//    return 1;
-//}
-//
-//// tell the picker the title for a given component
-//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-//    NSString *title;
-//    title = [@"" stringByAppendingFormat:@"%d",row];
-//    
-//    return title;
-//}
-//
-//// tell the picker the width of each row for a given component
-//- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-//    int sectionWidth = 300;
-//    
-//    return sectionWidth;
-//}
-
-
-
-
-
-
-
-- (IBAction)uitextfielddidstartediting:(id)sender {
-//    thePickerView.hidden=NO;
-    //toolbargenderpickerview.hidden=NO;
-    [genderTextField resignFirstResponder];
-   // [thePickerView setHidden:NO];
-    
-}
-
-//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-//    // Show UIPickerView
-// //   [thePickerView setHidden:NO];
-//    return NO;
-//}
-
-- (IBAction)donetoolbar:(id)sender {
-//    [sender resignFirstResponder];
-//     thePickerView.hidden=YES;
-//     toolbargenderpickerview.hidden=YES;
-        [thePickerView resignFirstResponder];
-}
-
-- (IBAction)textFieldReturn:(id)sender {
-    [sender resignFirstResponder];
-}
-*/
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textfield{
        // [textfield resignFirstResponder];
@@ -545,40 +250,7 @@
     }
     return YES;
 }
-/*
--(void)screenWasSwiped
-{
-    //[self.FirstNametextfield resignFirstResponder];
-    if(self.FirstNametextfield){
-        [self.FirstNametextfield resignFirstResponder];
-        
-        [self.LastNametextfield resignFirstResponder];
-        [self.Usernametextfield resignFirstResponder];
-        [self.Passwordtextfield resignFirstResponder];
 
-    }
-    else
-        if(self.LastNametextfield){
-            [self.LastNametextfield resignFirstResponder];
-        }
-        else
-            if(self.Usernametextfield){
-                [self.Usernametextfield resignFirstResponder];
-            }
-            else
-                if(self.Passwordtextfield){
-                    [self.Passwordtextfield resignFirstResponder];
-                }
-    NSLog(@"Swipped 2");
-}
-*/
-//- (IBAction)SwipeDownAction:(UISwipeGestureRecognizer *)sender {
-//    
-//     NSLog(@"swipped");
-//    
-//   
-//
-//}
 - (IBAction)DoneToolbar:(UIBarButtonItem *)sender {
     if ([self.FirstNametextfield isFirstResponder]) {
 
@@ -663,12 +335,6 @@ CGFloat				 animatedDistance;
 
 
 - (IBAction)JoinClick:(UIBarButtonItem *)sender {
-    
-    
-    
-    
-    
-   
     NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:@"", @"ID",[self.FirstNametextfield text], @"Firstname"
                                   ,[self.LastNametextfield text], @"Lastname"
                                   ,[self.Usernametextfield text], @"Email"
@@ -683,7 +349,7 @@ CGFloat				 animatedDistance;
 		
         if(![json isKindOfClass:[NSDictionary class]]||![json objectForKey:@"error"])
 		{
-            //if (![json valueForKey:@"error"]) {
+
 			//success
 			[[[UIAlertView alloc]initWithTitle:@"Success!" message:@"You have been registered! You can log in now." delegate:nil cancelButtonTitle:@"Yay!" otherButtonTitles: nil] show];
 		} else {
@@ -692,10 +358,7 @@ CGFloat				 animatedDistance;
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             [alert release];
-            
-			//if ([@"Authorization required" compare:errorMsg]==NSOrderedSame) {
-			//	[self performSegueWithIdentifier:@"ShowLogin" sender:nil];
-			//}
+
 		}
         dispatch_async(dispatch_get_main_queue(), ^{
             
