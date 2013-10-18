@@ -63,6 +63,7 @@
 		2CD7850E164588BB00059330 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CD7850D164588BA00059330 /* logo.jpg */; };
 		2CF7199D17E62D4900DDF05C /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7199C17E62D4900DDF05C /* Annotation.m */; };
 		2CF719A117E64FEF00DDF05C /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF719A017E64FEF00DDF05C /* map-pin.png */; };
+		2CFF9D841811FCCF00841D63 /* siennaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,7 +139,7 @@
 		2C74EB98165E53A4006D6B21 /* UIImagescaleandrotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImagescaleandrotate.m; sourceTree = "<group>"; };
 		2CB11B83165F038700ADB7FA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		2CB11B84165F038700ADB7FA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		2CD784CB16457AB200059330 /* FollowPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FollowPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CD784CB16457AB200059330 /* FollowPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FollowPlaces.app; path = "/Users/luchianchivoiu/Documents/xcrm/FollowPlaces/build/Debug-iphoneos/FollowPlaces.app"; sourceTree = "<absolute>"; };
 		2CD784CF16457AB200059330 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2CD784D116457AB200059330 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CD784D316457AB200059330 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -150,7 +151,7 @@
 		2CD784E316457AB300059330 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2CD784E516457AB300059330 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2CD784E816457AB300059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		2CD784F516457AB300059330 /* FollowPlacesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FollowPlacesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CD784F516457AB300059330 /* FollowPlacesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FollowPlacesTests.octest; path = "/Users/luchianchivoiu/Documents/xcrm/FollowPlaces/build/Debug-iphoneos/FollowPlacesTests.octest"; sourceTree = "<absolute>"; };
 		2CD784F616457AB300059330 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2CD784FE16457AB300059330 /* FollowPlacesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FollowPlacesTests-Info.plist"; sourceTree = "<group>"; };
 		2CD7850016457AB300059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -160,6 +161,8 @@
 		2CF7199B17E62D4900DDF05C /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
 		2CF7199C17E62D4900DDF05C /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 		2CF719A017E64FEF00DDF05C /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-pin.png"; path = "Images/map-pin.png"; sourceTree = "<group>"; };
+		2CFF9D821811FCCF00841D63 /* siennaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = siennaAppDelegate.h; sourceTree = "<group>"; };
+		2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = siennaAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,17 +263,7 @@
 				2CD784D516457AB200059330 /* FollowPlaces */,
 				2CD784FC16457AB300059330 /* FollowPlacesTests */,
 				2CD784CE16457AB200059330 /* Frameworks */,
-				2CD784CC16457AB200059330 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		2CD784CC16457AB200059330 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2CD784CB16457AB200059330 /* FollowPlaces.app */,
-				2CD784F516457AB300059330 /* FollowPlacesTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		2CD784CE16457AB200059330 /* Frameworks */ = {
@@ -302,6 +295,8 @@
 				2CD7850D164588BA00059330 /* logo.jpg */,
 				2CD784E716457AB300059330 /* MainStoryboard_iPhone.storyboard */,
 				2CD784D616457AB200059330 /* Supporting Files */,
+				2CFF9D821811FCCF00841D63 /* siennaAppDelegate.h */,
+				2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */,
 				2C2663601649908E00D53221 /* ExploreViewController.h */,
 				2C2663611649908E00D53221 /* ExploreViewController.m */,
 				2C26636A1649EBE300D53221 /* SignupTableViewController.h */,
@@ -427,7 +422,7 @@
 				en,
 			);
 			mainGroup = 2CD784C016457AB200059330;
-			productRefGroup = 2CD784CC16457AB200059330 /* Products */;
+			productRefGroup = 2CD784C016457AB200059330;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -513,6 +508,7 @@
 				2C74EB93165BF528006D6B21 /* UIImage+Alpha.m in Sources */,
 				2C74EB94165BF528006D6B21 /* UIImage+Resize.m in Sources */,
 				2C74EB95165BF528006D6B21 /* UIImage+RoundedCorner.m in Sources */,
+				2CFF9D841811FCCF00841D63 /* siennaAppDelegate.m in Sources */,
 				2C74EB96165BF528006D6B21 /* UIAlertView+error.m in Sources */,
 				2C74EB99165E53A4006D6B21 /* UIImagescaleandrotate.m in Sources */,
 				2CB11B85165F038700ADB7FA /* LoginViewController.m in Sources */,
