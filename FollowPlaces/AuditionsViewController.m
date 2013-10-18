@@ -18,7 +18,7 @@
 
 @implementation AuditionsViewController
 
-//@synthesize userId = _userId;
+
 @synthesize tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,96 +32,140 @@
 
 - (void)viewDidLoad
 {
-
-   
     [super viewDidLoad];
-
-     [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
+    [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
     [[API sharedInstance] getCommand:nil  APIPath:@"/Api/GetVideos"  onCompletion:^(NSDictionary *json)  {
         if ([json valueForKey:@"error" ]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[json valueForKey:@"error" ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             [alert release];
         } else {
-                //self.userId = [json valueForKey:@"UserId"];
 			for(id video in [json valueForKey:@"videos"]   )
             {
                 [[LoginInfo sharedInstance].auditionData addObject:[video valueForKey:@"ID"]];
             }
             [tableView reloadData];
         }
-        //[activity stopAnimating];
-       
-    }];	// Do any additional setup after loading the view.
+    }];
 }
 - (void)viewDidUnload
 {
     [self setTableView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-/*
-- (IBAction)TakeVideo:(id)sender {
-
-    
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
-    
-    [self presentViewController:picker animated:YES completion:NULL];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-    if ([mediaType isEqualToString:@"public.movie"]){
-        // Saving the video / // Get the new unique filename
-        NSString *sourcePath = [[info objectForKey:@"UIImagePickerControllerMediaURL"]relativePath];
-        UISaveVideoAtPathToSavedPhotosAlbum(sourcePath,nil,nil,nil);
-        
-        NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
-        NSData *webData = [NSData dataWithContentsOfURL:videoURL];
-     
-      
-        [self post:webData];
-      //  [webData release];
-    }
-    
-    self.movieURL = info[UIImagePickerControllerMediaURL];
-    
-    
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-}
-*/
-/*
-- (void)moviePlayBackDidFinish:(NSNotification *)notification {
-    
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-    
-    [self.movieController stop];
-    [self.movieController.view removeFromSuperview];
-    self.movieController = nil;
-    
-}
-*/
 - (void)viewDidAppear:(BOOL)animated {
-       /*
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+   return [[LoginInfo sharedInstance].auditionData count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    cell.textLabel.text = [[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:@"1352416674_video.png"];
+
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //[[LoginInfo sharedInstance].auditionData removeObjectAtIndex:indexPath.row];
+    //[tableView reloadData];
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    /*
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Row Selected" message:[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    [messageAlert show];
+    */
+    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/GetMediaFileVideo/?userId=%@&videoId=%@", kAPIHost, [LoginInfo sharedInstance].userId,[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row]]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+    [uploadRequest setHTTPMethod:@"GET"];
+    //[uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
+    [uploadRequest setHTTPBody:nil];
+    
+    // Execute the reqest:
+    NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
+    if (conn)
+    {
+        // Connection succeeded (even if a 404 or other non-200 range was returned).
+        NSLog(@"sucess");
+    }
+    else
+    {
+        // Connection failed (cannot reach server).
+        NSLog(@"fail");
+    }
+
+}
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+	expectedLength = MAX([response expectedContentLength], 1);
+	currentLength = 0;
+    HUD.mode = MBProgressHUDModeDeterminate;
+    [LoginInfo sharedInstance].savedVideoData = [[NSMutableData alloc] retain];
+    [[LoginInfo sharedInstance].savedVideoData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    HUD.mode = MBProgressHUDModeDeterminate;
+	currentLength += [data length];
+	HUD.progress = currentLength / (float)expectedLength;
+    [[LoginInfo sharedInstance].savedVideoData appendData:data];
+}
+
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"/Images/37x-Checkmark.png"]] autorelease];
+	HUD.mode = MBProgressHUDModeCustomView;
+	[HUD hide:YES afterDelay:2];
+    NSError *error = nil;
+    NSString * docsDir = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSString * path = [docsDir stringByAppendingPathComponent:@"test7.avi"];
+
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:[@"test1131" stringByAppendingString:@".mov"]];
+    
+     [[LoginInfo sharedInstance].savedVideoData  writeToFile:pdfPath options:NSDataWritingAtomic error:&error];
+    NSLog(@"Write returned error: %@", [error localizedDescription]);
+    /*if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (pdfPath))
+    {
+        UISaveVideoAtPathToSavedPhotosAlbum (pdfPath,self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+    }*/
+    /*
+    MPMoviePlayerController *myPlayer = [[MPMoviePlayerController alloc] init];
+    myPlayer.shouldAutoplay = YES;
+    myPlayer.repeatMode = MPMovieRepeatModeOne;
+    myPlayer.fullscreen = YES;
+    myPlayer.movieSourceType = MPMovieSourceTypeFile;
+    myPlayer.scalingMode = MPMovieScalingModeAspectFit;
+    myPlayer.contentURL =[NSURL fileURLWithPath:path];
+    [self.view addSubview:myPlayer.view];
+    [myPlayer play];
+    */
+    //NSURL *videoURL =
+    //NSString *stringPath = [[NSBundle mainBundle] pathForResource:@"intro" ofType:@"MP4"];
+    NSURL *url = [NSURL fileURLWithPath:pdfPath];
     self.movieController = [[MPMoviePlayerController alloc] init];
-    [self.movieController setContentURL:self.movieURL];
+    [self.movieController setContentURL:url];
     
     [self.movieController.view setFrame:CGRectMake( 0, 40, 320, 456)];
     
@@ -133,169 +177,46 @@
                                                object:self.movieController];
     [self.movieController prepareToPlay];
     [self.movieController play];
-    */
-}
-/*
-- (NSData *)generatePostDataForData:(NSData *)uploadData
-{
-    // Generate the post header:
-    NSString *post = [NSString stringWithCString:"--AaB03x\r\nContent-Disposition: form-data; name=\"upload[file]\"; filename=\"somefile\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\n" encoding:NSASCIIStringEncoding];
-    
-    // Get the post header int ASCII format:
-    NSData *postHeaderData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    // Generate the mutable data variable:
-    NSMutableData *postData = [[NSMutableData alloc] initWithLength:[postHeaderData length] ];
-    [postData setData:postHeaderData];
-    
-    // Add the image:
-    [postData appendData: uploadData];
-    
-    // Add the closing boundry:
-    [postData appendData: [@"\r\n--AaB03x--" dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES]];
-    
-    // Return the post data:
-    return postData;
-}
-
-- (void)post:(NSData *)fileData
-{
-    
-    NSLog(@"POSTING");
-    //HUD = [[MBProgressHUD alloc] initWithView:self.view];
-	//[self.view addSubview:HUD];
-	
-    HUD = [[MBProgressHUD showHUDAddedTo:self.view animated:YES] retain];
-    //HUD.mode = MBProgressHUDModeDeterminate;
-    
-	HUD.delegate = self;
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    
-    // Generate the postdata:
-    NSData *postData = [self generatePostDataForData: fileData];
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-  
-    //self.userId = [[NSString alloc] init];
-    // Setup the request:
-    
-    CLLocationCoordinate2D coordinate = [self getLocation];
-    NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
-    NSString *longitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
-  
-    
-    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@&latitude=%@&longitude=%@", kAPIHost, @"/Api/Videos/?userId=", [LoginInfo sharedInstance].userId, latitude, longitude]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
-    [uploadRequest setHTTPMethod:@"POST"];
-    [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
-    [uploadRequest setHTTPBody:postData];
-    
-    // Execute the reqest:
-    NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
     
    
-    
-    if (conn)
+}
+
+- (void)video:(NSString*)videoPath didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
+{
+    if (error)
     {
-        // Connection succeeded (even if a 404 or other non-200 range was returned).
-        NSLog(@"sucess");
-        //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Got Server Response" message:@"Success" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        //[alert show];
-        //[alert release];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Photo/Video Saving Failed"  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil, nil];
+        [alert show];
     }
     else
     {
-        // Connection failed (cannot reach server).
-        NSLog(@"fail");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Photo/Video Saved" message:@"Saved To Photo Album"  delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
     }
-    
-    
-}*/
-/*
-- (void)dealloc {
-    
-
-   // [self.userId release];
-    
-    //[_LogInButton release];
-    [super dealloc];
 }
-*/
-/*
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-	expectedLength = MAX([response expectedContentLength], 1);
-	currentLength = 0;
-    HUD.mode = MBProgressHUDModeDeterminate;
-
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    HUD.mode = MBProgressHUDModeDeterminate;
-	currentLength += [data length];
-	HUD.progress = currentLength / (float)expectedLength;
-    }
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"/Images/37x-Checkmark.png"]] autorelease];
-	HUD.mode = MBProgressHUDModeCustomView;
-	[HUD hide:YES afterDelay:2];
-    
-    // Append the new data to receivedData.
-    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Audition uploaded! The audition was also saved on your photo album." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    //[alert show];
-    //[alert release];
-    // receivedData is an instance variable declared elsewhere.
-}
-
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 	[HUD hide:YES];
+  
+    
+    [[LoginInfo sharedInstance].savedVideoData release];
+    
 }
 
--(CLLocationCoordinate2D) getLocation{
-    CLLocationManager *locationManager = [[[CLLocationManager alloc] init] autorelease];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    
-    return coordinate;
-}
-*/
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-   return [[LoginInfo sharedInstance].auditionData count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-       
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    cell.textLabel.text = [[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"1352416674_video.png"];
-
-    return cell;
-}
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Remove the row from data model
-    [[LoginInfo sharedInstance].auditionData removeObjectAtIndex:indexPath.row];
-    
-    // Request table view to reload
-    [tableView reloadData];
-}
 
 - (void)dealloc {
     [tableView release];
     [super dealloc];
 }
+- (void)moviePlayBackDidFinish:(NSNotification *)notification {
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    
+    [self.movieController stop];
+    [self.movieController.view removeFromSuperview];
+    self.movieController = nil;
+    
+}
+
+
+
 @end

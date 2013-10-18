@@ -13,7 +13,9 @@
 
 @property (strong , nonatomic) NSString* userId;
 @property  (nonatomic, strong) NSMutableArray *auditionData;
+@property (strong,nonatomic) NSMutableData *savedVideoData;
 
 + (LoginInfo*) sharedInstance;
 - (void) logout;
+
 @end
