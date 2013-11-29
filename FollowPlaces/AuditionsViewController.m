@@ -8,9 +8,9 @@
 
 #import "AuditionsViewController.h"
 #import <unistd.h>
+#import "AuditionCell.h"
 
-
-#define kAPIHost @"http://86.124.72.174:8080"
+#define kAPIHost @"http://starlety.com:8080"
 
 @interface AuditionsViewController ()
 
@@ -34,6 +34,7 @@
 {
     [super viewDidLoad];
     [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
+    //[[LoginInfo sharedInstance].auditionData addObject:@"I345345D"];
     [[API sharedInstance] getCommand:nil  APIPath:@"/Api/GetVideos"  onCompletion:^(NSDictionary *json)  {
         if ([json valueForKey:@"error" ]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[json valueForKey:@"error" ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -42,7 +43,7 @@
         } else {
 			for(id video in [json valueForKey:@"videos"]   )
             {
-                [[LoginInfo sharedInstance].auditionData addObject:[video valueForKey:@"ID"]];
+                [[LoginInfo sharedInstance].auditionData addObject:video];
             }
             [tableView reloadData];
         }
@@ -69,13 +70,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    AuditionCell *cell = [self.tableView dequeueReusableCellWithIdentifier : simpleTableIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    cell.textLabel.text = [[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"1352416674_video.png"];
-
+    //cell.textLabel.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"ID"];
+    //cell.imageView.image = [UIImage imageNamed:@"1352416674_video.png"];
+    cell.User_Name.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"UserName"];
+    cell.DateTime.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"DateCreated"];
+    if([[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ]  valueForKey:@"LocationName"]!=[NSNull null])
+    cell.Location.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ]  valueForKey:@"LocationName"];
     return cell;
 }
 
@@ -92,7 +96,7 @@
     
     [messageAlert show];
     */
-    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/GetMediaFileVideo/?userId=%@&videoId=%@", kAPIHost, [LoginInfo sharedInstance].userId,[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row]]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/GetMediaFileVideo/?userId=%@&videoId=%@", kAPIHost, [LoginInfo sharedInstance].userId,[[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
     [uploadRequest setHTTPMethod:@"GET"];
     //[uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
@@ -116,7 +120,12 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-	expectedLength = MAX([response expectedContentLength], 1);
+    HUD = [[MBProgressHUD showHUDAddedTo:self.view animated:YES] retain];
+    //HUD.mode = MBProgressHUDModeDeterminate;
+    
+	HUD.delegate = self;
+    
+	expectedLength = [response expectedContentLength];
 	currentLength = 0;
     HUD.mode = MBProgressHUDModeDeterminate;
     [LoginInfo sharedInstance].savedVideoData = [[NSMutableData alloc] retain];
@@ -128,6 +137,8 @@
 	currentLength += [data length];
 	HUD.progress = currentLength / (float)expectedLength;
     [[LoginInfo sharedInstance].savedVideoData appendData:data];
+    
+
 }
 
 
@@ -136,15 +147,13 @@
 	HUD.mode = MBProgressHUDModeCustomView;
 	[HUD hide:YES afterDelay:2];
     NSError *error = nil;
-    NSString * docsDir = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString * path = [docsDir stringByAppendingPathComponent:@"test7.avi"];
-
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:[@"test1131" stringByAppendingString:@".mov"]];
+    NSString *videoPath = [documentsDirectory stringByAppendingPathComponent:[@"tempMovie" stringByAppendingString:@".mov"]];
     
-     [[LoginInfo sharedInstance].savedVideoData  writeToFile:pdfPath options:NSDataWritingAtomic error:&error];
+     [[LoginInfo sharedInstance].savedVideoData  writeToFile:videoPath options:NSDataWritingAtomic error:&error];
     NSLog(@"Write returned error: %@", [error localizedDescription]);
     /*if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (pdfPath))
     {
@@ -163,7 +172,7 @@
     */
     //NSURL *videoURL =
     //NSString *stringPath = [[NSBundle mainBundle] pathForResource:@"intro" ofType:@"MP4"];
-    NSURL *url = [NSURL fileURLWithPath:pdfPath];
+    NSURL *url = [NSURL fileURLWithPath:videoPath];
     self.movieController = [[MPMoviePlayerController alloc] init];
     [self.movieController setContentURL:url];
     

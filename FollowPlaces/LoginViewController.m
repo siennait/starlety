@@ -148,7 +148,10 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     sender.enabled = false;
-   
+   	
+    //self.userId = @"UserId";
+    //[self performSegueWithIdentifier: @"LoginSegue" sender: self];
+    //return;
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[API sharedInstance] getCommand:params  APIPath:@"/Api/Login"  onCompletion:^(NSDictionary *json)  {
             if ([json valueForKey:@"error" ]) {

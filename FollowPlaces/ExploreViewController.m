@@ -7,7 +7,7 @@
 //
 
 #import "ExploreViewController.h"
-#import "Annotation.h"
+//#import "Annotation.h"
 #define kConfigPlistName @"config"
 
 @interface ExploreViewController ()
@@ -54,6 +54,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    /*
      locationsAnnotations = [[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view.
     NSArray *locations = [self locationsFromPlistNamed:kConfigPlistName];
@@ -75,7 +76,8 @@
         region.span.longitudeDelta = 0.03;
     
         [mapView setRegion:region animated:TRUE];
-    }
+     
+    }*/
 }
 
 - (void)didReceiveMemoryWarning
@@ -140,7 +142,7 @@
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissModalViewControllerAnimated:NO];
 }
-
+/*
 - (MKAnnotationView *)mapView:(MKMapView *)_mapView viewForAnnotation:(Annotation*)annotation{
 	
     NSString *myString = annotation.title;
@@ -161,10 +163,14 @@
     }
 	return annotationView;
 }
-
+*/
 //Opens Maps application when details button on annotation is tapped.
 - (void)annotationDetailsButtonPressed {
-    Annotation *selectedAnnotation = [[mapView selectedAnnotations] objectAtIndex:0];
+    /*
+     Annotation *selectedAnnotation = [[mapView selectedAnnotations] objectAtIndex:0];
+    
+    */
+    
   //  NSString *urlString = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=%f,%f&daddr=%f,%f", mapView.userLocation.coordinate.latitude, mapView.userLocation.coordinate.longitude, selectedAnnotation.coordinate.latitude, selectedAnnotation.coordinate.longitude];
   //  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }

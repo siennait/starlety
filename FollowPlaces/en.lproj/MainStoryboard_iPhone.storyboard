@@ -28,23 +28,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Followplaces" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xl8-YY-hC6">
-                                <rect key="frame" x="103" y="163" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Follow your favourite places." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ie1-su-px9">
-                                <rect key="frame" x="55" y="209" width="244" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo.jpg" id="cO6-Ao-196">
-                                <rect key="frame" x="82" y="91" width="148" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo2.png" id="cO6-Ao-196">
+                                <rect key="frame" x="-125" y="56" width="587" height="254"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buttonsignin" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bPH-j5-cqa">
-                                <rect key="frame" x="35" y="273" width="244" height="44"/>
+                                <rect key="frame" x="35" y="329" width="244" height="44"/>
                                 <color key="backgroundColor" red="0.72094080230000002" green="0.88800370939999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleShadowColor" red="0.38283357959999997" green="0.51354290069999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6dV-xo-Mae">
-                                <rect key="frame" x="35" y="350" width="244" height="44"/>
+                                <rect key="frame" x="35" y="406" width="244" height="44"/>
                                 <color key="backgroundColor" red="0.7209408022861008" green="0.88800370940815587" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,30 +143,6 @@
             </objects>
             <point key="canvasLocation" x="-2315" y="-768"/>
         </scene>
-        <!--View Controller - My Posts-->
-        <scene sceneID="20W-O6-HAU">
-            <objects>
-                <viewController id="fpe-bx-rrb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R28-ll-22I">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" id="Fjc-dw-WeA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Photo" id="2Qa-NS-2on"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="My Posts" image="1352415176_photo.png" id="Crj-pi-Arf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lAZ-fi-aB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1118" y="-228"/>
-        </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="yrf-us-ZDe">
             <objects>
@@ -220,33 +184,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hqm-Hb-dsI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hqm-Hb-dsI">
                                 <rect key="frame" x="0.0" y="44" width="320" height="474"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="BkB-jb-l90">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="85"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleTableItem" rowHeight="104" id="BkB-jb-l90" customClass="AuditionCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BkB-jb-l90" id="dUL-F3-SYB">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tnd-nV-2sl">
-                                                    <rect key="frame" x="176" y="48" width="42" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lDh-c4-tWm">
+                                                    <rect key="frame" x="55" y="25" width="223" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="drg-Fi-7dx">
-                                                    <rect key="frame" x="252" y="43" width="30" height="30"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="4YQ-6W-6We">
+                                                    <rect key="frame" x="11" y="16" width="31" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Play">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LcX-6h-S0H">
+                                                    <rect key="frame" x="144" y="78" width="168" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JKp-Q7-K3B">
+                                                    <rect key="frame" x="20" y="78" width="116" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="DateTime" destination="LcX-6h-S0H" id="fVh-2k-O51"/>
+                                            <outlet property="Location" destination="JKp-Q7-K3B" id="RjM-P0-7IR"/>
+                                            <outlet property="User_Name" destination="lDh-c4-tWm" id="qUZ-XH-xWO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -331,7 +310,6 @@
                     <connections>
                         <segue destination="S4F-LQ-aH6" kind="relationship" relationship="viewControllers" id="Sj5-KT-9zP"/>
                         <segue destination="sWo-SE-18N" kind="relationship" relationship="viewControllers" id="DoB-1t-WRT"/>
-                        <segue destination="fpe-bx-rrb" kind="relationship" relationship="viewControllers" id="9MA-V9-f2a"/>
                         <segue destination="qCe-MY-yab" kind="relationship" relationship="viewControllers" id="bGm-Y9-GLz"/>
                     </connections>
                 </tabBarController>
@@ -605,12 +583,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1352415176_photo.png" width="24" height="24"/>
         <image name="1352415203_man2.png" width="64" height="64"/>
         <image name="1352415709_gear.png" width="24" height="24"/>
         <image name="1352415729_globe.png" width="24" height="24"/>
+        <image name="1352416672_video.png" width="48" height="48"/>
         <image name="1352416674_video.png" width="24" height="24"/>
-        <image name="logo.jpg" width="104" height="88"/>
+        <image name="logo2.png" width="268" height="227"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
