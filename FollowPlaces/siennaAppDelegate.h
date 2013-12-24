@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import "WelcomeViewController.h"
+#import "AuditionsViewController.h"
+#import "MainTabBarController.h"
 
 @interface siennaAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) WelcomeViewController *customLoginViewController;
 
 @end

@@ -5,7 +5,7 @@
 //  Created by Luchian Chivoiu on 10/11/2012.
 //  Copyright (c) 2012 Luchian Chivoiu. All rights reserved.
 //
-
+#import <FacebookSDK/FacebookSDK.h>
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
@@ -58,6 +58,9 @@
     if (buttonIndex != [alertView cancelButtonIndex]) {
         [[LoginInfo sharedInstance] logout];
         [self performSegueWithIdentifier: @"SettingsLogout" sender: self];
+        
+        [FBSession.activeSession closeAndClearTokenInformation];
+        
         //NSLog(@"Launching the store");
         //replace appname with any specific name you want
         //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.com/apps/appname"]];

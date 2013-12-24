@@ -7,7 +7,7 @@
 //
 
 #import "RecordViewController.h"
-#define kAPIHost @"http://86.124.72.174:8080"
+#define kAPIHost @"https://starlety.com:4430"
 
 @interface RecordViewController ()
 

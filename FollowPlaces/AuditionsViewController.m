@@ -10,7 +10,7 @@
 #import <unistd.h>
 #import "AuditionCell.h"
 
-#define kAPIHost @"http://starlety.com:8080"
+#define kAPIHost @"https://starlety.com:4430"
 
 @interface AuditionsViewController ()
 
