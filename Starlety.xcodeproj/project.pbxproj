@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C0EDA43186934D3000C286A /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EDA42186934D3000C286A /* StartViewController.m */; };
 		2C0F5E0817F2F11A00A7E393 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0F5E0717F2F11A00A7E393 /* MediaPlayer.framework */; };
 		2C0F5E0B17F2F12800A7E393 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0F5E0A17F2F12800A7E393 /* MobileCoreServices.framework */; };
 		2C10C08D180DF0AA00633AED /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10C08C180DF0AA00633AED /* RecordViewController.m */; };
@@ -17,8 +16,6 @@
 		2C22C3F81806CCA60009CE63 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F71806CCA60009CE63 /* LoginInfo.m */; };
 		2C22C3F91806D6840009CE63 /* LoginInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F61806CCA60009CE63 /* LoginInfo.h */; };
 		2C22C3FB180775BB0009CE63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C22C3FA180775BB0009CE63 /* CoreLocation.framework */; };
-		2C2663621649908E00D53221 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2663611649908E00D53221 /* ExploreViewController.m */; };
-		2C26636C1649EBE300D53221 /* SignupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C26636B1649EBE300D53221 /* SignupTableViewController.m */; };
 		2C3F875F1829DEE300C6EECA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F875E1829DEE300C6EECA /* icon.png */; };
 		2C3F87861829E93500C6EECA /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F87601829E93500C6EECA /* 37x-Checkmark.png */; };
 		2C3F87871829E93500C6EECA /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F87611829E93500C6EECA /* 37x-Checkmark@2x.png */; };
@@ -84,7 +81,6 @@
 		2C74EB99165E53A4006D6B21 /* UIImagescaleandrotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB98165E53A4006D6B21 /* UIImagescaleandrotate.m */; };
 		2CA2B44D186A1FDB00AC95F5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA2B44C186A1FDB00AC95F5 /* MainTabBarController.m */; };
 		2CAD12BA181DB9C2001F5F81 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD12B9181DB9C2001F5F81 /* logo2.png */; };
-		2CB11B85165F038700ADB7FA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB11B84165F038700ADB7FA /* LoginViewController.m */; };
 		2CD784D016457AB200059330 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784CF16457AB200059330 /* UIKit.framework */; };
 		2CD784D216457AB200059330 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D116457AB200059330 /* Foundation.framework */; };
 		2CD784D416457AB200059330 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D316457AB200059330 /* CoreGraphics.framework */; };
@@ -184,8 +180,6 @@
 		2C0D449817E81F4E000AACC2 /* Titlu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Titlu.jpg; path = Images/Titlu.jpg; sourceTree = "<group>"; };
 		2C0D449B17E82083000AACC2 /* Titlu poza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Titlu poza.png"; path = "Images/Titlu poza.png"; sourceTree = "<group>"; };
 		2C0D449C17E82083000AACC2 /* Titlu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Titlu.png; path = Images/Titlu.png; sourceTree = "<group>"; };
-		2C0EDA41186934D3000C286A /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
-		2C0EDA42186934D3000C286A /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		2C0F5E0717F2F11A00A7E393 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2C0F5E0A17F2F12800A7E393 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2C10C08B180DF0AA00633AED /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
@@ -197,10 +191,6 @@
 		2C22C3F61806CCA60009CE63 /* LoginInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInfo.h; sourceTree = "<group>"; };
 		2C22C3F71806CCA60009CE63 /* LoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfo.m; sourceTree = "<group>"; };
 		2C22C3FA180775BB0009CE63 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		2C2663601649908E00D53221 /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
-		2C2663611649908E00D53221 /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
-		2C26636A1649EBE300D53221 /* SignupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupTableViewController.h; sourceTree = "<group>"; };
-		2C26636B1649EBE300D53221 /* SignupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupTableViewController.m; sourceTree = "<group>"; };
 		2C266391164C74E500D53221 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		2C3F875E1829DEE300C6EECA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2C3F87601829E93500C6EECA /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "37x-Checkmark.png"; path = "FollowPlaces/Images/37x-Checkmark.png"; sourceTree = "<group>"; };
@@ -289,8 +279,6 @@
 		2CAD12B7181DB8DF001F5F81 /* Starlety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starlety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAD12B8181DB8DF001F5F81 /* StarletyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarletyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAD12B9181DB9C2001F5F81 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
-		2CB11B83165F038700ADB7FA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		2CB11B84165F038700ADB7FA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		2CD784CF16457AB200059330 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2CD784D116457AB200059330 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CD784D316457AB200059330 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -711,16 +699,10 @@
 				2CD784D616457AB200059330 /* Supporting Files */,
 				2CFF9D821811FCCF00841D63 /* siennaAppDelegate.h */,
 				2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */,
-				2C2663601649908E00D53221 /* ExploreViewController.h */,
-				2C2663611649908E00D53221 /* ExploreViewController.m */,
-				2C26636A1649EBE300D53221 /* SignupTableViewController.h */,
-				2C26636B1649EBE300D53221 /* SignupTableViewController.m */,
 				2C583737164E9C35002255F9 /* SettingsViewController.h */,
 				2C583738164E9C35002255F9 /* SettingsViewController.m */,
 				2C74EB61165BCC0D006D6B21 /* API.h */,
 				2C74EB62165BCC0D006D6B21 /* API.m */,
-				2CB11B83165F038700ADB7FA /* LoginViewController.h */,
-				2CB11B84165F038700ADB7FA /* LoginViewController.m */,
 				2C15D57A17F2E0DD006704DE /* AuditionsViewController.h */,
 				2C15D57B17F2E0DD006704DE /* AuditionsViewController.m */,
 				2C22C3F61806CCA60009CE63 /* LoginInfo.h */,
@@ -731,8 +713,6 @@
 				2C46851D182B1F71003CF4DA /* AuditionCell.m */,
 				2CF4738A1865392C006F83C7 /* WelcomeViewController.h */,
 				2CF4738B1865392C006F83C7 /* WelcomeViewController.m */,
-				2C0EDA41186934D3000C286A /* StartViewController.h */,
-				2C0EDA42186934D3000C286A /* StartViewController.m */,
 				2CA2B44B186A1FDB00AC95F5 /* MainTabBarController.h */,
 				2CA2B44C186A1FDB00AC95F5 /* MainTabBarController.m */,
 			);
@@ -1509,8 +1489,6 @@
 				2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */,
 				2CD784DC16457AB300059330 /* main.m in Sources */,
 				2CA2B44D186A1FDB00AC95F5 /* MainTabBarController.m in Sources */,
-				2C2663621649908E00D53221 /* ExploreViewController.m in Sources */,
-				2C26636C1649EBE300D53221 /* SignupTableViewController.m in Sources */,
 				2C583739164E9C36002255F9 /* SettingsViewController.m in Sources */,
 				2C58373E165148A6002255F9 /* SignupFirstNameTextField.m in Sources */,
 				2C10C08D180DF0AA00633AED /* RecordViewController.m in Sources */,
@@ -1533,8 +1511,6 @@
 				2CFF9D841811FCCF00841D63 /* siennaAppDelegate.m in Sources */,
 				2C74EB96165BF528006D6B21 /* UIAlertView+error.m in Sources */,
 				2C74EB99165E53A4006D6B21 /* UIImagescaleandrotate.m in Sources */,
-				2C0EDA43186934D3000C286A /* StartViewController.m in Sources */,
-				2CB11B85165F038700ADB7FA /* LoginViewController.m in Sources */,
 				2C15D57C17F2E0DD006704DE /* AuditionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

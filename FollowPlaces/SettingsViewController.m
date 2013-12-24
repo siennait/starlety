@@ -44,13 +44,9 @@
                                                   delegate: self
                                          cancelButtonTitle:@"No"
                                          otherButtonTitles:@"Yes",nil];
-    
-    
     [alert show];
     [alert release];
     
-    
-    //	[self.delegate playerDetailsViewControllerDidSave:self];
 }
 
 
@@ -61,9 +57,6 @@
         
         [FBSession.activeSession closeAndClearTokenInformation];
         
-        //NSLog(@"Launching the store");
-        //replace appname with any specific name you want
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms://itunes.com/apps/appname"]];
     }
 }
 

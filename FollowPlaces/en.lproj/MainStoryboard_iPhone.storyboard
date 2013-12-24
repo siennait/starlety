@@ -42,6 +42,36 @@
                                     <action selector="LoginClick:" destination="Y2s-ct-Xbd" eventType="touchUpInside" id="eG7-nr-gg6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VvI-Jz-r7h">
+                                <rect key="frame" x="24" y="497" width="273" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="See our Terms and Service">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="f7A-eO-SiT" kind="push" id="DPm-el-yGY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ryF-a9-Gsj">
+                                <rect key="frame" x="21" y="526" width="277" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Data Policy">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qeq-Kl-S2N" kind="push" id="5lt-A6-17g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -53,89 +83,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLI-yC-v2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2838" y="-333"/>
-        </scene>
-        <!--Login View Controller - LOG IN-->
-        <scene sceneID="qNe-4h-dwK">
-            <objects>
-                <tableViewController id="16E-Nc-z1N" customClass="LoginViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="cRC-Bn-Ri2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="LOGIN" id="0nb-VV-f2f">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="V9e-kx-vWU">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V9e-kx-vWU" id="r4G-oe-d94">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="CxR-aj-nnX">
-                                                    <rect key="frame" x="15" y="7" width="276" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="16E-Nc-z1N" id="cyA-Im-Qxn"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uRK-RM-EyE">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uRK-RM-EyE" id="i37-jt-NwQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="A4e-vW-B3V">
-                                                    <rect key="frame" x="12" y="7" width="276" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="16E-Nc-z1N" id="J9I-nN-QDt"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="LOG IN" id="Ziw-fi-Q8j">
-                        <barButtonItem key="rightBarButtonItem" title="LOG IN" id="1Ki-Lh-ycu">
-                            <connections>
-                                <action selector="LoginClick:" destination="16E-Nc-z1N" id="wha-Z8-Mmw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="EmailTextfield" destination="CxR-aj-nnX" id="hWx-rj-sV1"/>
-                        <outlet property="KeyboardToolbar" destination="yDM-Eb-rE7" id="gnv-2j-u1Z"/>
-                        <outlet property="PasswordTextfield" destination="A4e-vW-B3V" id="PJQ-gQ-40L"/>
-                        <segue destination="XNi-1w-NqG" kind="modal" identifier="LoginSegue" modalTransitionStyle="flipHorizontal" id="yb1-Mc-uTi"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j1x-5A-d6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yDM-Eb-rE7">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <items>
-                        <barButtonItem width="246" style="plain" systemItem="fixedSpace" id="nam-n4-Dbm"/>
-                        <barButtonItem title="Done" id="3Cb-aE-Um8">
-                            <connections>
-                                <action selector="DoneToolbar:" destination="16E-Nc-z1N" id="YDE-oT-WnL"/>
-                            </connections>
-                        </barButtonItem>
-                    </items>
-                </toolbar>
-            </objects>
-            <point key="canvasLocation" x="-2509" y="-1042"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="yrf-us-ZDe">
@@ -247,48 +194,6 @@
             </objects>
             <point key="canvasLocation" x="-1253" y="-1034"/>
         </scene>
-        <!--Explore View Controller - Explore-->
-        <scene sceneID="ZQR-22-kwK">
-            <objects>
-                <viewController id="uqG-aO-B3V" customClass="ExploreViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jRC-hx-Hkg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" id="F1j-kP-wlc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Explore" id="t6j-Jm-2ee">
-                                        <barButtonItem key="rightBarButtonItem" image="1352416674_video.png" id="TTF-UQ-8xP">
-                                            <connections>
-                                                <action selector="Takephoto:" destination="uqG-aO-B3V" id="P2G-HD-UTx"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="VXN-R0-0n9">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="uqG-aO-B3V" id="ypU-O3-5Js"/>
-                                </connections>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="1352415729_globe.png" id="dDE-4W-wjU"/>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="mapView" destination="VXN-R0-0n9" id="EC6-u5-5Tm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QKe-WG-zba" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-786" y="-895"/>
-        </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="tRV-NA-xam">
             <objects>
@@ -310,196 +215,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HO-94-Xgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1713" y="-768"/>
-        </scene>
-        <!--Signup Table View Controller - SIGN UP-->
-        <scene sceneID="U0x-AP-HZD">
-            <objects>
-                <tableViewController id="2bg-nC-ti7" customClass="SignupTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="d8n-q4-WHR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <gestureRecognizers/>
-                        <sections>
-                            <tableViewSection headerTitle="ACCOUNT" id="K1N-Df-cmf">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="117" id="XkN-w2-78z">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="117"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XkN-w2-78z" id="iXd-P1-Tvm">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1352415203_man2.png" id="Cu4-cy-076">
-                                                    <rect key="frame" x="8" y="14" width="95" height="87"/>
-                                                </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="First Name" minimumFontSize="17" clearButtonMode="whileEditing" id="vv4-lm-U94">
-                                                    <rect key="frame" x="119" y="18" width="175" height="37"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <accessibility key="accessibilityConfiguration" hint="Email" label="Email">
-                                                        <accessibilityTraits key="traits" none="YES"/>
-                                                    </accessibility>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="2bg-nC-ti7" id="b4F-Gz-NP6"/>
-                                                    </connections>
-                                                </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Last Name" minimumFontSize="17" clearButtonMode="whileEditing" id="aOZ-Qy-qxC">
-                                                    <rect key="frame" x="119" y="59" width="175" height="36"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <accessibility key="accessibilityConfiguration" hint="Password" label="Password"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="2bg-nC-ti7" id="TPD-6b-xkE"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="PROFILE" id="rEm-68-jiD">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3RH-eZ-lZ7">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3RH-eZ-lZ7" id="HeE-Ob-qwg">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6fi-Y7-eZA">
-                                                    <rect key="frame" x="20" y="11" width="62" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" id="wOv-If-Vaz">
-                                                    <rect key="frame" x="115" y="7" width="185" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="2bg-nC-ti7" id="af0-sj-dL3"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="pLr-n9-D4b">
-                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pLr-n9-D4b" id="fds-gH-8g5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Rz-Ol-ouX">
-                                                    <rect key="frame" x="20" y="11" width="87" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" id="wkU-ju-tJl">
-                                                    <rect key="frame" x="115" y="7" width="185" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="2bg-nC-ti7" id="7EX-HK-I0v"/>
-                                                    </connections>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="149" id="JIJ-cs-Z5e">
-                                        <rect key="frame" x="0.0" y="308" width="320" height="149"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JIJ-cs-Z5e" id="zdV-MM-WhJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kqZ-Ev-7cG">
-                                                    <rect key="frame" x="15" y="11" width="296" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <string key="text">By clicking Register you are indicating that you read and agree to the terms of service and that you have read our Data use policy</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VvI-Jz-r7h">
-                                                    <rect key="frame" x="7" y="76" width="273" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="See our Terms and Service">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="f7A-eO-SiT" kind="push" id="DPm-el-yGY"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ryF-a9-Gsj">
-                                                    <rect key="frame" x="8" y="103" width="277" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Data Policy">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="Qeq-Kl-S2N" kind="push" id="5lt-A6-17g"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="SIGN UP" id="IIN-Zc-4op">
-                        <barButtonItem key="rightBarButtonItem" title="JOIN" id="OTs-nr-Ffn">
-                            <connections>
-                                <action selector="JoinClick:" destination="2bg-nC-ti7" id="R5F-LO-lIC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="FirstNametextfield" destination="vv4-lm-U94" id="pUX-Z1-DWb"/>
-                        <outlet property="KeyboardToolbar" destination="778-bq-CbN" id="dXy-w6-gde"/>
-                        <outlet property="LastNametextfield" destination="aOZ-Qy-qxC" id="YEI-i2-kO6"/>
-                        <outlet property="Passwordtextfield" destination="wkU-ju-tJl" id="B8n-mh-X3D"/>
-                        <outlet property="ProfilePicture" destination="Cu4-cy-076" id="feW-A9-hha"/>
-                        <outlet property="Usernametextfield" destination="wOv-If-Vaz" id="xm5-2x-J4i"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ixg-S2-GTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="778-bq-CbN">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <items>
-                        <barButtonItem width="255" style="plain" systemItem="fixedSpace" id="BI6-DM-ZMo"/>
-                        <barButtonItem title="Done" id="QWD-CU-aZC">
-                            <connections>
-                                <action selector="DoneToolbar:" destination="2bg-nC-ti7" id="5Ao-Ih-jeJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </items>
-                </toolbar>
-            </objects>
-            <point key="canvasLocation" x="-2315" y="180"/>
         </scene>
         <!--View Controller - Data Policy-->
         <scene sceneID="Rus-06-MXs">
@@ -557,7 +272,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1352415203_man2.png" width="64" height="64"/>
         <image name="1352415709_gear.png" width="24" height="24"/>
         <image name="1352415729_globe.png" width="24" height="24"/>
         <image name="1352416672_video.png" width="48" height="48"/>
@@ -571,7 +285,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="eGW-cp-93c"/>
-    </inferredMetricsTieBreakers>
 </document>

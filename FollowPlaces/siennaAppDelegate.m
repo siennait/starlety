@@ -16,11 +16,7 @@
     [super dealloc];
 }
 
-//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-//{
-    // Override point for customization after application launch.
-  //  return YES;
-//}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -35,16 +31,6 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-//- (void)applicationWillEnterForeground:(UIApplication *)application
-//{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-//}
-
-//- (void)applicationDidBecomeActive:(UIApplication *)application
-//{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-//}
-
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
@@ -57,30 +43,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    
-    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    
-    // Create a LoginUIViewController instance where we will put the login button
-    //WelcomeViewController *customLoginViewController = [[WelcomeViewController alloc] init];
-    //self.customLoginViewController = customLoginViewController;
-    
-    // Set loginUIViewController as root view controller
-    //[[self window] setRootViewController:customLoginViewController];
-    
-    //self.window.backgroundColor = [UIColor whiteColor];
-    //[self.window makeKeyAndVisible];
-    //AuditionsViewController *pvc = [[AuditionsViewController alloc] init];
-    //[(UINavigationController *)self.window.rootViewController pushViewController:pvc animated:NO];
-    
-    //self.window.rootViewController = pvc;
-    
-    //[self.window makeKeyAndVisible];
-    //MainTabBarController *pvc = [[MainTabBarController alloc] init];
-    //self.window.rootViewController = pvc;
-//[self.window makeKeyAndVisible];
-    //[(UINavigationController *)self.window.rootViewController pushViewController:pvc animated:NO];
     
     // Whenever a person opens the app, check for a cached session
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
@@ -96,9 +58,6 @@
                                       }];
         
         // If there's no cached session, we will show a login button
-    } else {
-        //UIButton *loginButton = [self.customLoginViewController loginButton];
-        //[loginButton setTitle:@"Log in with Facebook" forState:UIControlStateNormal];
     }
     return YES;
 }
@@ -164,10 +123,6 @@
 // Show the user the logged-out UI
 - (void)userLoggedOut
 {
-    // Set the button title as "Log in with Facebook"
-    //UIButton *loginButton = [self.customLoginViewController loginButton];
-    //[loginButton setTitle:@"Log in with Facebook" forState:UIControlStateNormal];
-    
     // Confirm logout message
     //[self showMessage:@"You're now logged out" withTitle:@""];
 }
@@ -175,14 +130,8 @@
 // Show the user the logged-in UI
 - (void)userLoggedIn
 {
-    // Set the button title as "Log out"
-    //UIButton *loginButton = self.customLoginViewController.loginButton;
-    //[loginButton setTitle:@"Log out" forState:UIControlStateNormal];
-    
     // Welcome message
     //[self showMessage:@"You're now logged in" withTitle:@"Welcome!"];
-    
-    
 }
 
 // Show an alert message
@@ -213,20 +162,5 @@
     // For example: when the user presses the iOS "home" button while the login dialog is active
     [FBAppCall handleDidBecomeActive];
     
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        AuditionsViewController *pvc = [[AuditionsViewController alloc] init];
-        [(UINavigationController *)self.window.rootViewController pushViewController:pvc animated:NO];
-        
-    }
-    else
-    {
-        
-        WelcomeViewController *pvc = [[WelcomeViewController alloc] init];
-        [(UINavigationController *)self.window.rootViewController pushViewController:pvc animated:NO];
-    }
-    // [pvc release]; if not using ARC
 }
 @end

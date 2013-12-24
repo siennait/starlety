@@ -16,44 +16,25 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
-        
     }
     return self;
 }
 - (void)loadView
 {
-    //UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    // add subviews
-    //self.view = view;
-    //[view release];
     if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
         
         // Close the session and remove the access token from the cache
         // The session state handler (in the app delegate) will be called automatically
-        //[FBSession.activeSession closeAndClearTokenInformation];
         [self performSegueWithIdentifier: @"WelcomeSegue" sender: self];
         
         // If the session state is not any of the two "open" states when the button is clicked
     }
      [super loadView];
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 
 - (IBAction)LoginClick:(id)sender {
-    
-    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"sienna" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    //[alert show];
-    //[alert release];
     
     // If the session state is any of the two "open" states when the button is clicked
     if (FBSession.activeSession.state == FBSessionStateOpen
@@ -85,17 +66,10 @@
 
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-}
 - (void)dealloc {
-    //[_LoginFacebookClick release];
     [super dealloc];
 }
 - (void)viewDidUnload {
-   // [self setLoginFacebookClick:nil];
     [super viewDidUnload];
 }
 

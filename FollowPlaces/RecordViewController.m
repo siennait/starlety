@@ -66,7 +66,7 @@
         
         
         [self post:webData];
-        //  [webData release];
+        
     }
     
     self.movieURL = info[UIImagePickerControllerMediaURL];
@@ -122,7 +122,6 @@
     NSData *postData = [self generatePostDataForData: fileData];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     
-    //self.userId = [[NSString alloc] init];
     // Setup the request:
     
     CLLocationCoordinate2D coordinate = [self getLocation];
@@ -145,9 +144,6 @@
     {
         // Connection succeeded (even if a 404 or other non-200 range was returned).
         NSLog(@"sucess");
-        //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Got Server Response" message:@"Success" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        //[alert show];
-        //[alert release];
     }
     else
     {
@@ -159,11 +155,6 @@
 }
 
 - (void)dealloc {
-    
-    
-    // [self.userId release];
-    
-    //[_LogInButton release];
     [super dealloc];
 }
 
@@ -194,9 +185,6 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 	[HUD hide:YES afterDelay:2];
     
     // Append the new data to receivedData.
-    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Audition uploaded! The audition was also saved on your photo album." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    //[alert show];
-    //[alert release];
     // receivedData is an instance variable declared elsewhere.
 }
 

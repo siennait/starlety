@@ -34,7 +34,6 @@
 {
     [super viewDidLoad];
     [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
-    //[[LoginInfo sharedInstance].auditionData addObject:@"I345345D"];
     [[API sharedInstance] getCommand:nil  APIPath:@"/Api/GetVideos"  onCompletion:^(NSDictionary *json)  {
         if ([json valueForKey:@"error" ]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[json valueForKey:@"error" ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -74,8 +73,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    //cell.textLabel.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"ID"];
-    //cell.imageView.image = [UIImage imageNamed:@"1352416674_video.png"];
     cell.User_Name.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"UserName"];
     cell.DateTime.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"DateCreated"];
     if([[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ]  valueForKey:@"LocationName"]!=[NSNull null])
@@ -85,20 +82,12 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //[[LoginInfo sharedInstance].auditionData removeObjectAtIndex:indexPath.row];
-    //[tableView reloadData];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    UIAlertView *messageAlert = [[UIAlertView alloc]
-                                 initWithTitle:@"Row Selected" message:[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
-    [messageAlert show];
-    */
     NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/GetMediaFileVideo/?userId=%@&videoId=%@", kAPIHost, [LoginInfo sharedInstance].userId,[[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
     [uploadRequest setHTTPMethod:@"GET"];
-    //[uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
     [uploadRequest setHTTPBody:nil];
     
@@ -121,9 +110,7 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     HUD = [[MBProgressHUD showHUDAddedTo:self.view animated:YES] retain];
-    //HUD.mode = MBProgressHUDModeDeterminate;
-    
-	HUD.delegate = self;
+    HUD.delegate = self;
     
 	expectedLength = [response expectedContentLength];
 	currentLength = 0;
@@ -155,23 +142,10 @@
     
      [[LoginInfo sharedInstance].savedVideoData  writeToFile:videoPath options:NSDataWritingAtomic error:&error];
     NSLog(@"Write returned error: %@", [error localizedDescription]);
-    /*if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum (pdfPath))
-    {
-        UISaveVideoAtPathToSavedPhotosAlbum (pdfPath,self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
-    }*/
-    /*
-    MPMoviePlayerController *myPlayer = [[MPMoviePlayerController alloc] init];
-    myPlayer.shouldAutoplay = YES;
-    myPlayer.repeatMode = MPMovieRepeatModeOne;
-    myPlayer.fullscreen = YES;
-    myPlayer.movieSourceType = MPMovieSourceTypeFile;
-    myPlayer.scalingMode = MPMovieScalingModeAspectFit;
-    myPlayer.contentURL =[NSURL fileURLWithPath:path];
-    [self.view addSubview:myPlayer.view];
-    [myPlayer play];
-    */
-    //NSURL *videoURL =
-    //NSString *stringPath = [[NSBundle mainBundle] pathForResource:@"intro" ofType:@"MP4"];
+    
+    
+    
+    
     NSURL *url = [NSURL fileURLWithPath:videoPath];
     self.movieController = [[MPMoviePlayerController alloc] init];
     [self.movieController setContentURL:url];

@@ -51,11 +51,7 @@
 }
 
 -(void)commandWithParams:(NSMutableDictionary*)params  APIPath:(NSString*) ApiPath onCompletion:(JSONResponseBlock)completionBlock {
-//	NSData* uploadFile = nil;
-//	if ([params objectForKey:@"file"]) {
-//		uploadFile = (NSData*)[params objectForKey:@"file"];
-//		[params removeObjectForKey:@"file"];
-//	}
+
     self.parameterEncoding=AFJSONParameterEncoding;//AFJSONParameterEncoding;
     [self postPath:ApiPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //success!
@@ -63,28 +59,9 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //failure :(
-       // NSMutableArray *errorArray = [[NSMutableArray alloc]init];
-        //[errorArray addObject:[error localizedDescription]];
         completionBlock([NSDictionary dictionaryWithObject:[error localizedDescription] forKey:@"error"]);
     }];
-   
- //   NSMutableURLRequest *apiRequest = [self multipartFormRequestWithMethod:@"POST" path:kAPIPath parameters:params constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
-
-        //		if (uploadFile) {
-//            [formData appendPartWithFileData:uploadFile name:@"file" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
-//		}
-//	}];
-//    AFJSONRequestOperation* operation = [[AFJSONRequestOperation alloc] initWithRequest: apiRequest];
-//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        //success!
-//        completionBlock(responseObject);
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        //failure :(
-//
-//        completionBlock([NSDictionary dictionaryWithObject:[error localizedDescription] forKey:@"error"]);
-//    }];
-//    [operation start];
-}
+  }
 
 -(void)getCommand:(NSMutableDictionary*)params  APIPath:(NSString*) ApiPath onCompletion:(JSONResponseBlock)completionBlock {
 
@@ -93,7 +70,6 @@
         //success!
        
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        //[NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         completionBlock(json);
     
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
