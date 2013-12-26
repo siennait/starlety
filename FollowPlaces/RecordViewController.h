@@ -15,6 +15,7 @@
 #import <CoreLocation/CLAvailability.h>
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocationManager.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface RecordViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate,MBProgressHUDDelegate>{
 	MBProgressHUD *HUD;

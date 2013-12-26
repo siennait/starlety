@@ -12,6 +12,7 @@
 @interface LoginInfo : NSObject
 
 @property (strong , nonatomic) NSString* userId;
+@property (strong , nonatomic) NSString* userFacebookId;
 @property  (nonatomic, strong) NSMutableArray *auditionData;
 @property (strong,nonatomic) NSMutableData *savedVideoData;
 

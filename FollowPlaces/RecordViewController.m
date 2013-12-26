@@ -128,31 +128,36 @@
     NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
     NSString *longitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
     
-    
-    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@&latitude=%@&longitude=%@", kAPIHost, @"/Api/Videos/?userId=", [LoginInfo sharedInstance].userId, latitude, longitude]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
-    [uploadRequest setHTTPMethod:@"POST"];
-    [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
-    [uploadRequest setHTTPBody:postData];
-    
-    // Execute the reqest:
-    NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
-    
-    
-    
-    if (conn)
-    {
-        // Connection succeeded (even if a 404 or other non-200 range was returned).
-        NSLog(@"sucess");
-    }
-    else
-    {
-        // Connection failed (cannot reach server).
-        NSLog(@"fail");
-    }
+  
+         NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@&latitude=%@&longitude=%@", kAPIHost, @"/Api/Videos/?userId=",
+            [LoginInfo sharedInstance].userId, latitude, longitude]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+         [uploadRequest setHTTPMethod:@"POST"];
+         [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+         [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
+         [uploadRequest setHTTPBody:postData];
+         
+         // Execute the reqest:
+         NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
+         
+         
+         
+         if (conn)
+         {
+             // Connection succeeded (even if a 404 or other non-200 range was returned).
+             NSLog(@"sucess");
+         }
+         else
+         {
+             // Connection failed (cannot reach server).
+             NSLog(@"fail");
+         }
+
+     
     
     
 }
+
+
 
 - (void)dealloc {
     [super dealloc];

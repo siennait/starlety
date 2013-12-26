@@ -42,8 +42,12 @@
         
         // Close the session and remove the access token from the cache
         // The session state handler (in the app delegate) will be called automatically
-        //[FBSession.activeSession closeAndClearTokenInformation];
-        [self performSegueWithIdentifier: @"WelcomeSegue" sender: self];
+        [FBRequestConnection startForMeWithCompletionHandler:
+         ^(FBRequestConnection *connection, id result, NSError *error)
+         {
+             [LoginInfo sharedInstance].userFacebookId = [result objectForKey:@"id"];
+             [self setInfoAndProceed:result ];
+         }];
         
         // If the session state is not any of the two "open" states when the button is clicked
     } else {
@@ -58,8 +62,12 @@
              siennaAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
              // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
              [appDelegate sessionStateChanged:session state:state error:error];
-             [self performSegueWithIdentifier: @"WelcomeSegue" sender: self];
-             
+             [FBRequestConnection startForMeWithCompletionHandler:
+              ^(FBRequestConnection *connection, id result, NSError *error)
+              {
+                  [LoginInfo sharedInstance].userFacebookId = [result objectForKey:@"id"];
+                  [self setInfoAndProceed:result ];
+              }];
              
          }];
     }
@@ -71,6 +79,31 @@
 }
 - (void)viewDidUnload {
     [super viewDidUnload];
+}
+
+- (void)setInfoAndProceed:(id)result
+{
+    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[result objectForKey:@"id"], @"userFacebookId", nil];
+    
+    [[API sharedInstance] getCommand:params  APIPath:@"/Api/Users"  onCompletion:^(NSDictionary *json)  {
+        if ([json valueForKey:@"error" ]) {
+            [self showMessage:[json valueForKey:@"error" ] withTitle:@""];
+        } else {
+            [LoginInfo sharedInstance].userId = [json valueForKey:@"ID"];
+           
+            [self performSegueWithIdentifier: @"WelcomeSegue" sender: self];
+        }}];
+
+}
+
+// Show an alert message
+- (void)showMessage:(NSString *)text withTitle:(NSString *)title
+{
+    [[[UIAlertView alloc] initWithTitle:title
+                                message:text
+                               delegate:self
+                      cancelButtonTitle:@"OK!"
+                      otherButtonTitles:nil] show];
 }
 
 @end

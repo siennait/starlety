@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginInfo.h"
+#import "API.h"
 
 @interface WelcomeViewController : UIViewController
 - (IBAction)LoginClick:(id)sender;
