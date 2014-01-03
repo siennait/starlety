@@ -9,7 +9,9 @@
 #import "API.h"
 
 //the web location of the service
-#define kAPIHost @"https://starlety.com:4430"
+#define kAPIHost @"http://starlety.com:8080"
+//#define kAPIHost @"https://starlety.com:4430"
+
 #define kAPIPath @"/Api/Users"
 
 @implementation API

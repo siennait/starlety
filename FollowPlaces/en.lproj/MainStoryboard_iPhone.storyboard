@@ -39,7 +39,7 @@
                                     <color key="titleShadowColor" red="0.035389508672768938" green="0.04751495279646533" blue="0.093219259510869512" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="LoginClick:" destination="Y2s-ct-Xbd" eventType="touchUpInside" id="eG7-nr-gg6"/>
+                                    <action selector="LoginClick:" destination="Y2s-ct-Xbd" eventType="touchUpInside" id="Sfd-Z4-4bc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VvI-Jz-r7h">
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="-2838" y="-333"/>
         </scene>
-        <!--Settings View Controller - Settings-->
+        <!--Settings Table View Controller - Settings-->
         <scene sceneID="yrf-us-ZDe">
             <objects>
-                <viewController id="qCe-MY-yab" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController id="qCe-MY-yab" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jcq-Xk-nko">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -97,7 +97,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Settings" id="ct1-6e-D5e">
-                                        <barButtonItem key="rightBarButtonItem" image="1352415709_gear.png" id="fAn-ui-Ywn">
+                                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="fAn-ui-Ywn">
                                             <connections>
                                                 <action selector="Logout:" destination="qCe-MY-yab" id="jhy-ga-nbt"/>
                                             </connections>
@@ -105,17 +105,43 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uVh-gd-kkN">
+                                <rect key="frame" x="15" y="94" width="148" height="121"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firstname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4rt-Hn-tER">
+                                <rect key="frame" x="184" y="118" width="131" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lastname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8gJ-Cs-eCh">
+                                <rect key="frame" x="184" y="159" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ewU-HB-k2W">
+                                <rect key="frame" x="25" y="58" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="1352415709_gear.png" id="jU4-dJ-1Da"/>
                     <connections>
+                        <outlet property="Firstname" destination="4rt-Hn-tER" id="ghk-6j-Lnx"/>
+                        <outlet property="Lastname" destination="8gJ-Cs-eCh" id="E64-oO-hSi"/>
+                        <outlet property="ProfileImage" destination="uVh-gd-kkN" id="DDq-e3-847"/>
                         <segue destination="pvz-mG-QbO" kind="modal" identifier="SettingsLogout" modalTransitionStyle="flipHorizontal" id="ad6-yV-pRG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJI-Ix-0tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-824" y="471"/>
+            <point key="canvasLocation" x="-1090" y="-117"/>
         </scene>
         <!--Auditions View Controller - Auditions-->
         <scene sceneID="b3T-LF-Edj">
@@ -209,12 +235,12 @@
                     <connections>
                         <segue destination="S4F-LQ-aH6" kind="relationship" relationship="viewControllers" id="Sj5-KT-9zP"/>
                         <segue destination="sWo-SE-18N" kind="relationship" relationship="viewControllers" id="DoB-1t-WRT"/>
-                        <segue destination="qCe-MY-yab" kind="relationship" relationship="viewControllers" id="bGm-Y9-GLz"/>
+                        <segue destination="qCe-MY-yab" kind="relationship" relationship="viewControllers" id="XZV-Qv-SiQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HO-94-Xgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1713" y="-768"/>
+            <point key="canvasLocation" x="-1739" y="-600"/>
         </scene>
         <!--View Controller - Data Policy-->
         <scene sceneID="Rus-06-MXs">

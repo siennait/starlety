@@ -17,6 +17,7 @@
 @property (strong,nonatomic) NSMutableData *savedVideoData;
 
 + (LoginInfo*) sharedInstance;
++ (void) create;
 - (void) logout;
 
 @end

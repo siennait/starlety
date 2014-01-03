@@ -10,7 +10,9 @@
 #import <unistd.h>
 #import "AuditionCell.h"
 
-#define kAPIHost @"https://starlety.com:4430"
+#define kAPIHost @"http://starlety.com:8080"
+//#define kAPIHost @"https://starlety.com:4430"
+
 
 @interface AuditionsViewController ()
 
@@ -160,6 +162,8 @@
                                                object:self.movieController];
     [self.movieController prepareToPlay];
     [self.movieController play];
+    
+    [[LoginInfo sharedInstance].savedVideoData release];
     
    
 }

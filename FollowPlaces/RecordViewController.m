@@ -7,7 +7,9 @@
 //
 
 #import "RecordViewController.h"
-#define kAPIHost @"https://starlety.com:4430"
+#define kAPIHost @"http://starlety.com:8080"
+//#define kAPIHost @"https://starlety.com:4430"
+
 
 @interface RecordViewController ()
 
@@ -26,7 +28,14 @@
 
 - (void)viewDidLoad
 {
-
+    if([LoginInfo sharedInstance].userId==nil || [[LoginInfo sharedInstance].userId  isEqual: @""])
+    {
+        [[LoginInfo sharedInstance] logout];
+        [self performSegueWithIdentifier: @"SettingsLogout" sender: self];
+        
+        [FBSession.activeSession closeAndClearTokenInformation];
+        
+    }
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -107,7 +116,7 @@
 
 - (void)post:(NSData *)fileData
 {
-    
+  
     NSLog(@"POSTING");
     //HUD = [[MBProgressHUD alloc] initWithView:self.view];
 	//[self.view addSubview:HUD];

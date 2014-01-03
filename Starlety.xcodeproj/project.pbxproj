@@ -58,7 +58,7 @@
 		2C46851E182B1F71003CF4DA /* AuditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C46851D182B1F71003CF4DA /* AuditionCell.m */; };
 		2C4EA6201847BAC100BE34E8 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4EA61E1847BAC100BE34E8 /* 37x-Checkmark.png */; };
 		2C4EA6211847BAC100BE34E8 /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4EA61F1847BAC100BE34E8 /* 37x-Checkmark@2x.png */; };
-		2C583739164E9C36002255F9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C583738164E9C35002255F9 /* SettingsViewController.m */; };
+		2C583739164E9C36002255F9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C583738164E9C35002255F9 /* SettingsTableViewController.m */; };
 		2C58373B164EE13A002255F9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C58373A164EE13A002255F9 /* MapKit.framework */; };
 		2C58373E165148A6002255F9 /* SignupFirstNameTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C58373D165148A6002255F9 /* SignupFirstNameTextField.m */; };
 		2C74EB63165BCC0D006D6B21 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB62165BCC0D006D6B21 /* API.m */; };
@@ -235,8 +235,8 @@
 		2C46851D182B1F71003CF4DA /* AuditionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditionCell.m; sourceTree = "<group>"; };
 		2C4EA61E1847BAC100BE34E8 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "37x-Checkmark.png"; path = "FollowPlaces/Images/37x-Checkmark.png"; sourceTree = "<group>"; };
 		2C4EA61F1847BAC100BE34E8 /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "37x-Checkmark@2x.png"; path = "FollowPlaces/Images/37x-Checkmark@2x.png"; sourceTree = "<group>"; };
-		2C583737164E9C35002255F9 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		2C583738164E9C35002255F9 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		2C583737164E9C35002255F9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		2C583738164E9C35002255F9 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		2C58373A164EE13A002255F9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2C58373C165148A6002255F9 /* SignupFirstNameTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupFirstNameTextField.h; sourceTree = "<group>"; };
 		2C58373D165148A6002255F9 /* SignupFirstNameTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupFirstNameTextField.m; sourceTree = "<group>"; };
@@ -699,8 +699,8 @@
 				2CD784D616457AB200059330 /* Supporting Files */,
 				2CFF9D821811FCCF00841D63 /* siennaAppDelegate.h */,
 				2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */,
-				2C583737164E9C35002255F9 /* SettingsViewController.h */,
-				2C583738164E9C35002255F9 /* SettingsViewController.m */,
+				2C583737164E9C35002255F9 /* SettingsTableViewController.h */,
+				2C583738164E9C35002255F9 /* SettingsTableViewController.m */,
 				2C74EB61165BCC0D006D6B21 /* API.h */,
 				2C74EB62165BCC0D006D6B21 /* API.m */,
 				2C15D57A17F2E0DD006704DE /* AuditionsViewController.h */,
@@ -1489,7 +1489,7 @@
 				2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */,
 				2CD784DC16457AB300059330 /* main.m in Sources */,
 				2CA2B44D186A1FDB00AC95F5 /* MainTabBarController.m in Sources */,
-				2C583739164E9C36002255F9 /* SettingsViewController.m in Sources */,
+				2C583739164E9C36002255F9 /* SettingsTableViewController.m in Sources */,
 				2C58373E165148A6002255F9 /* SignupFirstNameTextField.m in Sources */,
 				2C10C08D180DF0AA00633AED /* RecordViewController.m in Sources */,
 				2C74EB63165BCC0D006D6B21 /* API.m in Sources */,

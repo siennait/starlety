@@ -21,21 +21,21 @@
 }
 - (void)loadView
 {
-    if (FBSession.activeSession.state == FBSessionStateOpen
-        || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
+    //if (FBSession.activeSession.state == FBSessionStateOpen
+     //   || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
         
         // Close the session and remove the access token from the cache
         // The session state handler (in the app delegate) will be called automatically
-        [self performSegueWithIdentifier: @"WelcomeSegue" sender: self];
+     //   [self performSegueWithIdentifier: @"WelcomeSegue" sender: self];
         
         // If the session state is not any of the two "open" states when the button is clicked
-    }
+    //}
      [super loadView];
 }
 
 
 - (IBAction)LoginClick:(id)sender {
-    
+    [self showLoading];
     // If the session state is any of the two "open" states when the button is clicked
     if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
@@ -46,7 +46,8 @@
          ^(FBRequestConnection *connection, id result, NSError *error)
          {
              [LoginInfo sharedInstance].userFacebookId = [result objectForKey:@"id"];
-             [self setInfoAndProceed:result ];
+             [self getUserFromDBAndProceed:result ];
+             
          }];
         
         // If the session state is not any of the two "open" states when the button is clicked
@@ -62,14 +63,22 @@
              siennaAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
              // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
              [appDelegate sessionStateChanged:session state:state error:error];
+             
              [FBRequestConnection startForMeWithCompletionHandler:
               ^(FBRequestConnection *connection, id result, NSError *error)
               {
-                  [LoginInfo sharedInstance].userFacebookId = [result objectForKey:@"id"];
-                  [self setInfoAndProceed:result ];
+                  if([result objectForKey:@"id"]!=nil)
+                  {
+                      //[LoginInfo sharedInstance] = [[LoginInfo sharedInstance] new];
+                      [LoginInfo create];
+                      [LoginInfo sharedInstance].userFacebookId = [result objectForKey:@"id"];
+                      [self registerUserToDB:result ];
+                  }
+                  
               }];
-             
          }];
+        
+        
     }
 
 }
@@ -81,21 +90,48 @@
     [super viewDidUnload];
 }
 
-- (void)setInfoAndProceed:(id)result
+- (void)getUserFromDBAndProceed:(id)result
 {
     NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[result objectForKey:@"id"], @"userFacebookId", nil];
+    
     
     [[API sharedInstance] getCommand:params  APIPath:@"/Api/Users"  onCompletion:^(NSDictionary *json)  {
         if ([json valueForKey:@"error" ]) {
             [self showMessage:[json valueForKey:@"error" ] withTitle:@""];
         } else {
             [LoginInfo sharedInstance].userId = [json valueForKey:@"ID"];
-           
+            [self hideLoading];
             [self performSegueWithIdentifier: @"WelcomeSegue" sender: self];
         }}];
 
 }
+-(void)registerUserToDB : (id)result
+{
+    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:@"", @"ID",[result objectForKey:@"first_name"], @"Firstname"
+                                  ,[result objectForKey:@"last_name"], @"Lastname"
+                                  ,[result objectForKey:@"email"], @"Email"
+                                  ,@"", @"Password1"
+                                  ,[result objectForKey:@"id"], @"UserFacebookId",nil];
+    
+    
+    [[API sharedInstance] commandWithParams:params APIPath:(@"/Api/Users") onCompletion:^(NSDictionary *json) {
+        
+        if(![json isKindOfClass:[NSDictionary class]]||![json objectForKey:@"error"])
+		{
+            [self getUserFromDBAndProceed:result];
+            
 
+		} else {
+			
+			NSString* errorMsg = [json valueForKey:@"error"];
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+            
+		}
+        
+    }];
+}
 // Show an alert message
 - (void)showMessage:(NSString *)text withTitle:(NSString *)title
 {
@@ -106,4 +142,14 @@
                       otherButtonTitles:nil] show];
 }
 
+-(void)showLoading{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+}
+-(void)hideLoading{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+}
 @end
