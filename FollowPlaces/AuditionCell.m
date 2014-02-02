@@ -30,6 +30,8 @@
     [_User_Name release];
     [_DateTime release];
     [_Location release];
+    [_UserProfileImage release];
+    [_Thumbnail release];
     [super dealloc];
 }
 @end

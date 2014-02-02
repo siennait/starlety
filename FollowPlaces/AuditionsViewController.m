@@ -70,6 +70,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
     AuditionCell *cell = [self.tableView dequeueReusableCellWithIdentifier : simpleTableIdentifier];
     if (cell == nil) {
@@ -79,6 +80,22 @@
     cell.DateTime.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"DateCreated"];
     if([[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ]  valueForKey:@"LocationName"]!=[NSNull null])
     cell.Location.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ]  valueForKey:@"LocationName"];
+    //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=normal", [result objectForKey:@"id"]]];
+    //NSData *data = [NSData dataWithContentsOfURL:url];
+    //ProfileImage.image = [[[UIImage alloc] initWithData:data] autorelease];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=small", [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"UserFacebookId"] ]];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    cell.UserProfileImage.image = [[[UIImage alloc] initWithData:data] autorelease];
+        
+        NSURL *urlThumbnail = [NSURL URLWithString:[NSString stringWithFormat:@"https://starlety.com/Thumbnails/%@.png", [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"ID"] ]];
+        NSData *dataThumbnail = [NSData dataWithContentsOfURL:urlThumbnail];
+        cell.Thumbnail.image = [[[UIImage alloc] initWithData:dataThumbnail] autorelease];
+    });
+
+
     return cell;
 }
 

@@ -80,7 +80,6 @@
 		2C74EB96165BF528006D6B21 /* UIAlertView+error.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB92165BF528006D6B21 /* UIAlertView+error.m */; };
 		2C74EB99165E53A4006D6B21 /* UIImagescaleandrotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB98165E53A4006D6B21 /* UIImagescaleandrotate.m */; };
 		2CA2B44D186A1FDB00AC95F5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA2B44C186A1FDB00AC95F5 /* MainTabBarController.m */; };
-		2CAD12BA181DB9C2001F5F81 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD12B9181DB9C2001F5F81 /* logo2.png */; };
 		2CD784D016457AB200059330 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784CF16457AB200059330 /* UIKit.framework */; };
 		2CD784D216457AB200059330 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D116457AB200059330 /* Foundation.framework */; };
 		2CD784D416457AB200059330 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D316457AB200059330 /* CoreGraphics.framework */; };
@@ -95,6 +94,8 @@
 		2CD784F916457AB300059330 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D116457AB200059330 /* Foundation.framework */; };
 		2CD7850116457AB300059330 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784FF16457AB300059330 /* InfoPlist.strings */; };
 		2CD7850416457AB300059330 /* FollowPlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7850316457AB300059330 /* FollowPlacesTests.m */; };
+		2CE53190189D91850078DA3B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE5318F189D91850078DA3B /* logo.png */; };
+		2CE53192189D91E50078DA3B /* iphone_bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE53191189D91E50078DA3B /* iphone_bg3.png */; };
 		2CF473871865355D006F83C7 /* facebook_login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF473861865355D006F83C7 /* facebook_login_button.png */; };
 		2CF4738C1865392C006F83C7 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4738B1865392C006F83C7 /* WelcomeViewController.m */; };
 		2CF474C5186542C0006F83C7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF4738E186542A3006F83C7 /* FacebookSDK.framework */; };
@@ -278,7 +279,6 @@
 		2CA2B44C186A1FDB00AC95F5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		2CAD12B7181DB8DF001F5F81 /* Starlety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starlety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAD12B8181DB8DF001F5F81 /* StarletyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarletyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CAD12B9181DB9C2001F5F81 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
 		2CD784CF16457AB200059330 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2CD784D116457AB200059330 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CD784D316457AB200059330 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -295,6 +295,8 @@
 		2CD7850016457AB300059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CD7850216457AB300059330 /* FollowPlacesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowPlacesTests.h; sourceTree = "<group>"; };
 		2CD7850316457AB300059330 /* FollowPlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowPlacesTests.m; sourceTree = "<group>"; };
+		2CE5318F189D91850078DA3B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		2CE53191189D91E50078DA3B /* iphone_bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_bg3.png; sourceTree = "<group>"; };
 		2CF473861865355D006F83C7 /* facebook_login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook_login_button.png; path = Images/facebook_login_button.png; sourceTree = "<group>"; };
 		2CF4738A1865392C006F83C7 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		2CF4738B1865392C006F83C7 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
@@ -693,9 +695,10 @@
 				2C74EB67165BD316006D6B21 /* AFNetworking */,
 				2C58373F165148BB002255F9 /* TextFields */,
 				2C266391164C74E500D53221 /* Images */,
-				2CAD12B9181DB9C2001F5F81 /* logo2.png */,
 				2C22C3ED1804110D0009CE63 /* MBProgressHUD */,
 				2CD784E716457AB300059330 /* MainStoryboard_iPhone.storyboard */,
+				2CE53191189D91E50078DA3B /* iphone_bg3.png */,
+				2CE5318F189D91850078DA3B /* logo.png */,
 				2CD784D616457AB200059330 /* Supporting Files */,
 				2CFF9D821811FCCF00841D63 /* siennaAppDelegate.h */,
 				2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */,
@@ -1401,6 +1404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3F87861829E93500C6EECA /* 37x-Checkmark.png in Resources */,
+				2CE53192189D91E50078DA3B /* iphone_bg3.png in Resources */,
 				2C3F87871829E93500C6EECA /* 37x-Checkmark@2x.png in Resources */,
 				2C3F87881829E93500C6EECA /* loading-iOS7@2x.png in Resources */,
 				2C3F87891829E93500C6EECA /* loading-Small.png in Resources */,
@@ -1446,8 +1450,8 @@
 				2CD784E216457AB300059330 /* Default.png in Resources */,
 				2CD784E416457AB300059330 /* Default@2x.png in Resources */,
 				2CD784E616457AB300059330 /* Default-568h@2x.png in Resources */,
+				2CE53190189D91850078DA3B /* logo.png in Resources */,
 				2CD784E916457AB300059330 /* MainStoryboard_iPhone.storyboard in Resources */,
-				2CAD12BA181DB9C2001F5F81 /* logo2.png in Resources */,
 				2CF719A117E64FEF00DDF05C /* map-pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

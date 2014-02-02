@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-3424" y="-343"/>
         </scene>
-        <!--Welcome View Controller - Welcome-->
+        <!--Welcome View Controller-->
         <scene sceneID="zzZ-Ny-lfQ">
             <objects>
                 <viewController id="Y2s-ct-Xbd" customClass="WelcomeViewController" sceneMemberID="viewController">
@@ -28,33 +28,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo2.png" id="cO6-Ao-196">
-                                <rect key="frame" x="-125" y="56" width="587" height="254"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="iphone_bg3.png" id="cO6-Ao-196">
+                                <rect key="frame" x="-9" y="27" width="333" height="572"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="buttonsignin" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bPH-j5-cqa">
-                                <rect key="frame" x="20" y="358" width="274" height="54"/>
-                                <color key="backgroundColor" red="0.72094080230000002" green="0.88800370939999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Sign In" image="facebook_login_button.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" red="0.035389508672768938" green="0.04751495279646533" blue="0.093219259510869512" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="LoginClick:" destination="Y2s-ct-Xbd" eventType="touchUpInside" id="Sfd-Z4-4bc"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VvI-Jz-r7h">
                                 <rect key="frame" x="24" y="497" width="273" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="See our Terms and Service">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="f7A-eO-SiT" kind="push" id="DPm-el-yGY"/>
+                                    <action selector="TermsServiceClick:" destination="Y2s-ct-Xbd" eventType="touchUpInside" id="NjO-fI-2Fe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ryF-a9-Gsj">
@@ -62,20 +51,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Data Policy">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Qeq-Kl-S2N" kind="push" id="5lt-A6-17g"/>
+                                    <action selector="DataPolicyClick:" destination="Y2s-ct-Xbd" eventType="touchUpInside" id="joh-rv-XMU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7GS-ZK-08L">
+                                <rect key="frame" x="60" y="421" width="212" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="facebook_login_button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoginClick:" destination="Y2s-ct-Xbd" eventType="touchUpInside" id="ZOH-PJ-Dsf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="hc3-Y9-Tfc"/>
+                    <navigationItem key="navigationItem" id="hc3-Y9-Tfc"/>
                     <connections>
                         <segue destination="XNi-1w-NqG" kind="modal" identifier="WelcomeSegue" modalTransitionStyle="flipHorizontal" id="eGW-cp-93c"/>
                     </connections>
@@ -151,37 +150,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hqm-Hb-dsI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="251" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hqm-Hb-dsI">
                                 <rect key="frame" x="0.0" y="44" width="320" height="474"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleTableItem" rowHeight="104" id="BkB-jb-l90" customClass="AuditionCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="104"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleTableItem" rowHeight="251" id="BkB-jb-l90" customClass="AuditionCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="251"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BkB-jb-l90" id="dUL-F3-SYB">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lDh-c4-tWm">
-                                                    <rect key="frame" x="55" y="25" width="223" height="21"/>
+                                                    <rect key="frame" x="66" y="7" width="223" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="4YQ-6W-6We">
-                                                    <rect key="frame" x="11" y="16" width="31" height="35"/>
+                                                    <rect key="frame" x="11" y="16" width="47" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="49u-Tt-fMm">
+                                                    <rect key="frame" x="66" y="28" width="229" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LcX-6h-S0H">
-                                                    <rect key="frame" x="144" y="78" width="168" height="21"/>
+                                                    <rect key="frame" x="20" y="215" width="280" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JKp-Q7-K3B">
-                                                    <rect key="frame" x="20" y="78" width="116" height="21"/>
+                                                    <rect key="frame" x="20" y="192" width="280" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
@@ -191,6 +194,8 @@
                                         <connections>
                                             <outlet property="DateTime" destination="LcX-6h-S0H" id="fVh-2k-O51"/>
                                             <outlet property="Location" destination="JKp-Q7-K3B" id="RjM-P0-7IR"/>
+                                            <outlet property="Thumbnail" destination="49u-Tt-fMm" id="j4Q-w9-1Lm"/>
+                                            <outlet property="UserProfileImage" destination="4YQ-6W-6We" id="zIx-QB-ief"/>
                                             <outlet property="User_Name" destination="lDh-c4-tWm" id="qUZ-XH-xWO"/>
                                         </connections>
                                     </tableViewCell>
@@ -242,21 +247,6 @@
             </objects>
             <point key="canvasLocation" x="-1739" y="-600"/>
         </scene>
-        <!--View Controller - Data Policy-->
-        <scene sceneID="Rus-06-MXs">
-            <objects>
-                <viewController id="Qeq-Kl-S2N" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jt4-Wv-D6E">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Data Policy" id="Pbm-RD-X9f"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fq6-Np-Blq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1749" y="948"/>
-        </scene>
         <!--Record View Controller - Record-->
         <scene sceneID="54U-y2-Dni">
             <objects>
@@ -281,21 +271,6 @@
             </objects>
             <point key="canvasLocation" x="-1230" y="973"/>
         </scene>
-        <!--View Controller - Terms and Service-->
-        <scene sceneID="a3h-9J-9c6">
-            <objects>
-                <viewController id="f7A-eO-SiT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tev-z5-8Xf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Terms and Service" id="ngM-fe-pn0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GZX-s0-iW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1758" y="97"/>
-        </scene>
     </scenes>
     <resources>
         <image name="1352415709_gear.png" width="24" height="24"/>
@@ -303,7 +278,7 @@
         <image name="1352416672_video.png" width="48" height="48"/>
         <image name="1352416674_video.png" width="24" height="24"/>
         <image name="facebook_login_button.png" width="392" height="78"/>
-        <image name="logo2.png" width="268" height="227"/>
+        <image name="iphone_bg3.png" width="640" height="1136"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

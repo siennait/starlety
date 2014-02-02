@@ -12,5 +12,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *User_Name;
 @property (retain, nonatomic) IBOutlet UILabel *DateTime;
 @property (retain, nonatomic) IBOutlet UILabel *Location;
+@property (retain, nonatomic) IBOutlet UIImageView *UserProfileImage;
+@property (retain, nonatomic) IBOutlet UIImageView *Thumbnail;
 
 @end

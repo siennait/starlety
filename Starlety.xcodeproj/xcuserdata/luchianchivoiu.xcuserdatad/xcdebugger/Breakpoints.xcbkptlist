@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FollowPlaces/LoginViewController.m"
-         timestampString = "402423158.623052"
+         timestampString = "402697168.113799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
+         startingLineNumber = "145"
+         endingLineNumber = "145"
          landmarkName = "-LoginClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +229,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FollowPlaces/LoginViewController.m"
-         timestampString = "402662175.745712"
+         timestampString = "402697168.113799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "140"
-         endingLineNumber = "140"
+         startingLineNumber = "146"
+         endingLineNumber = "146"
          landmarkName = "-LoginClick:"
          landmarkType = "5">
       </FileBreakpoint>

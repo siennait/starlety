@@ -12,5 +12,7 @@
 
 @interface WelcomeViewController : UIViewController
 - (IBAction)LoginClick:(id)sender;
+- (IBAction)TermsServiceClick:(id)sender;
+- (IBAction)DataPolicyClick:(id)sender;
 
 @end

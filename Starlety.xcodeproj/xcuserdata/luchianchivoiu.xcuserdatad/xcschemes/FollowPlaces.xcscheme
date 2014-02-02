@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0450"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2CD784CA16457AB200059330"
-               BuildableName = "FollowPlaces.app"
-               BlueprintName = "FollowPlaces"
-               ReferencedContainer = "container:FollowPlaces.xcodeproj">
+               BuildableName = "Starlety.app"
+               BlueprintName = "Starlety"
+               ReferencedContainer = "container:Starlety.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2CD784F416457AB300059330"
-               BuildableName = "FollowPlacesTests.octest"
-               BlueprintName = "FollowPlacesTests"
-               ReferencedContainer = "container:FollowPlaces.xcodeproj">
+               BuildableName = "StarletyTests.octest"
+               BlueprintName = "StarletyTests"
+               ReferencedContainer = "container:Starlety.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2CD784CA16457AB200059330"
-            BuildableName = "FollowPlaces.app"
-            BlueprintName = "FollowPlaces"
-            ReferencedContainer = "container:FollowPlaces.xcodeproj">
+            BuildableName = "Starlety.app"
+            BlueprintName = "Starlety"
+            ReferencedContainer = "container:Starlety.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2CD784CA16457AB200059330"
-            BuildableName = "FollowPlaces.app"
-            BlueprintName = "FollowPlaces"
-            ReferencedContainer = "container:FollowPlaces.xcodeproj">
+            BuildableName = "Starlety.app"
+            BlueprintName = "Starlety"
+            ReferencedContainer = "container:Starlety.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2CD784CA16457AB200059330"
-            BuildableName = "FollowPlaces.app"
-            BlueprintName = "FollowPlaces"
-            ReferencedContainer = "container:FollowPlaces.xcodeproj">
+            BuildableName = "Starlety.app"
+            BlueprintName = "Starlety"
+            ReferencedContainer = "container:Starlety.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
