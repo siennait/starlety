@@ -14,6 +14,7 @@
 @property (strong , nonatomic) NSString* userId;
 @property (strong , nonatomic) NSString* userFacebookId;
 @property  (nonatomic, strong) NSMutableArray *auditionData;
+@property  (nonatomic, strong) NSMutableArray *users;
 @property (strong,nonatomic) NSMutableData *savedVideoData;
 
 + (LoginInfo*) sharedInstance;

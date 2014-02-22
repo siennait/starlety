@@ -25,6 +25,7 @@
 +(API*)sharedInstance {
     static API *sharedInstance = nil;
     static dispatch_once_t oncePredicate;
+    
     dispatch_once(&oncePredicate, ^{
         sharedInstance = [[self alloc] initWithBaseURL:[NSURL URLWithString: kAPIHost]];
     });

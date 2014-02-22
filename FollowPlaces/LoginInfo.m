@@ -16,6 +16,7 @@
 @synthesize userFacebookId;
 @synthesize auditionData;
 @synthesize savedVideoData;
+@synthesize users;
 static LoginInfo *myInstance = nil;
 
 + (LoginInfo*) sharedInstance {
@@ -30,12 +31,14 @@ static LoginInfo *myInstance = nil;
     myInstance.userFacebookId = [[NSString alloc]init];
     myInstance.savedVideoData = [[NSMutableData data] init];
     myInstance.auditionData = [[NSMutableArray alloc] init];
+    myInstance.users = [[NSMutableArray alloc] init];
 
 }
 - (void) logout {
     [userId release];
     [userFacebookId release];
     [auditionData release];
+    [users release];
     //[savedVideoData release];
     
     //userId = [[NSString alloc] init];
