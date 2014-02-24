@@ -14,20 +14,22 @@
 #import "User.h"
 
 #define kAPIHost @"http://starlety.com:8080"
-//#define kAPIHost @"https://starlety.com:4430"
+#define kWEBHost @"https://starlety.com"
 
 
 @interface AuditionsViewController () <UIScrollViewDelegate>
 // the set of IconDownloader objects for each app
 @property (nonatomic, strong) NSMutableDictionary *videoThumbnailImageDownloadsInProgress;
 @property (nonatomic, strong) NSMutableDictionary *userProfileImageDownloadsInProgress;
+@property (nonatomic) CGPoint lastOffset;
 
 @end
 
 @implementation AuditionsViewController
 
-
 @synthesize tableView;
+@synthesize lastOffset;
+@synthesize navigationBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -76,6 +78,7 @@
 - (void)viewDidUnload
 {
     [self setTableView:nil];
+    [self setNavigationBar:nil];
     [super viewDidUnload];
 }
 - (void)didReceiveMemoryWarning
@@ -94,71 +97,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-//    static NSString *simpleTableIdentifier = @"SimpleTableItem";
-//    AuditionCell *cell = [self.tableView dequeueReusableCellWithIdentifier : simpleTableIdentifier];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-//    }
-//    cell.User_Name.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"UserName"];
-//    cell.DateTime.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"DateCreated"];
-//    if([[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ]  valueForKey:@"LocationName"]!=[NSNull null])
-//    cell.Location.text = [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ]  valueForKey:@"LocationName"];
-//    //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=normal", [result objectForKey:@"id"]]];
-//    //NSData *data = [NSData dataWithContentsOfURL:url];
-//    //ProfileImage.image = [[[UIImage alloc] initWithData:data] autorelease];
-//    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        
-//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=small", [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"UserFacebookId"] ]];
-//    NSData *data = [NSData dataWithContentsOfURL:url];
-//    cell.UserProfileImage.image = [[[UIImage alloc] initWithData:data] autorelease];
-//        
-//        NSURL *urlThumbnail = [NSURL URLWithString:[NSString stringWithFormat:@"https://starlety.com/Thumbnails/%@.png", [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"ID"] ]];
-//        NSData *dataThumbnail = [NSData dataWithContentsOfURL:urlThumbnail];
-//        cell.Thumbnail.image = [[[UIImage alloc] initWithData:dataThumbnail] autorelease];
-//    });
-//
-//
-//    return cell;
-
     // customize the appearance of table view cells
 	//
 	static NSString *CellIdentifier = @"SimpleTableItem";
-    //static NSString *PlaceholderCellIdentifier = @"SimpleTableItem";
-    
-    // add a placeholder cell while waiting on table data
-//    NSUInteger nodeCount = [self.entries count];
-//	
-//	if (nodeCount == 0 && indexPath.row == 0)
-//	{
-//        AuditionCell *cell = [tableView dequeueReusableCellWithIdentifier:PlaceholderCellIdentifier];
-//        
-//        
-//		cell.detailTextLabel.text = @"Loading…";
-//		
-//		return cell;
-//    }
-	
     AuditionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    // Leave cells empty if there's no data yet
-//    if (nodeCount > 0)
-//	{
-        // Set up the cell...
+          // Set up the cell...
         Audition *appRecord = [[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] ;
-//        
-//		cell.textLabel.text = appRecord.appName;
-//        cell.detailTextLabel.text = appRecord.artist;
-        
-//        if (cell == nil) {
-//                    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-//                }
-    cell.User_Name.text = appRecord.userName;//[[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"UserName"];
-    cell.DateTime.text = appRecord.dateCreated;//[[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ] valueForKey:@"DateCreated"];
-    cell.Location.text = appRecord.location;//[[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row ]  valueForKey:@"LocationName"];
-
+    cell.User_Name.text = appRecord.userName;
+    cell.DateTime.text = appRecord.dateCreated;
+    cell.Location.text = appRecord.location;
         // Only load cached images; defer new downloads until scrolling ends
         if (!appRecord.videoThumbnail.image)
         {
@@ -191,8 +141,6 @@
     {
         cell.UserProfileImage.image = userRecord.ProfileImage.image;
     }
-    
-//    }
     
     return cell;
     
@@ -338,24 +286,73 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mp4", kWEBHost, [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]];
+    MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
     
-    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/GetMediaFileVideo/?userId=%@&videoId=%@", kAPIHost, [LoginInfo sharedInstance].userId,[[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
-    [uploadRequest setHTTPMethod:@"GET"];
-    [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
-    [uploadRequest setHTTPBody:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(moviePlaybackDidFinish:)
+//                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+//                                               object:mp];
     
-    // Execute the reqest:
-    NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
-    if (conn)
-    {
-        // Connection succeeded (even if a 404 or other non-200 range was returned).
-        NSLog(@"sucess");
-    }
-    else
-    {
-        // Connection failed (cannot reach server).
-        NSLog(@"fail");
-    }
+    mp.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+    //moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+    //[self presentMoviePlayerViewControllerAnimated:mp];
+    //[mp release];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+     
+                                             selector:@selector(moviePlayBackDidFinish:)
+     
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+     
+                                               object:mp.moviePlayer];
+    
+    
+    
+    //moviePlayerController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+    
+    
+    
+    [mp.moviePlayer prepareToPlay];
+    
+    
+    
+    [self presentMoviePlayerViewControllerAnimated:mp];
+    
+    
+    
+    [mp.moviePlayer play];
+    
+//    
+//    MPMoviePlayerViewController *mpvc = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mov", kWEBHost, [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]]];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(moviePlaybackDidFinish:)
+//                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+//                                               object:nil];
+//    
+//    mpvc.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
+//    
+//    [self presentMoviePlayerViewControllerAnimated:mpvc];
+//    [mpvc release];
+    
+//    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/GetMediaFileVideo/?userId=%@&videoId=%@", kAPIHost, [LoginInfo sharedInstance].userId,[[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+//    [uploadRequest setHTTPMethod:@"GET"];
+//    [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
+//    [uploadRequest setHTTPBody:nil];
+//    
+//    // Execute the reqest:
+//    NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
+//    if (conn)
+//    {
+//        // Connection succeeded (even if a 404 or other non-200 range was returned).
+//        NSLog(@"sucess");
+//    }
+//    else
+//    {
+//        // Connection failed (cannot reach server).
+//        NSLog(@"fail");
+//    }
 
 }
 
@@ -444,17 +441,15 @@
 
 - (void)dealloc {
     [tableView release];
+    [navigationBar release];
     [super dealloc];
 }
-- (void)moviePlayBackDidFinish:(NSNotification *)notification {
-    
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-    
-    [self.movieController stop];
-    [self.movieController.view removeFromSuperview];
-    self.movieController = nil;
-    
+
+- (void)moviePlayBackDidFinish:(NSNotification*)notification {
+
+
 }
+
 
 
 

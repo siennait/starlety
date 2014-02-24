@@ -18,7 +18,7 @@
 #import "LoginInfo.h"
 #import "API.h"
 
-@interface AuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate> {
+@interface AuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate,UIScrollViewDelegate> {
     	MBProgressHUD *HUD;
     long long expectedLength;
 	long long currentLength;
@@ -27,6 +27,7 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 
 @property (copy,   nonatomic) NSURL *movieURL;
+@property (retain, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (strong, nonatomic) MPMoviePlayerController *movieController;
 @end
 
