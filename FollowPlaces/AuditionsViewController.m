@@ -42,6 +42,7 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
     [[API sharedInstance] getCommand:nil  APIPath:@"/Api/GetVideos"  onCompletion:^(NSDictionary *json)  {
@@ -141,12 +142,41 @@
     {
         cell.UserProfileImage.image = userRecord.ProfileImage.image;
     }
+    self.view.tag = indexPath;
+    
+    //UITapGestureRecognizer *newTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(playVideo:)];
+    
+   // [cell.PlayButton setUserInteractionEnabled:YES];
+    
+    //[cell.PlayButton addGestureRecognizer:newTap];
+    [cell.PlayButton setTag:indexPath.row];
+    [cell.PlayButton addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
+    //[cell.PlayButton addTarget:self action:@selector(customActionPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
     
     
 
 }
+-(void) play:(id) sender{
+    UIButton *play = (UIButton *)sender;
+    NSLog(@"Play %i" , play.tag);
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mp4", kWEBHost, [[[LoginInfo sharedInstance].auditionData objectAtIndex:play.tag] valueForKey:@"ID"]]];
+    MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+
+
+    mp.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+
+                                             selector:@selector(moviePlayBackDidFinish:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                               object:mp.moviePlayer];
+
+    [mp.moviePlayer prepareToPlay];
+    [self presentMoviePlayerViewControllerAnimated:mp];
+    [mp.moviePlayer play];
+}
+
 
 
 // -------------------------------------------------------------------------------
@@ -286,74 +316,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mp4", kWEBHost, [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]];
-    MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
-    
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mp4", kWEBHost, [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]];
+//    MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+//    
+//    
+//    mp.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
 //    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(moviePlaybackDidFinish:)
+//     
+//                                             selector:@selector(moviePlayBackDidFinish:)
 //                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-//                                               object:mp];
-    
-    mp.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
-    //moviePlayer.movieSourceType = MPMovieSourceTypeFile;
-    //[self presentMoviePlayerViewControllerAnimated:mp];
-    //[mp release];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-     
-                                             selector:@selector(moviePlayBackDidFinish:)
-     
-                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-     
-                                               object:mp.moviePlayer];
-    
-    
-    
-    //moviePlayerController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
-    
-    
-    
-    [mp.moviePlayer prepareToPlay];
-    
-    
-    
-    [self presentMoviePlayerViewControllerAnimated:mp];
-    
-    
-    
-    [mp.moviePlayer play];
-    
+//                                               object:mp.moviePlayer];
 //    
-//    MPMoviePlayerViewController *mpvc = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mov", kWEBHost, [[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]]];
+//    [mp.moviePlayer prepareToPlay];
+//    [self presentMoviePlayerViewControllerAnimated:mp];
+//    [mp.moviePlayer play];
 //    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(moviePlaybackDidFinish:)
-//                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-//                                               object:nil];
-//    
-//    mpvc.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
-//    
-//    [self presentMoviePlayerViewControllerAnimated:mpvc];
-//    [mpvc release];
-    
-//    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/GetMediaFileVideo/?userId=%@&videoId=%@", kAPIHost, [LoginInfo sharedInstance].userId,[[[LoginInfo sharedInstance].auditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
-//    [uploadRequest setHTTPMethod:@"GET"];
-//    [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
-//    [uploadRequest setHTTPBody:nil];
-//    
-//    // Execute the reqest:
-//    NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
-//    if (conn)
-//    {
-//        // Connection succeeded (even if a 404 or other non-200 range was returned).
-//        NSLog(@"sucess");
-//    }
-//    else
-//    {
-//        // Connection failed (cannot reach server).
-//        NSLog(@"fail");
-//    }
-
 }
 
 
@@ -450,6 +427,13 @@
 
 }
 
+// Override to support conditional editing of the table view.
+// This only needs to be implemented if you are going to be returning NO
+// for some items. By default, all items are editable.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return NO;
+}
 
 
 

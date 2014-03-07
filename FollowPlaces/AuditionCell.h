@@ -15,4 +15,8 @@
 @property (retain, nonatomic) IBOutlet UIImageView *UserProfileImage;
 @property (retain, nonatomic) IBOutlet UIImageView *Thumbnail;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *ApplauseButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *ViewButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *PlayButton;
+
 @end

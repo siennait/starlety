@@ -108,9 +108,13 @@
     [super viewDidUnload];
 }
 
+
 - (void)getUserFromDBAndProceed:(id)result
 {
     NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[result objectForKey:@"id"], @"userFacebookId", nil];
+    
+    
+   
     
     
     [[API sharedInstance] getCommand:params  APIPath:@"/Api/Users"  onCompletion:^(NSDictionary *json)  {

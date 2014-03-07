@@ -197,7 +197,11 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 	HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"/Images/37x-Checkmark.png"]] autorelease];
 	HUD.mode = MBProgressHUDModeCustomView;
 	[HUD hide:YES afterDelay:2];
-    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Video Uploaded Successfully"
+                                                        message:[NSString stringWithFormat: @"Audition Was Uploaded Successfully and can be seen on the 'New Auditions' Section"]
+                                                       delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
 }
