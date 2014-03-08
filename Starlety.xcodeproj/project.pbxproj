@@ -182,6 +182,9 @@
 		2CE53192189D91E50078DA3B /* iphone_bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE53191189D91E50078DA3B /* iphone_bg3.png */; };
 		2CF473871865355D006F83C7 /* facebook_login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF473861865355D006F83C7 /* facebook_login_button.png */; };
 		2CF4738C1865392C006F83C7 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4738B1865392C006F83C7 /* WelcomeViewController.m */; };
+		2CF69A9218CA29670020BA4A /* pullSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CF69A9018CA29670020BA4A /* pullSound.mp3 */; };
+		2CF69A9318CA29670020BA4A /* releaseSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CF69A9118CA29670020BA4A /* releaseSound.mp3 */; };
+		2CF69A9518CA2C200020BA4A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF69A9418CA2C200020BA4A /* AVFoundation.framework */; };
 		2CF719A117E64FEF00DDF05C /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF719A017E64FEF00DDF05C /* map-pin.png */; };
 		2CFF9D841811FCCF00841D63 /* siennaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -4596,6 +4599,9 @@
 		2CF4738E186542A3006F83C7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2CF4738F186542A3006F83C7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2CF47390186542A3006F83C7 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		2CF69A9018CA29670020BA4A /* pullSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pullSound.mp3; sourceTree = "<group>"; };
+		2CF69A9118CA29670020BA4A /* releaseSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = releaseSound.mp3; sourceTree = "<group>"; };
+		2CF69A9418CA2C200020BA4A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2CF719A017E64FEF00DDF05C /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-pin.png"; path = "Images/map-pin.png"; sourceTree = "<group>"; };
 		2CFF9D821811FCCF00841D63 /* siennaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = siennaAppDelegate.h; sourceTree = "<group>"; };
 		2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = siennaAppDelegate.m; sourceTree = "<group>"; };
@@ -4606,6 +4612,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF69A9518CA2C200020BA4A /* AVFoundation.framework in Frameworks */,
 				2CB2C90018BC31EA0096B84D /* libCoreParse.a in Frameworks */,
 				2CB2C5A118BC15C00096B84D /* CoreImage.framework in Frameworks */,
 				2CB2C5B018BC1B240096B84D /* QuartzCore.framework in Frameworks */,
@@ -13082,6 +13089,7 @@
 		2CD784CE16457AB200059330 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CF69A9418CA2C200020BA4A /* AVFoundation.framework */,
 				2CB2B3FD18BC151A0096B84D /* xcrm */,
 				2CB2B31218BC055F0096B84D /* QuartzCore.framework */,
 				2CF4738D186542A3006F83C7 /* FacebookSDK */,
@@ -13102,6 +13110,7 @@
 		2CD784D516457AB200059330 /* FollowPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				2CF69A3E18CA29570020BA4A /* Audio */,
 				2CB2C90218C1888C0096B84D /* Images */,
 				2CB2C83418BC29FF0096B84D /* NUI */,
 				2CB2B31418BC06BA0096B84D /* CoreParse-master */,
@@ -13181,6 +13190,15 @@
 			);
 			name = FacebookSDK;
 			path = ../../FacebookSDK;
+			sourceTree = "<group>";
+		};
+		2CF69A3E18CA29570020BA4A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2CF69A9018CA29670020BA4A /* pullSound.mp3 */,
+				2CF69A9118CA29670020BA4A /* releaseSound.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		2CF7199F17E64F6C00DDF05C /* images */ = {
@@ -14095,6 +14113,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF69A9218CA29670020BA4A /* pullSound.mp3 in Resources */,
 				2CB2C93418C1888C0096B84D /* 1352415524_photo.png in Resources */,
 				2CE53192189D91E50078DA3B /* iphone_bg3.png in Resources */,
 				2CB2C93618C1888C0096B84D /* 1352415531_photo.png in Resources */,
@@ -14103,6 +14122,7 @@
 				2CB2C93018C1888C0096B84D /* 1352415203_man.png in Resources */,
 				2CB2C95118C1888C0096B84D /* loading-Small.png in Resources */,
 				2CB2C95818C189FB0096B84D /* videoPlay.png in Resources */,
+				2CF69A9318CA29670020BA4A /* releaseSound.mp3 in Resources */,
 				2CB2C94F18C1888C0096B84D /* icon.png in Resources */,
 				2CB2C8E518BC2A000096B84D /* Round.NUI.nss in Resources */,
 				2CB2C94D18C1888C0096B84D /* 37x-Checkmark@2x.png in Resources */,

@@ -17,11 +17,19 @@
 #import <CoreLocation/CLLocationManager.h>
 #import "LoginInfo.h"
 #import "API.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface AuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate,UIScrollViewDelegate> {
+@interface AuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate,UIScrollViewDelegate,AVAudioPlayerDelegate> {
     	MBProgressHUD *HUD;
     long long expectedLength;
 	long long currentLength;
+    
+    
+        
+        AVAudioPlayer *audio;
+    
+    
+
 }
 
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
@@ -29,5 +37,9 @@
 @property (copy,   nonatomic) NSURL *movieURL;
 @property (retain, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (strong, nonatomic) MPMoviePlayerController *movieController;
+
+
+
+
 @end
 

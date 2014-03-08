@@ -31,6 +31,7 @@
 @synthesize lastOffset;
 @synthesize navigationBar;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -44,8 +45,17 @@
 {
     
     [super viewDidLoad];
-    [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
-    [[API sharedInstance] getCommand:nil  APIPath:@"/Api/GetVideos"  onCompletion:^(NSDictionary *json)  {
+    
+    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self loadData:true];
+    [self addRefreshControl];
+   }
+
+-(void)loadData: (BOOL)clearData
+{
+    if(clearData)
+        [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
+    [[API sharedInstance] getCommand:nil  APIPath:[NSString stringWithFormat:@"/Api/GetVideos/?fromIndex=%lu",(unsigned long)[[LoginInfo sharedInstance].auditionData count]]  onCompletion:^(NSDictionary *json)  {
         if ([json valueForKey:@"error" ]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[json valueForKey:@"error" ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
@@ -53,7 +63,7 @@
         } else {
 			for(id video in [json valueForKey:@"videos"]   )
             {
-                 Audition *auditionRecord = [[Audition alloc] init];
+                Audition *auditionRecord = [[Audition alloc] init];
                 auditionRecord.ID = [video valueForKey:@"ID"];
                 auditionRecord.userName = [video valueForKey:@"UserName"];
                 auditionRecord.dateCreated = [video valueForKey:@"DateCreated"];
@@ -69,13 +79,55 @@
                 userRecord.ProfileImage.imageURLString = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=small", [video valueForKey:@"UserFacebookId"]];
                 userRecord.userFacebookId =[video valueForKey:@"UserFacebookId"];
                 [[LoginInfo sharedInstance].users addObject:userRecord];
-
+                
                 [[LoginInfo sharedInstance].auditionData addObject:auditionRecord];
             }
             [tableView reloadData];
         }
     }];
+
 }
+
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([[LoginInfo sharedInstance].auditionData count]-1==indexPath.row)
+    {
+        [self loadData:false];
+        NSLog(@"the real end of the table");
+    }
+    // Perform operation to load new Cell's.
+}
+-(void)addRefreshControl
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+
+}
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    NSURL* musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                               pathForResource:@"pullSound"
+                                               ofType:@"mp3"]];
+    AVAudioPlayer *click = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+    
+    [click play];
+    [self loadData:true];
+    [self.tableView reloadData];
+
+    [refreshControl endRefreshing];
+}
+
+-(void) refreshInvoked:(id)sender forState:(UIControlState)state {
+
+    
+  
+    
+}
+
+
 - (void)viewDidUnload
 {
     [self setTableView:nil];
