@@ -49,7 +49,14 @@
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self loadData:true];
     [self addRefreshControl];
+    UISwipeGestureRecognizer * recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(myRightAction)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self.view addGestureRecognizer:recognizer];
    }
+
+-(void) myRightAction{
+    [self performSegueWithIdentifier: @"StarletyTopWeek" sender: self];
+}
 
 -(void)loadData: (BOOL)clearData
 {

@@ -1,3 +1,4 @@
+
 //
 //  main.m
 //  FollowPlaces
@@ -9,12 +10,11 @@
 #import <UIKit/UIKit.h>
 
 #import "siennaAppDelegate.h"
-#import "NUISettings.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        [NUISettings setAutoUpdatePath:@"/NUI/NUIStyle.nss"];
+       
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([siennaAppDelegate class]));
     }
 }

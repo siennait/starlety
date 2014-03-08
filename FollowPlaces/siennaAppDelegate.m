@@ -59,6 +59,10 @@
         
         // If there's no cached session, we will show a login button
     }
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor greenColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 

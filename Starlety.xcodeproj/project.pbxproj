@@ -185,6 +185,7 @@
 		2CF69A9218CA29670020BA4A /* pullSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CF69A9018CA29670020BA4A /* pullSound.mp3 */; };
 		2CF69A9318CA29670020BA4A /* releaseSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CF69A9118CA29670020BA4A /* releaseSound.mp3 */; };
 		2CF69A9518CA2C200020BA4A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF69A9418CA2C200020BA4A /* AVFoundation.framework */; };
+		2CF69A9A18CAB5840020BA4A /* CustomSlideSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF69A9918CAB5830020BA4A /* CustomSlideSegue.m */; };
 		2CF719A117E64FEF00DDF05C /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF719A017E64FEF00DDF05C /* map-pin.png */; };
 		2CFF9D841811FCCF00841D63 /* siennaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -4602,6 +4603,8 @@
 		2CF69A9018CA29670020BA4A /* pullSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pullSound.mp3; sourceTree = "<group>"; };
 		2CF69A9118CA29670020BA4A /* releaseSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = releaseSound.mp3; sourceTree = "<group>"; };
 		2CF69A9418CA2C200020BA4A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2CF69A9818CAB5830020BA4A /* CustomSlideSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSlideSegue.h; sourceTree = "<group>"; };
+		2CF69A9918CAB5830020BA4A /* CustomSlideSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSlideSegue.m; sourceTree = "<group>"; };
 		2CF719A017E64FEF00DDF05C /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-pin.png"; path = "Images/map-pin.png"; sourceTree = "<group>"; };
 		2CFF9D821811FCCF00841D63 /* siennaAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = siennaAppDelegate.h; sourceTree = "<group>"; };
 		2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = siennaAppDelegate.m; sourceTree = "<group>"; };
@@ -13110,6 +13113,7 @@
 		2CD784D516457AB200059330 /* FollowPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				2CF69A9718CAB54B0020BA4A /* Customs */,
 				2CF69A3E18CA29570020BA4A /* Audio */,
 				2CB2C90218C1888C0096B84D /* Images */,
 				2CB2C83418BC29FF0096B84D /* NUI */,
@@ -13199,6 +13203,15 @@
 				2CF69A9118CA29670020BA4A /* releaseSound.mp3 */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		2CF69A9718CAB54B0020BA4A /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				2CF69A9818CAB5830020BA4A /* CustomSlideSegue.h */,
+				2CF69A9918CAB5830020BA4A /* CustomSlideSegue.m */,
+			);
+			path = Customs;
 			sourceTree = "<group>";
 		};
 		2CF7199F17E64F6C00DDF05C /* images */ = {
@@ -14296,6 +14309,7 @@
 				2CB2C8EE18BC2A000096B84D /* UINavigationItem+NUI.m in Sources */,
 				2CB2C8EA18BC2A000096B84D /* UIButton+NUI.m in Sources */,
 				2CB2C8D618BC2A000096B84D /* NUISliderRenderer.m in Sources */,
+				2CF69A9A18CAB5840020BA4A /* CustomSlideSegue.m in Sources */,
 				2C74EB94165BF528006D6B21 /* UIImage+Resize.m in Sources */,
 				2CB2B24618B558510096B84D /* Icon.m in Sources */,
 				2CB2C8D818BC2A000096B84D /* NUITabBarItemRenderer.m in Sources */,
