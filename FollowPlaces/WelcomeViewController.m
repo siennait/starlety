@@ -119,7 +119,9 @@
     
     [[API sharedInstance] getCommand:params  APIPath:@"/Api/Users"  onCompletion:^(NSDictionary *json)  {
         if ([json valueForKey:@"error" ]) {
+              [self hideLoading];
             [self showMessage:[json valueForKey:@"error" ] withTitle:@""];
+            
         } else {
             [LoginInfo sharedInstance].userId = [json valueForKey:@"ID"];
             [self hideLoading];
@@ -144,7 +146,7 @@
             
 
 		} else {
-			
+            [self hideLoading];
 			NSString* errorMsg = [json valueForKey:@"error"];
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];

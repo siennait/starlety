@@ -39,7 +39,13 @@
 @property (strong, nonatomic) MPMoviePlayerController *movieController;
 
 
+@property NSUInteger pageIndex;
+@property (strong, nonatomic) NSString *TopStarletyLogoFile;
+@property (strong, nonatomic) NSString *QueryData;
 
+
+
+@property (retain, nonatomic) IBOutlet UIImageView *TopStarletyLogo;
 
 @end
 

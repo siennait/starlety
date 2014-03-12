@@ -30,7 +30,8 @@
 @synthesize tableView;
 @synthesize lastOffset;
 @synthesize navigationBar;
-
+@synthesize TopStarletyLogo;
+@synthesize TopStarletyLogoFile;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,20 +50,19 @@
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self loadData:true];
     [self addRefreshControl];
-    UISwipeGestureRecognizer * recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(myRightAction)];
-    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.view addGestureRecognizer:recognizer];
-   }
-
--(void) myRightAction{
-    [self performSegueWithIdentifier: @"StarletyTopWeek" sender: self];
+//    UISwipeGestureRecognizer * recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(myRightAction)];
+//    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+//    [self.view addGestureRecognizer:recognizer];
+    [TopStarletyLogo setImage:[UIImage imageNamed: self.TopStarletyLogoFile]];
 }
+
 
 -(void)loadData: (BOOL)clearData
 {
     if(clearData)
         [LoginInfo sharedInstance].auditionData = [[NSMutableArray alloc] init];
-    [[API sharedInstance] getCommand:nil  APIPath:[NSString stringWithFormat:@"/Api/GetVideos/?fromIndex=%lu",(unsigned long)[[LoginInfo sharedInstance].auditionData count]]  onCompletion:^(NSDictionary *json)  {
+    [[API sharedInstance] getCommand:nil  APIPath:[NSString stringWithFormat:@"/Api/GetVideos/?fromIndex=%lu%@",(unsigned long)[[LoginInfo sharedInstance].auditionData count],
+        self.QueryData]  onCompletion:^(NSDictionary *json)  {
         if ([json valueForKey:@"error" ]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[json valueForKey:@"error" ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
@@ -80,6 +80,8 @@
                 auditionRecord.videoThumbnail = [[Icon alloc] init];
                 auditionRecord.videoThumbnail.imageURLString = [NSString stringWithFormat:@"https://starlety.com/Thumbnails/%@.png", [video valueForKey:@"ID"] ];
                 auditionRecord.userId =[video valueForKey:@"UserId"];
+                auditionRecord.applauseCount = [video valueForKey:@"ApplauseCount"];
+                auditionRecord.viewCount = [video valueForKey:@"ViewCount"];
                 User *userRecord = [[User alloc] init];
                 userRecord.ID = [video valueForKey:@"UserId"];
                 userRecord.ProfileImage = [[Icon alloc] init];
@@ -139,6 +141,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self setTableView:nil];
     [self setNavigationBar:nil];
+    [self setTopStarletyLogo:nil];
     [super viewDidUnload];
 }
 - (void)didReceiveMemoryWarning
@@ -169,6 +172,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     cell.User_Name.text = appRecord.userName;
     cell.DateTime.text = appRecord.dateCreated;
     cell.Location.text = appRecord.location;
+    cell.ApplauseCountLabel.text = [NSString stringWithFormat: @"%d",(int)appRecord.applauseCount];
+    cell.ViewCountLabel.text = [NSString stringWithFormat: @"%d",(int)appRecord.viewCount];
+    
         // Only load cached images; defer new downloads until scrolling ends
         if (!appRecord.videoThumbnail.image)
         {
@@ -201,22 +207,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     {
         cell.UserProfileImage.image = userRecord.ProfileImage.image;
     }
-    self.view.tag = indexPath;
-    
-    //UITapGestureRecognizer *newTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(playVideo:)];
-    
-   // [cell.PlayButton setUserInteractionEnabled:YES];
-    
-    //[cell.PlayButton addGestureRecognizer:newTap];
+    //self.view.tag = indexPath;
+  
     [cell.PlayButton setTag:indexPath.row];
     [cell.PlayButton addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
-    //[cell.PlayButton addTarget:self action:@selector(customActionPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.ApplauseButton setTag:appRecord.ID];
+    [cell.ApplauseButton addTarget:self action:@selector(applause:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
     
     
 
 }
+
+
 -(void) play:(id) sender{
     UIButton *play = (UIButton *)sender;
     NSLog(@"Play %i" , play.tag);
@@ -237,6 +241,29 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 
+-(void) applause:(id) sender{
+    UIButton *applause = (UIButton *)sender;
+    
+    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:applause.tag, @"videoId", nil];
+    
+    NSURL* musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                               pathForResource:@"applause"
+                                               ofType:@"mp3"]];
+    AVAudioPlayer *music = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
+    
+    [music play];
+    
+    
+    [[API sharedInstance] getCommand:params  APIPath: @"/Api/VoteVideo"  onCompletion:^(NSDictionary *json)  {
+        if ([json valueForKey:@"error" ]) {
+            [self showMessage:[json valueForKey:@"error" ] withTitle:@""];
+        } else {
+          
+            
+        }}];
+    
+ 
+}
 
 // -------------------------------------------------------------------------------
 //	startIconDownload:forIndexPath:
@@ -478,6 +505,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)dealloc {
     [tableView release];
     [navigationBar release];
+    [TopStarletyLogo release];
     [super dealloc];
 }
 
@@ -494,6 +522,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     return NO;
 }
 
+
+// Show an alert message
+- (void)showMessage:(NSString *)text withTitle:(NSString *)title
+{
+    [[[UIAlertView alloc] initWithTitle:title
+                                message:text
+                               delegate:self
+                      cancelButtonTitle:@"OK!"
+                      otherButtonTitles:nil] show];
+}
 
 
 @end

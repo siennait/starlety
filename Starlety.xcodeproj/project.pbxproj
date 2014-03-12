@@ -178,6 +178,12 @@
 		2CD784F916457AB300059330 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD784D116457AB200059330 /* Foundation.framework */; };
 		2CD7850116457AB300059330 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD784FF16457AB300059330 /* InfoPlist.strings */; };
 		2CD7850416457AB300059330 /* FollowPlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7850316457AB300059330 /* FollowPlacesTests.m */; };
+		2CDFECD018CBCBE600FC2DB7 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDFECCF18CBCBE600FC2DB7 /* StartViewController.m */; };
+		2CDFECD218CBF87D00FC2DB7 /* separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CDFECD118CBF87D00FC2DB7 /* separator.png */; };
+		2CDFECD618CDEA5E00FC2DB7 /* MyStarletyForIphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CDFECD318CDEA5E00FC2DB7 /* MyStarletyForIphone.png */; };
+		2CDFECD718CDEA5E00FC2DB7 /* StarletyNewForIphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CDFECD418CDEA5E00FC2DB7 /* StarletyNewForIphone.png */; };
+		2CDFECD818CDEA5E00FC2DB7 /* StarletyTopForIphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CDFECD518CDEA5E00FC2DB7 /* StarletyTopForIphone.png */; };
+		2CDFECDD18CE9F2300FC2DB7 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CDFECDC18CE9F2300FC2DB7 /* applause.mp3 */; };
 		2CE53190189D91850078DA3B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE5318F189D91850078DA3B /* logo.png */; };
 		2CE53192189D91E50078DA3B /* iphone_bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE53191189D91E50078DA3B /* iphone_bg3.png */; };
 		2CF473871865355D006F83C7 /* facebook_login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF473861865355D006F83C7 /* facebook_login_button.png */; };
@@ -4592,6 +4598,13 @@
 		2CD7850016457AB300059330 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CD7850216457AB300059330 /* FollowPlacesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowPlacesTests.h; sourceTree = "<group>"; };
 		2CD7850316457AB300059330 /* FollowPlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowPlacesTests.m; sourceTree = "<group>"; };
+		2CDFECCE18CBCBE600FC2DB7 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		2CDFECCF18CBCBE600FC2DB7 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		2CDFECD118CBF87D00FC2DB7 /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
+		2CDFECD318CDEA5E00FC2DB7 /* MyStarletyForIphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyStarletyForIphone.png; sourceTree = "<group>"; };
+		2CDFECD418CDEA5E00FC2DB7 /* StarletyNewForIphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarletyNewForIphone.png; sourceTree = "<group>"; };
+		2CDFECD518CDEA5E00FC2DB7 /* StarletyTopForIphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarletyTopForIphone.png; sourceTree = "<group>"; };
+		2CDFECDC18CE9F2300FC2DB7 /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
 		2CE5318F189D91850078DA3B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2CE53191189D91E50078DA3B /* iphone_bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_bg3.png; sourceTree = "<group>"; };
 		2CF473861865355D006F83C7 /* facebook_login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook_login_button.png; path = Images/facebook_login_button.png; sourceTree = "<group>"; };
@@ -13026,6 +13039,10 @@
 		2CB2C90218C1888C0096B84D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2CDFECD318CDEA5E00FC2DB7 /* MyStarletyForIphone.png */,
+				2CDFECD418CDEA5E00FC2DB7 /* StarletyNewForIphone.png */,
+				2CDFECD518CDEA5E00FC2DB7 /* StarletyTopForIphone.png */,
+				2CDFECD118CBF87D00FC2DB7 /* separator.png */,
 				2CB2C96118C95EEC0096B84D /* videoPlay.png */,
 				2CB2C95F18C6941F0096B84D /* StarletyForIphone.png */,
 				2CB2C95B18C2365E0096B84D /* biglogo.png */,
@@ -13113,6 +13130,7 @@
 		2CD784D516457AB200059330 /* FollowPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				2CDFEC7C18CBCAD600FC2DB7 /* Controllers */,
 				2CF69A9718CAB54B0020BA4A /* Customs */,
 				2CF69A3E18CA29570020BA4A /* Audio */,
 				2CB2C90218C1888C0096B84D /* Images */,
@@ -13185,6 +13203,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2CDFEC7C18CBCAD600FC2DB7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CDFECCE18CBCBE600FC2DB7 /* StartViewController.h */,
+				2CDFECCF18CBCBE600FC2DB7 /* StartViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2CF4738D186542A3006F83C7 /* FacebookSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -13199,6 +13226,7 @@
 		2CF69A3E18CA29570020BA4A /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				2CDFECDC18CE9F2300FC2DB7 /* applause.mp3 */,
 				2CF69A9018CA29670020BA4A /* pullSound.mp3 */,
 				2CF69A9118CA29670020BA4A /* releaseSound.mp3 */,
 			);
@@ -14126,6 +14154,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDFECD618CDEA5E00FC2DB7 /* MyStarletyForIphone.png in Resources */,
+				2CDFECD718CDEA5E00FC2DB7 /* StarletyNewForIphone.png in Resources */,
+				2CDFECD818CDEA5E00FC2DB7 /* StarletyTopForIphone.png in Resources */,
 				2CF69A9218CA29670020BA4A /* pullSound.mp3 in Resources */,
 				2CB2C93418C1888C0096B84D /* 1352415524_photo.png in Resources */,
 				2CE53192189D91E50078DA3B /* iphone_bg3.png in Resources */,
@@ -14184,11 +14215,13 @@
 				2CB2C95E18C238F70096B84D /* eye.png in Resources */,
 				2CD784E416457AB300059330 /* Default@2x.png in Resources */,
 				2CB2C94818C1888C0096B84D /* 1352415761_gear.png in Resources */,
+				2CDFECD218CBF87D00FC2DB7 /* separator.png in Resources */,
 				2CB2C95018C1888C0096B84D /* loading-iOS7@2x.png in Resources */,
 				2CB2C92F18C1888C0096B84D /* 1352415176_photo.png in Resources */,
 				2CD784E616457AB300059330 /* Default-568h@2x.png in Resources */,
 				2CB2C92D18C1888C0096B84D /* 1352415164_photo.png in Resources */,
 				2CB2C8E218BC2A000096B84D /* Blue.NUI.nss in Resources */,
+				2CDFECDD18CE9F2300FC2DB7 /* applause.mp3 in Resources */,
 				2CB2C95C18C2365E0096B84D /* biglogo.png in Resources */,
 				2CE53190189D91850078DA3B /* logo.png in Resources */,
 				2CB2C94C18C1888C0096B84D /* 37x-Checkmark.png in Resources */,
@@ -14271,6 +14304,7 @@
 				2CA6957B18AC188E0015084B /* IconDownloader.m in Sources */,
 				2CB2C8CD18BC2A000096B84D /* NUIBarButtonItemRenderer.m in Sources */,
 				2CB2C8CB18BC2A000096B84D /* NUITokeniserDelegate.m in Sources */,
+				2CDFECD018CBCBE600FC2DB7 /* StartViewController.m in Sources */,
 				2CF4738C1865392C006F83C7 /* WelcomeViewController.m in Sources */,
 				2C74EB7E165BD332006D6B21 /* AFHTTPRequestOperation.m in Sources */,
 				2CB2C8CA18BC2A000096B84D /* NUIStyleSheetItem.m in Sources */,

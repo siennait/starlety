@@ -17,6 +17,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *Firstname;
 @property (retain, nonatomic) IBOutlet UILabel *Lastname;
 @property (retain, nonatomic) IBOutlet UIImageView *ProfileImage;
+@property NSUInteger pageIndex;
 
 
 @end

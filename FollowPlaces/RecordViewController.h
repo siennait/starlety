@@ -24,4 +24,8 @@
 }
 @property (copy,   nonatomic) NSURL *movieURL;
 @property (strong, nonatomic) MPMoviePlayerController *movieController;
+@property NSUInteger pageIndex;
+
+- (IBAction)RecordButtonTouchUp:(id)sender;
+
 @end
