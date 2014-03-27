@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C10C08D180DF0AA00633AED /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C10C08C180DF0AA00633AED /* RecordViewController.m */; };
 		2C22C3F3180411960009CE63 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F2180411960009CE63 /* MBProgressHUD.m */; };
 		2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F1180411960009CE63 /* MBProgressHUD.h */; };
 		2C22C3F81806CCA60009CE63 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F71806CCA60009CE63 /* LoginInfo.m */; };
 		2C22C3F91806D6840009CE63 /* LoginInfo.h in Sources */ = {isa = PBXBuildFile; fileRef = 2C22C3F61806CCA60009CE63 /* LoginInfo.h */; };
 		2C3F875F1829DEE300C6EECA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C3F875E1829DEE300C6EECA /* icon.png */; };
 		2C46851E182B1F71003CF4DA /* AuditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C46851D182B1F71003CF4DA /* AuditionCell.m */; };
-		2C583739164E9C36002255F9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C583738164E9C35002255F9 /* SettingsTableViewController.m */; };
+		2C5DA77218E1B35600D9C1BD /* TopAuditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA76B18E1B35600D9C1BD /* TopAuditionsViewController.m */; };
+		2C5DA77318E1B35600D9C1BD /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA76D18E1B35600D9C1BD /* RecordViewController.m */; };
+		2C5DA77418E1B35600D9C1BD /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA76F18E1B35600D9C1BD /* SettingsTableViewController.m */; };
+		2C5DA77518E1B35600D9C1BD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA77118E1B35600D9C1BD /* WelcomeViewController.m */; };
+		2C5DA7CB18E1DC2400D9C1BD /* MyAuditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA7C818E1DC2400D9C1BD /* MyAuditionsViewController.m */; };
+		2C5DA7CC18E1DC2400D9C1BD /* NewAuditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA7CA18E1DC2400D9C1BD /* NewAuditionsViewController.m */; };
 		2C74EB63165BCC0D006D6B21 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB62165BCC0D006D6B21 /* API.m */; };
 		2C74EB7D165BD332006D6B21 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB69165BD332006D6B21 /* AFHTTPClient.m */; };
 		2C74EB7E165BD332006D6B21 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB6B165BD332006D6B21 /* AFHTTPRequestOperation.m */; };
@@ -36,7 +40,6 @@
 		2CA6957C18AC188E0015084B /* LazyTableAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6957718AC188E0015084B /* LazyTableAppDelegate.m */; };
 		2CA6957D18AC188E0015084B /* ParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6957818AC188E0015084B /* ParseOperation.m */; };
 		2CA6958518AC19BA0015084B /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6958218AC19BA0015084B /* ReadMe.txt */; };
-		2CA6958718AC19D40015084B /* AuditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6958618AC19D40015084B /* AuditionsViewController.m */; };
 		2CB2B24318AFE5610096B84D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2B24218AFE5610096B84D /* User.m */; };
 		2CB2B24618B558510096B84D /* Icon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2B24518B558510096B84D /* Icon.m */; };
 		2CB2B24918B8A46A0096B84D /* Audition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB2B24818B8A46A0096B84D /* Audition.m */; };
@@ -187,7 +190,6 @@
 		2CE53190189D91850078DA3B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE5318F189D91850078DA3B /* logo.png */; };
 		2CE53192189D91E50078DA3B /* iphone_bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE53191189D91E50078DA3B /* iphone_bg3.png */; };
 		2CF473871865355D006F83C7 /* facebook_login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF473861865355D006F83C7 /* facebook_login_button.png */; };
-		2CF4738C1865392C006F83C7 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4738B1865392C006F83C7 /* WelcomeViewController.m */; };
 		2CF69A9218CA29670020BA4A /* pullSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CF69A9018CA29670020BA4A /* pullSound.mp3 */; };
 		2CF69A9318CA29670020BA4A /* releaseSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CF69A9118CA29670020BA4A /* releaseSound.mp3 */; };
 		2CF69A9518CA2C200020BA4A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF69A9418CA2C200020BA4A /* AVFoundation.framework */; };
@@ -801,9 +803,6 @@
 		2C0D449C17E82083000AACC2 /* Titlu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Titlu.png; path = Images/Titlu.png; sourceTree = "<group>"; };
 		2C0F5E0717F2F11A00A7E393 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2C0F5E0A17F2F12800A7E393 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		2C10C08B180DF0AA00633AED /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
-		2C10C08C180DF0AA00633AED /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
-		2C15D57A17F2E0DD006704DE /* AuditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditionsViewController.h; sourceTree = "<group>"; };
 		2C22C3F1180411960009CE63 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2C22C3F2180411960009CE63 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		2C22C3F61806CCA60009CE63 /* LoginInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInfo.h; sourceTree = "<group>"; };
@@ -812,9 +811,19 @@
 		2C3F875E1829DEE300C6EECA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2C46851C182B1F71003CF4DA /* AuditionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuditionCell.h; sourceTree = "<group>"; };
 		2C46851D182B1F71003CF4DA /* AuditionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditionCell.m; sourceTree = "<group>"; };
-		2C583737164E9C35002255F9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
-		2C583738164E9C35002255F9 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		2C58373A164EE13A002255F9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2C5DA76A18E1B35600D9C1BD /* TopAuditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopAuditionsViewController.h; sourceTree = "<group>"; };
+		2C5DA76B18E1B35600D9C1BD /* TopAuditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopAuditionsViewController.m; sourceTree = "<group>"; };
+		2C5DA76C18E1B35600D9C1BD /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		2C5DA76D18E1B35600D9C1BD /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		2C5DA76E18E1B35600D9C1BD /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		2C5DA76F18E1B35600D9C1BD /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		2C5DA77018E1B35600D9C1BD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		2C5DA77118E1B35600D9C1BD /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		2C5DA7C718E1DC2400D9C1BD /* MyAuditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAuditionsViewController.h; sourceTree = "<group>"; };
+		2C5DA7C818E1DC2400D9C1BD /* MyAuditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAuditionsViewController.m; sourceTree = "<group>"; };
+		2C5DA7C918E1DC2400D9C1BD /* NewAuditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAuditionsViewController.h; sourceTree = "<group>"; };
+		2C5DA7CA18E1DC2400D9C1BD /* NewAuditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAuditionsViewController.m; sourceTree = "<group>"; };
 		2C74EB61165BCC0D006D6B21 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		2C74EB62165BCC0D006D6B21 /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		2C74EB68165BD332006D6B21 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -858,7 +867,6 @@
 		2CA6958018AC19BA0015084B /* IconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
 		2CA6958118AC19BA0015084B /* ParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseOperation.h; sourceTree = "<group>"; };
 		2CA6958218AC19BA0015084B /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		2CA6958618AC19D40015084B /* AuditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuditionsViewController.m; sourceTree = "<group>"; };
 		2CAD12B7181DB8DF001F5F81 /* Starlety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starlety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB2B24018AD79EF0096B84D /* StarletyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarletyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB2B24118AFE5610096B84D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -4608,8 +4616,6 @@
 		2CE5318F189D91850078DA3B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2CE53191189D91E50078DA3B /* iphone_bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_bg3.png; sourceTree = "<group>"; };
 		2CF473861865355D006F83C7 /* facebook_login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook_login_button.png; path = Images/facebook_login_button.png; sourceTree = "<group>"; };
-		2CF4738A1865392C006F83C7 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
-		2CF4738B1865392C006F83C7 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		2CF4738E186542A3006F83C7 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2CF4738F186542A3006F83C7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2CF47390186542A3006F83C7 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -13149,20 +13155,12 @@
 				2CD784D616457AB200059330 /* Supporting Files */,
 				2CFF9D821811FCCF00841D63 /* siennaAppDelegate.h */,
 				2CFF9D831811FCCF00841D63 /* siennaAppDelegate.m */,
-				2C583737164E9C35002255F9 /* SettingsTableViewController.h */,
-				2C583738164E9C35002255F9 /* SettingsTableViewController.m */,
 				2C74EB61165BCC0D006D6B21 /* API.h */,
 				2C74EB62165BCC0D006D6B21 /* API.m */,
-				2C15D57A17F2E0DD006704DE /* AuditionsViewController.h */,
-				2CA6958618AC19D40015084B /* AuditionsViewController.m */,
 				2C22C3F61806CCA60009CE63 /* LoginInfo.h */,
 				2C22C3F71806CCA60009CE63 /* LoginInfo.m */,
-				2C10C08B180DF0AA00633AED /* RecordViewController.h */,
-				2C10C08C180DF0AA00633AED /* RecordViewController.m */,
 				2C46851C182B1F71003CF4DA /* AuditionCell.h */,
 				2C46851D182B1F71003CF4DA /* AuditionCell.m */,
-				2CF4738A1865392C006F83C7 /* WelcomeViewController.h */,
-				2CF4738B1865392C006F83C7 /* WelcomeViewController.m */,
 				2CA2B44B186A1FDB00AC95F5 /* MainTabBarController.h */,
 				2CA2B44C186A1FDB00AC95F5 /* MainTabBarController.m */,
 			);
@@ -13206,6 +13204,18 @@
 		2CDFEC7C18CBCAD600FC2DB7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2C5DA76A18E1B35600D9C1BD /* TopAuditionsViewController.h */,
+				2C5DA76B18E1B35600D9C1BD /* TopAuditionsViewController.m */,
+				2C5DA7C718E1DC2400D9C1BD /* MyAuditionsViewController.h */,
+				2C5DA7C818E1DC2400D9C1BD /* MyAuditionsViewController.m */,
+				2C5DA7C918E1DC2400D9C1BD /* NewAuditionsViewController.h */,
+				2C5DA7CA18E1DC2400D9C1BD /* NewAuditionsViewController.m */,
+				2C5DA76C18E1B35600D9C1BD /* RecordViewController.h */,
+				2C5DA76D18E1B35600D9C1BD /* RecordViewController.m */,
+				2C5DA76E18E1B35600D9C1BD /* SettingsTableViewController.h */,
+				2C5DA76F18E1B35600D9C1BD /* SettingsTableViewController.m */,
+				2C5DA77018E1B35600D9C1BD /* WelcomeViewController.h */,
+				2C5DA77118E1B35600D9C1BD /* WelcomeViewController.m */,
 				2CDFECCE18CBCBE600FC2DB7 /* StartViewController.h */,
 				2CDFECCF18CBCBE600FC2DB7 /* StartViewController.m */,
 			);
@@ -14264,7 +14274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB2C8ED18BC2A000096B84D /* UINavigationBar+NUI.m in Sources */,
-				2CA6958718AC19D40015084B /* AuditionsViewController.m in Sources */,
 				2CB2C8E918BC2A000096B84D /* UIBarButtonItem+NUI.m in Sources */,
 				2CB2C8DB18BC2A000096B84D /* NUITableViewRenderer.m in Sources */,
 				2CB2C8EF18BC2A000096B84D /* UIProgressView+NUI.m in Sources */,
@@ -14278,6 +14287,7 @@
 				2CB2C8BD18BC2A000096B84D /* NUIRenderer.m in Sources */,
 				2C22C3F81806CCA60009CE63 /* LoginInfo.m in Sources */,
 				2CB2C8F518BC2A000096B84D /* UITabBarItem+NUI.m in Sources */,
+				2C5DA77318E1B35600D9C1BD /* RecordViewController.m in Sources */,
 				2CB2B24918B8A46A0096B84D /* Audition.m in Sources */,
 				2C22C3F3180411960009CE63 /* MBProgressHUD.m in Sources */,
 				2C22C3F4180411E00009CE63 /* MBProgressHUD.h in Sources */,
@@ -14285,6 +14295,7 @@
 				2CB2C8D318BC2A000096B84D /* NUIProgressViewRenderer.m in Sources */,
 				2CB2C8D218BC2A000096B84D /* NUINavigationItemRenderer.m in Sources */,
 				2CD784DC16457AB300059330 /* main.m in Sources */,
+				2C5DA77218E1B35600D9C1BD /* TopAuditionsViewController.m in Sources */,
 				2CB2C8DF18BC2A000096B84D /* NUIWindowRenderer.m in Sources */,
 				2CB2C8C718BC2A000096B84D /* NUIRuleSet.m in Sources */,
 				2CB2C8C318BC2A000096B84D /* NUIDefinition.m in Sources */,
@@ -14293,8 +14304,6 @@
 				2CB2C8F618BC2A000096B84D /* UITableView+NUI.m in Sources */,
 				2CB2C8C118BC2A000096B84D /* NUIUtilities.m in Sources */,
 				2CB2C8C018BC2A000096B84D /* NUISwizzler.m in Sources */,
-				2C583739164E9C36002255F9 /* SettingsTableViewController.m in Sources */,
-				2C10C08D180DF0AA00633AED /* RecordViewController.m in Sources */,
 				2CB2C8F118BC2A000096B84D /* UISegmentedControl+NUI.m in Sources */,
 				2C74EB63165BCC0D006D6B21 /* API.m in Sources */,
 				2CB2C8BA18BC2A000096B84D /* NUIConverter.m in Sources */,
@@ -14305,7 +14314,6 @@
 				2CB2C8CD18BC2A000096B84D /* NUIBarButtonItemRenderer.m in Sources */,
 				2CB2C8CB18BC2A000096B84D /* NUITokeniserDelegate.m in Sources */,
 				2CDFECD018CBCBE600FC2DB7 /* StartViewController.m in Sources */,
-				2CF4738C1865392C006F83C7 /* WelcomeViewController.m in Sources */,
 				2C74EB7E165BD332006D6B21 /* AFHTTPRequestOperation.m in Sources */,
 				2CB2C8CA18BC2A000096B84D /* NUIStyleSheetItem.m in Sources */,
 				2CB2C8DE18BC2A000096B84D /* NUIViewRenderer.m in Sources */,
@@ -14313,14 +14321,17 @@
 				2CB2C8F218BC2A000096B84D /* UISlider+NUI.m in Sources */,
 				2C74EB7F165BD332006D6B21 /* AFImageRequestOperation.m in Sources */,
 				2C74EB80165BD332006D6B21 /* AFJSONRequestOperation.m in Sources */,
+				2C5DA7CC18E1DC2400D9C1BD /* NewAuditionsViewController.m in Sources */,
 				2CB2C8F718BC2A000096B84D /* UITableViewCell+NUI.m in Sources */,
 				2CB2C8C218BC2A000096B84D /* NUIDeclaration.m in Sources */,
 				2CB2C8C818BC2A000096B84D /* NUISelectorSet.m in Sources */,
 				2C74EB81165BD332006D6B21 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2C74EB82165BD332006D6B21 /* AFPropertyListRequestOperation.m in Sources */,
+				2C5DA77418E1B35600D9C1BD /* SettingsTableViewController.m in Sources */,
 				2CB2C8F918BC2A000096B84D /* UIToolbar+NUI.m in Sources */,
 				2CB2C8BC18BC2A000096B84D /* NUIGraphics.m in Sources */,
 				2CB2C8D118BC2A000096B84D /* NUINavigationBarRenderer.m in Sources */,
+				2C5DA77518E1B35600D9C1BD /* WelcomeViewController.m in Sources */,
 				2CB2C8F318BC2A000096B84D /* UISwitch+NUI.m in Sources */,
 				2CB2C8FB18BC2A000096B84D /* UIWindow+NUI.m in Sources */,
 				2CB2C8DC18BC2A000096B84D /* NUITextFieldRenderer.m in Sources */,
@@ -14347,6 +14358,7 @@
 				2C74EB94165BF528006D6B21 /* UIImage+Resize.m in Sources */,
 				2CB2B24618B558510096B84D /* Icon.m in Sources */,
 				2CB2C8D818BC2A000096B84D /* NUITabBarItemRenderer.m in Sources */,
+				2C5DA7CB18E1DC2400D9C1BD /* MyAuditionsViewController.m in Sources */,
 				2C74EB95165BF528006D6B21 /* UIImage+RoundedCorner.m in Sources */,
 				2CFF9D841811FCCF00841D63 /* siennaAppDelegate.m in Sources */,
 				2CB2C8C418BC2A000096B84D /* NUIMediaBlock.m in Sources */,
@@ -15340,7 +15352,7 @@
 					/Users/luchianchivoiu/Documents/xcrm/FollowPlaces/FollowPlaces,
 				);
 				PRODUCT_NAME = Starlety;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "B705D815-8C26-4FA1-80B0-70334D9F59BD";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -15365,7 +15377,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Starlety;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "B705D815-8C26-4FA1-80B0-70334D9F59BD";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

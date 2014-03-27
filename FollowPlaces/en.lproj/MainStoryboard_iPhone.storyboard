@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="iphone_bg3.png" id="cO6-Ao-196">
-                                <rect key="frame" x="-9" y="27" width="333" height="572"/>
+                                <rect key="frame" x="-7" y="27" width="333" height="572"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VvI-Jz-r7h">
                                 <rect key="frame" x="24" y="497" width="273" height="29"/>
@@ -116,9 +116,9 @@
                             <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" id="xQM-U9-BJ7">
                                 <rect key="frame" x="0.0" y="17" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" red="0.38283357959999997" green="0.51354290069999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.36843341150812037" green="0.82963003178062089" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Settings" id="ct1-6e-D5e"/>
+                                    <navigationItem title="ACCOUNT" id="ct1-6e-D5e"/>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uVh-gd-kkN">
@@ -135,13 +135,6 @@
                                 <rect key="frame" x="184" y="178" width="131" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ewU-HB-k2W">
-                                <rect key="frame" x="25" y="77" width="84" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jGY-pE-dgT">
@@ -171,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="-1090" y="-117"/>
         </scene>
-        <!--Auditions View Controller - New talents-->
+        <!--My Auditions View Controller - New talents-->
         <scene sceneID="b3T-LF-Edj">
             <objects>
-                <viewController storyboardIdentifier="AuditionsViewController" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="S4F-LQ-aH6" customClass="AuditionsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyAuditionsViewController" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="S4F-LQ-aH6" customClass="MyAuditionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a4U-Ea-3cv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -211,7 +204,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="49u-Tt-fMm">
-                                                            <rect key="frame" x="0.0" y="6" width="320" height="220"/>
+                                                            <rect key="frame" x="0.0" y="6" width="321" height="220"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LcX-6h-S0H">
@@ -293,7 +286,7 @@
                                         </items>
                                     </navigationBar>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="W7i-HQ-nP3">
-                                        <rect key="frame" x="5" y="15" width="321" height="44"/>
+                                        <rect key="frame" x="5" y="15" width="327" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -310,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78d-f2-Tf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1253" y="-1034"/>
+            <point key="canvasLocation" x="-1104" y="-959"/>
         </scene>
         <!--Record View Controller - Record-->
         <scene sceneID="54U-y2-Dni">
@@ -329,7 +322,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a8F-Nh-fpt">
-                                <rect key="frame" x="46" y="471" width="228" height="30"/>
+                                <rect key="frame" x="46" y="459" width="228" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Start recording your video">
@@ -339,19 +332,19 @@
                                     <action selector="RecordButtonTouchUp:" destination="sWo-SE-18N" eventType="touchUpInside" id="cdE-wK-u0Z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2OK-e4-MXg">
-                                <rect key="frame" x="27" y="79" width="273" height="350"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2OK-e4-MXg">
+                                <rect key="frame" x="27" y="79" width="273" height="322"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Share your talent and you can win the monthly prize of our contest.                                       
-You can also be contacted by our partnership agencies .
-The audition video has to be with real voice , real video.
-There are not allowed altered auditions ( changed voices, edited video ).                                                
-You can post your video anytime, from anywhere in the world.                  Every 1st of the month the contestant who got the most applaused wins an iPad Mini . </string>
+                                        <string key="content">Share your talent and you can win the monthly prize of our contest.                                      
+ 
+You can post maximum 3 videos per month .                                                                                                                                    
+
+You can visit www.starlety.com to  find out more about the contest </string>
                                         <attributes>
                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="17" name="Futura-MediumItalic"/>
+                                            <font key="NSFont" size="20" name="Futura-Medium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -366,6 +359,288 @@ You can post your video anytime, from anywhere in the world.                  Ev
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UtK-Rh-nuT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1230" y="973"/>
+        </scene>
+        <!--Top Auditions View Controller - New talents-->
+        <scene sceneID="l2Z-59-TW4">
+            <objects>
+                <viewController storyboardIdentifier="TopAuditionsViewController" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="gDV-oY-xZM" customClass="TopAuditionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qg5-Qp-gcd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="JpC-WF-wY7">
+                                <rect key="frame" x="-6" y="0.0" width="433" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarletyForIphone.png" id="bB5-09-8dT">
+                                        <rect key="frame" x="81" y="266" width="167" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="314" sectionHeaderHeight="22" sectionFooterHeight="22" id="GSd-hI-dRE">
+                                        <rect key="frame" x="5" y="54" width="321" height="514"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleTableItem" rowHeight="314" id="ItW-pQ-o0t" customClass="AuditionCell">
+                                                <rect key="frame" x="0.0" y="22" width="321" height="314"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ItW-pQ-o0t" id="TlQ-OF-sBp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="313"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KX3-n4-5N3">
+                                                            <rect key="frame" x="66" y="234" width="169" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="mVe-YQ-WOq">
+                                                            <rect key="frame" x="11" y="237" width="47" height="51"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="k5k-cl-v5w">
+                                                            <rect key="frame" x="0.0" y="6" width="321" height="220"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fCK-R2-O4s">
+                                                            <rect key="frame" x="66" y="270" width="169" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eai-3X-fs9">
+                                                            <rect key="frame" x="66" y="252" width="169" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye.png" id="6KP-GF-7ae">
+                                                            <rect key="frame" x="225" y="267" width="34" height="29"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OLf-oy-ZPS">
+                                                            <rect key="frame" x="224" y="155" width="76" height="57"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="videoPlay.png">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XV8-Cz-GFx">
+                                                            <rect key="frame" x="266" y="239" width="60" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NgN-ri-eMP">
+                                                            <rect key="frame" x="266" y="270" width="54" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator.png" id="BpL-Nu-4Oa">
+                                                            <rect key="frame" x="-24" y="303" width="374" height="13"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xCv-KL-di1">
+                                                            <rect key="frame" x="225" y="234" width="35" height="33"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="applause.png">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="ApplauseButton" destination="xCv-KL-di1" id="8Nb-wt-aYB"/>
+                                                    <outlet property="ApplauseCountLabel" destination="XV8-Cz-GFx" id="3M4-55-OED"/>
+                                                    <outlet property="DateTime" destination="fCK-R2-O4s" id="tra-Gx-wp4"/>
+                                                    <outlet property="Location" destination="eai-3X-fs9" id="ma6-ue-d1w"/>
+                                                    <outlet property="PlayButton" destination="OLf-oy-ZPS" id="qtc-Yc-Rqz"/>
+                                                    <outlet property="Thumbnail" destination="k5k-cl-v5w" id="tVQ-7s-2qD"/>
+                                                    <outlet property="UserProfileImage" destination="mVe-YQ-WOq" id="bUg-Dd-tKa"/>
+                                                    <outlet property="User_Name" destination="KX3-n4-5N3" id="Ca6-jk-U7y"/>
+                                                    <outlet property="ViewButton" destination="6KP-GF-7ae" id="1RZ-dS-eww"/>
+                                                    <outlet property="ViewCountLabel" destination="NgN-ri-eMP" id="PRP-oI-ykk"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="gDV-oY-xZM" id="O1S-Ev-L2x"/>
+                                            <outlet property="delegate" destination="gDV-oY-xZM" id="Ktd-Yg-2h4"/>
+                                        </connections>
+                                    </tableView>
+                                    <navigationBar contentMode="scaleToFill" id="uaf-Fw-u8h">
+                                        <rect key="frame" x="-62" y="15" width="433" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" red="0.31366413230000001" green="0.73159640280000005" blue="0.88671875" alpha="1" colorSpace="calibratedRGB"/>
+                                        <items>
+                                            <navigationItem title="Title" id="gzt-AW-haK"/>
+                                        </items>
+                                    </navigationBar>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="041-oZ-aLe">
+                                        <rect key="frame" x="5" y="15" width="327" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="New talents" image="1352415729_globe.png" id="Yqr-63-Hvq"/>
+                    <navigationItem key="navigationItem" id="dYr-da-681"/>
+                    <connections>
+                        <outlet property="TopStarletyLogo" destination="041-oZ-aLe" id="iZM-CS-obh"/>
+                        <outlet property="tableView" destination="GSd-hI-dRE" id="e3X-lS-gTe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecn-N9-qdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1793" y="-812"/>
+        </scene>
+        <!--New Auditions View Controller - New talents-->
+        <scene sceneID="kkA-k5-aAg">
+            <objects>
+                <viewController storyboardIdentifier="NewAuditionsViewController" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="9M2-ZF-B2r" customClass="NewAuditionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XAu-er-bAw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Rsb-r1-bJK">
+                                <rect key="frame" x="-6" y="0.0" width="433" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarletyForIphone.png" id="9E3-VO-5NE">
+                                        <rect key="frame" x="81" y="266" width="167" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="314" sectionHeaderHeight="22" sectionFooterHeight="22" id="j4E-9g-Q2w">
+                                        <rect key="frame" x="5" y="54" width="321" height="514"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleTableItem" rowHeight="314" id="KB6-Ti-1OW" customClass="AuditionCell">
+                                                <rect key="frame" x="0.0" y="22" width="321" height="314"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KB6-Ti-1OW" id="tua-dI-YM7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="313"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4lD-2n-kvW">
+                                                            <rect key="frame" x="66" y="234" width="169" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="Q54-vh-jTc">
+                                                            <rect key="frame" x="11" y="237" width="47" height="51"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="tZb-PP-hzg">
+                                                            <rect key="frame" x="0.0" y="6" width="321" height="220"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yXi-qY-7zB">
+                                                            <rect key="frame" x="66" y="270" width="169" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OsI-Rh-p1K">
+                                                            <rect key="frame" x="66" y="252" width="169" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye.png" id="Ger-V5-MXF">
+                                                            <rect key="frame" x="225" y="267" width="34" height="29"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Hdc-ub-ZO3">
+                                                            <rect key="frame" x="224" y="155" width="76" height="57"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="videoPlay.png">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fBg-MS-WYp">
+                                                            <rect key="frame" x="266" y="239" width="60" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5pS-K3-aoz">
+                                                            <rect key="frame" x="266" y="270" width="54" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator.png" id="eOG-Rw-Jhw">
+                                                            <rect key="frame" x="-24" y="303" width="374" height="13"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="olK-KD-LJN">
+                                                            <rect key="frame" x="225" y="234" width="35" height="33"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="applause.png">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="ApplauseButton" destination="olK-KD-LJN" id="cbJ-6b-FAY"/>
+                                                    <outlet property="ApplauseCountLabel" destination="fBg-MS-WYp" id="c1F-3t-X5P"/>
+                                                    <outlet property="DateTime" destination="yXi-qY-7zB" id="AOb-GP-BaB"/>
+                                                    <outlet property="Location" destination="OsI-Rh-p1K" id="qcg-GH-8xf"/>
+                                                    <outlet property="PlayButton" destination="Hdc-ub-ZO3" id="MWu-CS-47L"/>
+                                                    <outlet property="Thumbnail" destination="tZb-PP-hzg" id="gti-p0-VLa"/>
+                                                    <outlet property="UserProfileImage" destination="Q54-vh-jTc" id="oet-Pi-0wT"/>
+                                                    <outlet property="User_Name" destination="4lD-2n-kvW" id="EyQ-ey-V1d"/>
+                                                    <outlet property="ViewButton" destination="Ger-V5-MXF" id="jud-qZ-J0k"/>
+                                                    <outlet property="ViewCountLabel" destination="5pS-K3-aoz" id="idN-4j-F3k"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9M2-ZF-B2r" id="XUN-vc-efm"/>
+                                            <outlet property="delegate" destination="9M2-ZF-B2r" id="5N3-la-vcT"/>
+                                        </connections>
+                                    </tableView>
+                                    <navigationBar contentMode="scaleToFill" id="MLz-GC-kDa">
+                                        <rect key="frame" x="-62" y="15" width="433" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" red="0.31366413230000001" green="0.73159640280000005" blue="0.88671875" alpha="1" colorSpace="calibratedRGB"/>
+                                        <items>
+                                            <navigationItem title="Title" id="boX-yy-Tfy"/>
+                                        </items>
+                                    </navigationBar>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5iT-VE-wZE">
+                                        <rect key="frame" x="5" y="15" width="327" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="New talents" image="1352415729_globe.png" id="lhQ-fQ-uVw"/>
+                    <navigationItem key="navigationItem" id="lkU-EW-Z6K"/>
+                    <connections>
+                        <outlet property="TopStarletyLogo" destination="5iT-VE-wZE" id="aK0-7u-s1S"/>
+                        <outlet property="tableView" destination="j4E-9g-Q2w" id="cOG-ya-I7n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IUa-gz-6UU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1536" y="-835"/>
         </scene>
     </scenes>
     <resources>

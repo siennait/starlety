@@ -10,8 +10,9 @@
 @property (nonatomic, strong) NSString *location;
 @property (nonatomic, strong) NSString *userFacebookId;
 @property (nonatomic, strong) NSString *userId;
-@property (nonatomic) NSInteger applauseCount;
-@property (nonatomic) NSInteger viewCount;
+@property (nonatomic, strong) NSNumber *applauseCount;
+@property (nonatomic, strong) NSNumber *viewCount;
+
 
 
 @end

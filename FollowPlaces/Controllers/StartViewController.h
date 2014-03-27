@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AuditionsViewController.h"
+#import "TopAuditionsViewController.h"
+#import "NewAuditionsViewController.h"
+#import "MyAuditionsViewController.h"
 
 @interface StartViewController : UIViewController <UIPageViewControllerDataSource>
 

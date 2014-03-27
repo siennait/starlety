@@ -14,7 +14,9 @@
 
 @synthesize userId;
 @synthesize userFacebookId;
-@synthesize auditionData;
+@synthesize topAuditionData;
+@synthesize newAuditionData;
+@synthesize myAuditionData;
 @synthesize savedVideoData;
 @synthesize users;
 static LoginInfo *myInstance = nil;
@@ -30,14 +32,18 @@ static LoginInfo *myInstance = nil;
     myInstance.userId = [[NSString alloc]init];
     myInstance.userFacebookId = [[NSString alloc]init];
     myInstance.savedVideoData = [[NSMutableData data] init];
-    myInstance.auditionData = [[NSMutableArray alloc] init];
+    myInstance.topAuditionData = [[NSMutableArray alloc] init];
+    myInstance.newAuditionData = [[NSMutableArray alloc] init];
+    myInstance.myAuditionData = [[NSMutableArray alloc] init];
     myInstance.users = [[NSMutableArray alloc] init];
 
 }
 - (void) logout {
     [userId release];
     [userFacebookId release];
-    [auditionData release];
+    [topAuditionData release];
+    [newAuditionData release];
+    [myAuditionData release];
     [users release];
     //[savedVideoData release];
     

@@ -7,7 +7,7 @@
 //
 
 #import "StartViewController.h"
-#import "AuditionsViewController.h"
+#import "TopAuditionsViewController.h"
 #import "RecordViewController.h"
 #import "SettingsTableViewController.h"
 
@@ -24,13 +24,13 @@
 	// Create the data model
     _pageTitles = @[@"Top Talents", @"New Talents"
                     , @"Share Your Talent", @"My Posts", @"Settings"];
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
-    
+//    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
+   
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
     
-    AuditionsViewController *startingViewController = [self viewControllerAtIndex:0];
+    TopAuditionsViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
@@ -49,7 +49,7 @@
 }
 
 - (IBAction)startWalkthrough:(id)sender {
-    AuditionsViewController *startingViewController = [self viewControllerAtIndex:0];
+    TopAuditionsViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
 }
@@ -61,7 +61,7 @@
     }
     if(index==0)
     {
-            AuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AuditionsViewController"];
+            TopAuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TopAuditionsViewController"];
             pageContentViewController.TopStarletyLogoFile = @"StarletyTopForIphone.png";
             pageContentViewController.QueryData = @"&sortBy=ApplauseCount";
             pageContentViewController.pageIndex = index;
@@ -70,7 +70,7 @@
     else
         if(index==1)
         {
-            AuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AuditionsViewController"];
+            NewAuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewAuditionsViewController"];
             [pageContentViewController.TopStarletyLogo setImage:[UIImage imageNamed:@"StarletyNewForIphone.png"]];
             
             pageContentViewController.TopStarletyLogoFile = @"StarletyNewForIphone.png";
@@ -89,7 +89,7 @@
                 else
                     if(index==3)
                     {
-                        AuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AuditionsViewController"];
+                        MyAuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyAuditionsViewController"];
                         [pageContentViewController.TopStarletyLogo setImage:[UIImage imageNamed:@"MyStarletyForIphone.png"]];
                         
                         pageContentViewController.TopStarletyLogoFile = @"MyStarletyForIphone.png";
@@ -107,14 +107,18 @@
                         }
 
    
-    
+    TopAuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AuditionsViewController"];
+    pageContentViewController.TopStarletyLogoFile = @"StarletyTopForIphone.png";
+    pageContentViewController.QueryData = @"&sortBy=ApplauseCount";
+    pageContentViewController.pageIndex = index;
+    return pageContentViewController;
 }
 
 #pragma mark - Page View Controller Data Source
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((AuditionsViewController*) viewController).pageIndex;
+    NSUInteger index = ((TopAuditionsViewController*) viewController).pageIndex;
     
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -126,7 +130,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((AuditionsViewController*) viewController).pageIndex;
+    NSUInteger index = ((TopAuditionsViewController*) viewController).pageIndex;
     
     if (index == NSNotFound) {
         return nil;
