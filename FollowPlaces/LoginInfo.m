@@ -19,6 +19,14 @@
 @synthesize myAuditionData;
 @synthesize savedVideoData;
 @synthesize users;
+//static RecordViewController *pageContentRecordViewController;
+
+//@synthesize pageContentTopAuditionsViewController;
+//@synthesize pageContentNewAuditionsViewController;
+//@synthesize pageContentRecordViewController;
+//@synthesize pageContentMyAuditionsViewController;
+//@synthesize pageContentSettingsViewController;
+////@synthesize pageContentTopAuditionsViewController;
 static LoginInfo *myInstance = nil;
 
 + (LoginInfo*) sharedInstance {

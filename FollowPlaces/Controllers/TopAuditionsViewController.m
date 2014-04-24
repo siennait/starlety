@@ -12,6 +12,7 @@
 #import "Audition.h"
 #import "IconDownloader.h"
 #import "User.h"
+#import "LoginInfo.h"
 
 #define kAPIHost @"http://starlety.com:8080"
 #define kWEBHost @"https://starlety.com"
@@ -44,6 +45,9 @@
 
 - (void)viewDidLoad
 {
+    
+    self.TopStarletyLogoFile = @"StarletyTopForIphone.png";
+    self.QueryData = @"&sortBy=ApplauseCount";
     
     [super viewDidLoad];
     
@@ -291,10 +295,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
             // Display the newly loaded image
             cell.Thumbnail.image = appRecord.image;
-
+            cell.Thumbnail.contentMode = UIViewContentModeScaleAspectFit;
             // Remove the IconDownloader from the in progress list.
             // This will result in it being deallocated.
             [self.videoThumbnailImageDownloadsInProgress removeObjectForKey:indexPath];
+
 
         }];
         [self.videoThumbnailImageDownloadsInProgress setObject:iconDownloader forKey:indexPath];
@@ -529,5 +534,58 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                       otherButtonTitles:nil] show];
 }
 
+
+
+-(BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+-(BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+//// Preserve the text selection
+//
+//- (void) encodeRestorableStateWithCoder:(NSCoder *)coder {
+//    
+//    [super encodeRestorableStateWithCoder:coder];
+//    
+//    
+//    
+//    NSRange range = [self selectionRange];
+//    
+//    [coder encodeInt:range.length forKey:kMyTextViewSelectionRangeLength];
+//    
+//    [coder encodeInt:range.location forKey:kMyTextViewSelectionRangeLocation];
+//    
+//}
+//
+//
+//
+//// Restore the text selection.
+//
+//- (void) decodeRestorableStateWithCoder:(NSCoder *)coder {
+//    
+//    [super decodeRestorableStateWithCoder:coder];
+//    
+//    if ([coder containsValueForKey:kMyTextViewSelectionRangeLength] &&
+//        
+//        [coder containsValueForKey:kMyTextViewSelectionRangeLocation]) {
+//        
+//        NSRange range;
+//        
+//        range.length = [coder decodeIntForKey:kMyTextViewSelectionRangeLength];
+//        
+//        range.location = [coder decodeIntForKey:kMyTextViewSelectionRangeLocation];
+//        
+//        if (range.length > 0)
+//            
+//            [self setSelectionRange:range];
+//        
+//    }
+//    
+//}
 
 @end

@@ -105,7 +105,7 @@
     
     if (image.size.width != kAppIconSize || image.size.height != kAppIconSize)
 	{
-        CGSize itemSize = CGSizeMake(kAppIconSize, kAppIconSize);
+        CGSize itemSize = CGSizeMake(image.size.width/2, image.size.height/2);//MADE MY CHANGE HERE , it was kAppIconSize , kAppIconSize
 		UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0f);
 		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
 		[image drawInRect:imageRect];

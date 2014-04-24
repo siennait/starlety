@@ -44,6 +44,8 @@
 
 - (void)viewDidLoad
 {
+    self.TopStarletyLogoFile = @"StarletyNewForIphone.png";
+    self.QueryData = @"";
     
     [super viewDidLoad];
     
@@ -286,16 +288,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         iconDownloader = [[IconDownloader alloc] init];
         iconDownloader.appRecord = appRecord;
         [iconDownloader setCompletionHandler:^{
-
+            
             AuditionCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-
+            
             // Display the newly loaded image
             cell.Thumbnail.image = appRecord.image;
-
+            cell.Thumbnail.contentMode = UIViewContentModeScaleAspectFit;
             // Remove the IconDownloader from the in progress list.
             // This will result in it being deallocated.
             [self.videoThumbnailImageDownloadsInProgress removeObjectForKey:indexPath];
-
+            
         }];
         [self.videoThumbnailImageDownloadsInProgress setObject:iconDownloader forKey:indexPath];
         [iconDownloader startDownload];

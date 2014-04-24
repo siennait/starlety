@@ -13,10 +13,27 @@
 
 #define ControllersCount 5
 @interface StartViewController ()
-
+//@property (retain,nonatomic) TopAuditionsViewController* pageContentTopAuditionsViewController ;
+//@property (retain,nonatomic) NewAuditionsViewController* pageContentNewAuditionsViewController;
+//@property (retain,nonatomic) RecordViewController *pageContentRecordViewController;
+//@property (retain,nonatomic) MyAuditionsViewController *pageContentMyAuditionsViewController;
+//@property (retain,nonatomic) SettingsTableViewController *pageContentSettingsViewController;
 @end
 
 @implementation StartViewController
+    //TopAuditionsViewController *pageContentTopAuditionsViewController;
+//@synthesize pageContentTopAuditionsViewController;
+//@synthesize pageContentNewAuditionsViewController;
+//@synthesize pageContentRecordViewController;
+//@synthesize pageContentMyAuditionsViewController;
+//@synthesize pageContentSettingsViewController;
+
+static TopAuditionsViewController *pageContentTopAuditionsViewController ;
+static NewAuditionsViewController *pageContentNewAuditionsViewController;
+static RecordViewController *pageContentRecordViewController;
+static MyAuditionsViewController *pageContentMyAuditionsViewController;
+static SettingsTableViewController *pageContentSettingsViewController;
+
 
 - (void)viewDidLoad
 {
@@ -31,9 +48,14 @@
     self.pageViewController.dataSource = self;
     
     TopAuditionsViewController *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
+    //NewAuditionsViewController *pageContentNewAuditionsViewController = [self viewControllerAtIndex:1];
+    //RecordViewController *pageContentRecordViewController = [self viewControllerAtIndex:2];
+    //MyAuditionsViewController *pageContentMyAuditionsViewController = [self viewControllerAtIndex:3];
+    //SettingsTableViewController *pageContentSettingsViewController = [self viewControllerAtIndex:4];
+    NSArray *viewControllers = @[startingViewController];//,pageContentNewAuditionsViewController,pageContentRecordViewController,pageContentMyAuditionsViewController,pageContentSettingsViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
+    //self.pageViewController.doubleSided = YES;
+    //self.pageViewController.childViewControllers
     // Change the size of page view controller
     self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height+40 );
 
@@ -61,57 +83,77 @@
     }
     if(index==0)
     {
-            TopAuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TopAuditionsViewController"];
-            pageContentViewController.TopStarletyLogoFile = @"StarletyTopForIphone.png";
-            pageContentViewController.QueryData = @"&sortBy=ApplauseCount";
-            pageContentViewController.pageIndex = index;
-            return pageContentViewController;
+            //if(pageContentTopAuditionsViewController==nil)
+            //{
+                TopAuditionsViewController *pageContentTopAuditionsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TopAuditionsViewController"];
+                pageContentTopAuditionsViewController.TopStarletyLogoFile = @"StarletyTopForIphone.png";
+                pageContentTopAuditionsViewController.QueryData = @"&sortBy=ApplauseCount";
+                pageContentTopAuditionsViewController.pageIndex = index;
+                return pageContentTopAuditionsViewController;
+            //}
+            //return pageContentTopAuditionsViewController;
     }
     else
         if(index==1)
         {
-            NewAuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewAuditionsViewController"];
-            [pageContentViewController.TopStarletyLogo setImage:[UIImage imageNamed:@"StarletyNewForIphone.png"]];
+            //if(pageContentNewAuditionsViewController==nil)
+            //{
+                NewAuditionsViewController *pageContentNewAuditionsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewAuditionsViewController"];
+                [pageContentNewAuditionsViewController.TopStarletyLogo setImage:[UIImage imageNamed:@"StarletyNewForIphone.png"]];
             
-            pageContentViewController.TopStarletyLogoFile = @"StarletyNewForIphone.png";
-            pageContentViewController.QueryData = @"";
-            pageContentViewController.pageIndex = index;
-            return pageContentViewController;
+                pageContentNewAuditionsViewController.TopStarletyLogoFile = @"StarletyNewForIphone.png";
+                pageContentNewAuditionsViewController.QueryData = @"";
+                pageContentNewAuditionsViewController.pageIndex = index;
+                return pageContentNewAuditionsViewController;
+            //}
+            //return pageContentNewAuditionsViewController;
         }
         else
-
                 if(index==2)
                 {
-                    RecordViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RecordViewController"];
-                    pageContentViewController.pageIndex = index;
-                    return pageContentViewController;
+                    //if(pageContentRecordViewController==nil)
+                    //{
+                        RecordViewController* pageContentRecordViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RecordViewController"];
+                        pageContentRecordViewController.pageIndex = index;
+                        return pageContentRecordViewController;
+                    //}
+                    return pageContentRecordViewController;
                 }
                 else
                     if(index==3)
                     {
-                        MyAuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyAuditionsViewController"];
-                        [pageContentViewController.TopStarletyLogo setImage:[UIImage imageNamed:@"MyStarletyForIphone.png"]];
+                        //if(pageContentMyAuditionsViewController==nil)
+                        //{
+                            MyAuditionsViewController* pageContentMyAuditionsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MyAuditionsViewController"] ;
+                            [pageContentMyAuditionsViewController.TopStarletyLogo setImage:[UIImage imageNamed:@"MyStarletyForIphone.png"]];
                         
-                        pageContentViewController.TopStarletyLogoFile = @"MyStarletyForIphone.png";
-                        pageContentViewController.QueryData = [NSString stringWithFormat:@"&userId=%@",[LoginInfo sharedInstance].userId];
+                            pageContentMyAuditionsViewController.TopStarletyLogoFile = @"MyStarletyForIphone.png";
+                            pageContentMyAuditionsViewController.QueryData = [NSString stringWithFormat:@"&userId=%@",[LoginInfo sharedInstance].userId];
                         
-                        pageContentViewController.pageIndex = index;
-                        return pageContentViewController;
+                            pageContentMyAuditionsViewController.pageIndex = index;
+                        //}
+                        return pageContentMyAuditionsViewController;
                     }
                     else
-                        if(index==4)
+                        //if(index==4)
                         {
-                            SettingsTableViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsTableViewController"];
-                            pageContentViewController.pageIndex = index;
-                            return pageContentViewController;
+                            //if(pageContentSettingsViewController==nil)
+                            //{
+                                SettingsTableViewController* pageContentSettingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsTableViewController"];
+                                pageContentSettingsViewController.pageIndex = index;
+                            //}
+                            return pageContentSettingsViewController;
                         }
 
    
-    TopAuditionsViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AuditionsViewController"];
-    pageContentViewController.TopStarletyLogoFile = @"StarletyTopForIphone.png";
-    pageContentViewController.QueryData = @"&sortBy=ApplauseCount";
-    pageContentViewController.pageIndex = index;
-    return pageContentViewController;
+    if(pageContentTopAuditionsViewController==nil)
+    {
+        TopAuditionsViewController* pageContentTopAuditionsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AuditionsViewController"];
+        pageContentTopAuditionsViewController.TopStarletyLogoFile = @"StarletyTopForIphone.png";
+        pageContentTopAuditionsViewController.QueryData = @"&sortBy=ApplauseCount";
+        pageContentTopAuditionsViewController.pageIndex = index;
+    }
+    return pageContentTopAuditionsViewController;
 }
 
 #pragma mark - Page View Controller Data Source

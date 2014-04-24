@@ -129,7 +129,10 @@
 {
   
     NSLog(@"POSTING");
-    
+    NSLog(@"UIInterfaceOrientationPortrait-%d\n\
+          UIInterfaceOrientationPortraitUpsideDown-%d\n\
+          UIInterfaceOrientationLandscapeLeft-%d\n\
+          UIInterfaceOrientationLandscapeRight-%d", UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight);
     
     HUD = [[MBProgressHUD showHUDAddedTo:self.view animated:YES] retain];
     HUD.delegate = self;
@@ -236,6 +239,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+    picker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+    picker.videoMaximumDuration = 120;
     
     [self presentViewController:picker animated:YES completion:NULL];
 }
