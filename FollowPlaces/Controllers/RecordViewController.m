@@ -7,7 +7,7 @@
 //
 
 #import "RecordViewController.h"
-#define kAPIHost @"http://starlety.com:8080"
+#define kAPIHost @"http://api.starlety.com"
 //#define kAPIHost @"https://starlety.com:4430"
 
 
@@ -184,7 +184,7 @@
 }
 
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
 {
 	expectedLength = MAX([response expectedContentLength], 1);
 	currentLength = 0;
@@ -193,6 +193,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSLog(@"String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     
 }
 
@@ -239,7 +240,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
-    picker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+    //picker.videoQuality = UIImagePickerControllerQualityTypeHigh;
     picker.videoMaximumDuration = 120;
     
     [self presentViewController:picker animated:YES completion:NULL];

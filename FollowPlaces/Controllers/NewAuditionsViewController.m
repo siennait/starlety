@@ -13,8 +13,8 @@
 #import "IconDownloader.h"
 #import "User.h"
 
-#define kAPIHost @"http://starlety.com:8080"
-#define kWEBHost @"https://starlety.com"
+#define kAPIHost @"http://api.starlety.com"
+#define kWEBHost @"http://starlety.com"
 
 
 @interface NewAuditionsViewController () <UIScrollViewDelegate>
@@ -77,7 +77,7 @@
                 auditionRecord.userName = [video valueForKey:@"UserName"];
                 auditionRecord.userFacebookId = [video valueForKey:@"UserFacebookId"];
                 auditionRecord.videoThumbnail = [[Icon alloc] init];
-                auditionRecord.videoThumbnail.imageURLString = [NSString stringWithFormat:@"https://starlety.com/Thumbnails/%@.png", [video valueForKey:@"ID"] ];
+                auditionRecord.videoThumbnail.imageURLString = [NSString stringWithFormat:@"http://starlety.com/Thumbnails/%@.png", [video valueForKey:@"ID"] ];
                 auditionRecord.userId = [video valueForKey:@"UserId"];
                 auditionRecord.applauseCount = [video valueForKey:@"ApplauseCount"];
                 auditionRecord.viewCount = [video valueForKey:@"ViewCount"];

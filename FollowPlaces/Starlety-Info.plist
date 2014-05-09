@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>WebDomain</key>
-	<string>https://starlety.com</string>
+	<string>http://starlety.com</string>
 	<key>ApiDomain</key>
-	<string>http://starlety.com:8080</string>
+	<string>http://api.starlety.com</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

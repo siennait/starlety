@@ -30,6 +30,7 @@
 @property  (nonatomic, strong) NSMutableArray *topAuditionData;
 @property  (nonatomic, strong) NSMutableArray *newAuditionData;
 @property  (nonatomic, strong) NSMutableArray *myAuditionData;
+@property  (nonatomic, strong) NSMutableArray *downloadedAuditionData;
 @property  (nonatomic, strong) NSMutableArray *users;
 @property (strong,nonatomic) NSMutableData *savedVideoData;
 //@property TopAuditionsViewController *pageContentTopAuditionsViewController;

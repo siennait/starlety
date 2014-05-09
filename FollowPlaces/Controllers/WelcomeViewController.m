@@ -95,11 +95,11 @@
 }
 
 - (IBAction)TermsServiceClick:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.starlety.com/Terms/"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.starlety.com/Terms/"]];
 }
 
 - (IBAction)DataPolicyClick:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.starlety.com/Privacy/"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.starlety.com/Privacy/"]];
 }
 
 - (void)dealloc {

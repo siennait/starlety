@@ -6,18 +6,19 @@
 //  Copyright (c) 2013 Luchian Chivoiu. All rights reserved.
 //
 
-#import "MyAuditionsViewController.h"
+#import "DownloadedAuditionsViewController.h"
 #import <unistd.h>
 #import "AuditionCell.h"
 #import "Audition.h"
 #import "IconDownloader.h"
 #import "User.h"
+#import "LoginInfo.h"
 
 #define kAPIHost @"http://api.starlety.com"
 #define kWEBHost @"http://starlety.com"
 
 
-@interface MyAuditionsViewController () <UIScrollViewDelegate>
+@interface DownloadedAuditionsViewController () <UIScrollViewDelegate>
 // the set of IconDownloader objects for each app
 @property (nonatomic, strong) NSMutableDictionary *videoThumbnailImageDownloadsInProgress;
 @property (nonatomic, strong) NSMutableDictionary *userProfileImageDownloadsInProgress;
@@ -25,7 +26,7 @@
 
 @end
 
-@implementation MyAuditionsViewController
+@implementation DownloadedAuditionsViewController
 
 @synthesize tableView;
 @synthesize lastOffset;
@@ -45,9 +46,8 @@
 - (void)viewDidLoad
 {
     
-    self.TopStarletyLogoFile = @"MyStarletyForIphone.png";
-    self.QueryData = [NSString stringWithFormat:@"&userId=%@",[LoginInfo sharedInstance].userId];
-    
+    self.TopStarletyLogoFile = @"StarletyTopForIphone.png";
+    self.QueryData = @"&downloaded=1";
     
     [super viewDidLoad];
     
@@ -61,8 +61,8 @@
 -(void)loadData: (BOOL)clearData
 {
     if(clearData)
-        [LoginInfo sharedInstance].myAuditionData = [[NSMutableArray alloc] init];
-    [[API sharedInstance] getCommand:nil  APIPath:[NSString stringWithFormat:@"/Api/GetVideos/?fromIndex=%lu%@",(unsigned long)[[LoginInfo sharedInstance].myAuditionData count],
+        [LoginInfo sharedInstance].downloadedAuditionData = [[NSMutableArray alloc] init];
+    [[API sharedInstance] getCommand:nil  APIPath:[NSString stringWithFormat:@"/Api/GetVideos/?fromIndex=%lu%@",(unsigned long)[[LoginInfo sharedInstance].downloadedAuditionData count],
         self.QueryData]  onCompletion:^(NSDictionary *json)  {
         if ([json valueForKey:@"error" ]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[json valueForKey:@"error" ] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -90,7 +90,7 @@
                 userRecord.userFacebookId =[video valueForKey:@"UserFacebookId"];
                 [[LoginInfo sharedInstance].users addObject:userRecord];
                 
-                [[LoginInfo sharedInstance].myAuditionData addObject:auditionRecord];
+                [[LoginInfo sharedInstance].downloadedAuditionData addObject:auditionRecord];
             }
             [tableView reloadData];
         }
@@ -103,7 +103,7 @@
   willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([[LoginInfo sharedInstance].myAuditionData count]-1==indexPath.row)
+    if([[LoginInfo sharedInstance].downloadedAuditionData count]-1==indexPath.row)
     {
         [self loadData:false];
         NSLog(@"the real end of the table");
@@ -155,7 +155,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-   return [[LoginInfo sharedInstance].myAuditionData count];
+   return [[LoginInfo sharedInstance].downloadedAuditionData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -169,7 +169,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Set up the cell...
-    Audition *appRecord = [[LoginInfo sharedInstance].myAuditionData objectAtIndex:indexPath.row ] ;
+    Audition *appRecord = [[LoginInfo sharedInstance].downloadedAuditionData objectAtIndex:indexPath.row ] ;
     cell.User_Name.text = appRecord.userName;
     cell.DateTime.text = appRecord.dateCreated;
     cell.Location.text = appRecord.location;
@@ -223,7 +223,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 -(void) play:(id) sender{
     UIButton *play = (UIButton *)sender;
     NSLog(@"Play %i" , play.tag);
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mp4", kWEBHost, [[[LoginInfo sharedInstance].myAuditionData objectAtIndex:play.tag] valueForKey:@"ID"]]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mp4", kWEBHost, [[[LoginInfo sharedInstance].downloadedAuditionData objectAtIndex:play.tag] valueForKey:@"ID"]]];
     MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
 
 
@@ -239,7 +239,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [mp.moviePlayer play];
     
     
-    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[[[LoginInfo sharedInstance].myAuditionData objectAtIndex:play.tag] valueForKey:@"ID"], @"videoId",
+    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[[[LoginInfo sharedInstance].downloadedAuditionData objectAtIndex:play.tag] valueForKey:@"ID"], @"videoId",
                                   [LoginInfo sharedInstance].userId, @"userId", nil];
     
     [[API sharedInstance] getCommand:params  APIPath: @"/Api/ViewVideo"  onCompletion:^(NSDictionary *json)  {
@@ -290,22 +290,22 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         iconDownloader = [[IconDownloader alloc] init];
         iconDownloader.appRecord = appRecord;
         [iconDownloader setCompletionHandler:^{
-            
+
             AuditionCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-            
+
             // Display the newly loaded image
             cell.Thumbnail.image = appRecord.image;
             cell.Thumbnail.contentMode = UIViewContentModeScaleAspectFit;
             // Remove the IconDownloader from the in progress list.
             // This will result in it being deallocated.
             [self.videoThumbnailImageDownloadsInProgress removeObjectForKey:indexPath];
-            
+
+
         }];
         [self.videoThumbnailImageDownloadsInProgress setObject:iconDownloader forKey:indexPath];
         [iconDownloader startDownload];
     }
 }
-
 
 // -------------------------------------------------------------------------------
 //	loadImagesForOnscreenRows
@@ -314,12 +314,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 // -------------------------------------------------------------------------------
 - (void)loadImagesForOnscreenRowsVideoThumbnail
 {
-    if ([[LoginInfo sharedInstance].myAuditionData count] > 0)
+    if ([[LoginInfo sharedInstance].downloadedAuditionData count] > 0)
     {
         NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
         for (NSIndexPath *indexPath in visiblePaths)
         {
-            Audition *appRecord = [[LoginInfo sharedInstance].myAuditionData objectAtIndex:indexPath.row];
+            Audition *appRecord = [[LoginInfo sharedInstance].downloadedAuditionData objectAtIndex:indexPath.row];
 
             if (!appRecord.videoThumbnail.image)
             // Avoid the app icon download if the app already has an icon
@@ -534,5 +534,58 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                       otherButtonTitles:nil] show];
 }
 
+
+
+-(BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+-(BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+//// Preserve the text selection
+//
+//- (void) encodeRestorableStateWithCoder:(NSCoder *)coder {
+//    
+//    [super encodeRestorableStateWithCoder:coder];
+//    
+//    
+//    
+//    NSRange range = [self selectionRange];
+//    
+//    [coder encodeInt:range.length forKey:kMyTextViewSelectionRangeLength];
+//    
+//    [coder encodeInt:range.location forKey:kMyTextViewSelectionRangeLocation];
+//    
+//}
+//
+//
+//
+//// Restore the text selection.
+//
+//- (void) decodeRestorableStateWithCoder:(NSCoder *)coder {
+//    
+//    [super decodeRestorableStateWithCoder:coder];
+//    
+//    if ([coder containsValueForKey:kMyTextViewSelectionRangeLength] &&
+//        
+//        [coder containsValueForKey:kMyTextViewSelectionRangeLocation]) {
+//        
+//        NSRange range;
+//        
+//        range.length = [coder decodeIntForKey:kMyTextViewSelectionRangeLength];
+//        
+//        range.location = [coder decodeIntForKey:kMyTextViewSelectionRangeLocation];
+//        
+//        if (range.length > 0)
+//            
+//            [self setSelectionRange:range];
+//        
+//    }
+//    
+//}
 
 @end

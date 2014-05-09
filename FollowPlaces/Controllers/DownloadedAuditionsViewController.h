@@ -19,13 +19,13 @@
 #import "API.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface TopAuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate,UIScrollViewDelegate,AVAudioPlayerDelegate> {
+@interface DownloadedAuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate,UIScrollViewDelegate,AVAudioPlayerDelegate> {
     	MBProgressHUD *HUD;
     long long expectedLength;
 	long long currentLength;
     
     
-    
+        
         AVAudioPlayer *audio;
     
     
@@ -46,7 +46,6 @@
 
 
 @property (retain, nonatomic) IBOutlet UIImageView *TopStarletyLogo;
-- (IBAction)download:(id)sender;
 
 @end
 
