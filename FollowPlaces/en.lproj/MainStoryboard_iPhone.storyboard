@@ -306,12 +306,20 @@ You can visit www.starlety.com to  find out more about the contest </string>
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kdY-yu-Skm">
+                                                            <rect key="frame" x="190" y="289" width="30" height="27"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="download.png">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="ApplauseButton" destination="olK-KD-LJN" id="cbJ-6b-FAY"/>
                                                     <outlet property="ApplauseCountLabel" destination="fBg-MS-WYp" id="c1F-3t-X5P"/>
                                                     <outlet property="DateTime" destination="yXi-qY-7zB" id="AOb-GP-BaB"/>
+                                                    <outlet property="DownloadButton" destination="kdY-yu-Skm" id="kNM-pl-RaQ"/>
                                                     <outlet property="Location" destination="OsI-Rh-p1K" id="qcg-GH-8xf"/>
                                                     <outlet property="PlayButton" destination="Hdc-ub-ZO3" id="MWu-CS-47L"/>
                                                     <outlet property="Thumbnail" destination="tZb-PP-hzg" id="gti-p0-VLa"/>
@@ -363,7 +371,6 @@ You can visit www.starlety.com to  find out more about the contest </string>
                         <segue destination="YDL-lr-yrB" kind="relationship" relationship="viewControllers" id="Ype-To-vxV"/>
                         <segue destination="9M2-ZF-B2r" kind="relationship" relationship="viewControllers" id="dXM-aP-PFe"/>
                         <segue destination="sWo-SE-18N" kind="relationship" relationship="viewControllers" id="a1J-dj-jVV"/>
-                        <segue destination="hdE-iZ-MAs" kind="relationship" relationship="viewControllers" id="xsp-IF-mVt"/>
                         <segue destination="fJJ-LB-NOO" kind="relationship" relationship="viewControllers" id="Us0-xn-FHe"/>
                         <segue destination="qCe-MY-yab" kind="relationship" relationship="viewControllers" id="P2z-Tn-eKV"/>
                     </connections>
@@ -439,7 +446,7 @@ You can visit www.starlety.com to  find out more about the contest </string>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qCf-Zr-Y7E">
-                                                            <rect key="frame" x="187" y="289" width="30" height="26"/>
+                                                            <rect key="frame" x="187" y="288" width="30" height="27"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="download.png">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

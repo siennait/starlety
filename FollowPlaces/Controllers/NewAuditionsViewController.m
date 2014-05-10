@@ -53,6 +53,7 @@
     [self loadData:true];
     [self addRefreshControl];
     [TopStarletyLogo setImage:[UIImage imageNamed: self.TopStarletyLogoFile]];
+    self.library = [[ALAssetsLibrary alloc] init];
 }
 
 
@@ -210,6 +211,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [cell.PlayButton addTarget:self action:@selector(play:) forControlEvents:UIControlEventTouchUpInside];
     [cell.ApplauseButton setTag:appRecord.ID];
     [cell.ApplauseButton addTarget:self action:@selector(applause:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.DownloadButton setTag:indexPath.row];
+    [cell.DownloadButton addTarget:self action:@selector(download:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
     
@@ -452,29 +455,51 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *videoPath = [documentsDirectory stringByAppendingPathComponent:[@"tempMovie" stringByAppendingString:@".mov"]];
     
-     [[LoginInfo sharedInstance].savedVideoData  writeToFile:videoPath options:NSDataWritingAtomic error:&error];
+    [[LoginInfo sharedInstance].savedVideoData  writeToFile:videoPath options:NSDataWritingAtomic error:&error];
     NSLog(@"Write returned error: %@", [error localizedDescription]);
     
     
     
     
     NSURL *url = [NSURL fileURLWithPath:videoPath];
-    self.movieController = [[MPMoviePlayerController alloc] init];
-    [self.movieController setContentURL:url];
+    //UISaveVideoAtPathToSavedPhotosAlbum( videoPath, nil, NULL, NULL);
+    [self.library saveVideo:url toAlbum:@"Starlety" withCompletionBlock:^(NSError *error) {
+        if (error!=nil) {
+            NSLog(@"Big error: %@", [error description]);
+        }
+    }];
     
-    [self.movieController.view setFrame:CGRectMake( 0, 40, 320, 456)];
     
-    [self.view addSubview:self.movieController.view];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(moviePlayBackDidFinish:)
-                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-                                               object:self.movieController];
-    [self.movieController prepareToPlay];
-    [self.movieController play];
+    //    [self.library addAssetURL:url toAlbum:@"Touch Code Magazine" withCompletionBlock:^(NSError *error) {
+    //                    if (error!=nil) {
+    //                        NSLog(@"Big error: %@", [error description]);
+    //                    }
+    //                }];
+    //    [self.library saveVideo:url toAlbum:@"Starlety" withCompletionBlock:^(NSError *error) {
+    //        if (error!=nil) {
+    //            NSLog(@"Big error: %@", [error description]);
+    //        }
+    //    }];
+    //    self.movieController = [[MPMoviePlayerController alloc] init];
+    //    [self.movieController setContentURL:url];
+    //
+    //    [self.movieController.view setFrame:CGRectMake( 0, 40, 320, 456)];
+    //
+    //    [self.view addSubview:self.movieController.view];
+    //
+    //    [[NSNotificationCenter defaultCenter] addObserver:self
+    //                                             selector:@selector(moviePlayBackDidFinish:)
+    //                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+    //                                               object:self.movieController];
+    //    [self.movieController prepareToPlay];
+    //    [self.movieController play];
     
     [[LoginInfo sharedInstance].savedVideoData release];
-    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Video Successfully Downloaded"
+                                                        message:[NSString stringWithFormat: @"To view it look in to 'Photos' , album 'Starlety'"]
+                                                       delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
    
 }
 
@@ -529,6 +554,38 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                                delegate:self
                       cancelButtonTitle:@"OK!"
                       otherButtonTitles:nil] show];
+}
+
+-(BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+-(BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (IBAction)download:(id)sender {
+    UIButton *downloadButton = (UIButton *)sender;
+    
+    NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/GetMediaFileVideo/?userId=%@&videoId=%@", kAPIHost, [LoginInfo sharedInstance].userId,[[[LoginInfo sharedInstance].newAuditionData objectAtIndex:downloadButton.tag] valueForKey:@"ID"]]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+    [uploadRequest setHTTPMethod:@"GET"];
+    [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
+    [uploadRequest setHTTPBody:nil];
+    
+    // Execute the reqest:
+    NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
+    if (conn)
+    {
+        // Connection succeeded (even if a 404 or other non-200 range was returned).
+        NSLog(@"sucess");
+    }
+    else
+    {
+        // Connection failed (cannot reach server).
+        NSLog(@"fail");
+    }
 }
 
 

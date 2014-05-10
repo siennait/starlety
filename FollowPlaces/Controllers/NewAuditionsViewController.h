@@ -18,6 +18,8 @@
 #import "LoginInfo.h"
 #import "API.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVFoundation.h>
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
 
 @interface NewAuditionsViewController : UIViewController<UINavigationControllerDelegate,MKAnnotation,UITableViewDelegate, UITableViewDataSource,MBProgressHUDDelegate,UIScrollViewDelegate,AVAudioPlayerDelegate> {
     	MBProgressHUD *HUD;
@@ -46,6 +48,8 @@
 
 
 @property (retain, nonatomic) IBOutlet UIImageView *TopStarletyLogo;
+
+@property (strong, atomic) ALAssetsLibrary* library;
 
 @end
 

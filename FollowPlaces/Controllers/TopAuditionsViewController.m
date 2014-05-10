@@ -500,7 +500,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 //    [self.movieController play];
     
     [[LoginInfo sharedInstance].savedVideoData release];
-    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Video Successfully Downloaded"
+                                                        message:[NSString stringWithFormat: @"To view it look in to 'Photos' , album 'Starlety'"]
+                                                       delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
    
 }
 //
