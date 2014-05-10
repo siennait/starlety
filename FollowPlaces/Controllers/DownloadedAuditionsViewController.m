@@ -46,7 +46,6 @@
 - (void)viewDidLoad
 {
     
-    self.TopStarletyLogoFile = @"StarletyTopForIphone.png";
     self.QueryData = @"&downloaded=1";
     
     [super viewDidLoad];

@@ -22,4 +22,6 @@
 @property (retain, nonatomic) IBOutlet UILabel *ApplauseCountLabel;
 @property (retain, nonatomic) IBOutlet UILabel *ViewCountLabel;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *DownloadButton;
+
 @end

@@ -444,9 +444,6 @@ You can visit www.starlety.com to  find out more about the contest </string>
                                                             <state key="normal" image="download.png">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
-                                                            <connections>
-                                                                <action selector="download:" destination="YDL-lr-yrB" eventType="touchUpInside" id="6j6-aM-9Ne"/>
-                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B9O-ka-GZN">
                                                             <rect key="frame" x="266" y="260" width="60" height="21"/>
@@ -479,6 +476,7 @@ You can visit www.starlety.com to  find out more about the contest </string>
                                                     <outlet property="ApplauseButton" destination="EH4-zF-Kf0" id="T9d-w1-38O"/>
                                                     <outlet property="ApplauseCountLabel" destination="B9O-ka-GZN" id="h6v-bD-n6a"/>
                                                     <outlet property="DateTime" destination="30w-Gf-KtG" id="moH-0s-khd"/>
+                                                    <outlet property="DownloadButton" destination="qCf-Zr-Y7E" id="5y9-aM-ANY"/>
                                                     <outlet property="Location" destination="LOk-iQ-MBM" id="3rJ-Fs-2KP"/>
                                                     <outlet property="PlayButton" destination="BD2-aY-93n" id="x7c-xr-oZ0"/>
                                                     <outlet property="Thumbnail" destination="mxz-ru-b9v" id="q0a-0Y-DWu"/>
@@ -649,139 +647,6 @@ You can visit www.starlety.com to  find out more about the contest </string>
             <point key="canvasLocation" x="-1075" y="-926"/>
         </scene>
         <!--Downloaded Auditions View Controller - DOWNLOADED-->
-        <scene sceneID="Bxg-Z5-6eG">
-            <objects>
-                <viewController storyboardIdentifier="DownloadedAuditionsViewController" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0aI-E4-THT" customClass="DownloadedAuditionsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tHW-dO-q0z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Qd8-eq-lTv">
-                                <rect key="frame" x="-6" y="0.0" width="433" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarletyForIphone.png" id="cxT-SS-VFs">
-                                        <rect key="frame" x="81" y="266" width="167" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="319" sectionHeaderHeight="22" sectionFooterHeight="22" id="FJ0-Zn-aEU">
-                                        <rect key="frame" x="4" y="54" width="321" height="514"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleTableItem" rowHeight="322" id="0Yh-U3-icS" customClass="AuditionCell">
-                                                <rect key="frame" x="0.0" y="22" width="321" height="322"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Yh-U3-icS" id="w2j-VL-gD8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="321"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aD7-M1-EVF">
-                                                            <rect key="frame" x="66" y="255" width="169" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="yC7-OF-q9K">
-                                                            <rect key="frame" x="11" y="258" width="47" height="51"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1352416672_video.png" id="GzT-xg-vG4">
-                                                            <rect key="frame" x="0.0" y="6" width="321" height="243"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pHm-Ek-05h">
-                                                            <rect key="frame" x="66" y="291" width="169" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jvT-F6-rrz">
-                                                            <rect key="frame" x="66" y="273" width="169" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye.png" id="ydV-Mr-qa7">
-                                                            <rect key="frame" x="225" y="288" width="34" height="29"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0I0-g0-HOG">
-                                                            <rect key="frame" x="224" y="173" width="76" height="57"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" image="videoPlay.png">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                        </button>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="72h-Wf-i7U">
-                                                            <rect key="frame" x="266" y="260" width="60" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="126" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9oa-5n-BEb">
-                                                            <rect key="frame" x="266" y="291" width="54" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator.png" id="hcK-wG-fDs">
-                                                            <rect key="frame" x="-24" y="315" width="374" height="7"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e3d-Or-qX2">
-                                                            <rect key="frame" x="225" y="255" width="35" height="33"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <state key="normal" image="applause.png">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                        </button>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="ApplauseButton" destination="e3d-Or-qX2" id="p0u-9d-cG4"/>
-                                                    <outlet property="ApplauseCountLabel" destination="72h-Wf-i7U" id="AyU-zZ-Uzg"/>
-                                                    <outlet property="DateTime" destination="pHm-Ek-05h" id="ErH-7R-qPN"/>
-                                                    <outlet property="Location" destination="jvT-F6-rrz" id="o8k-VC-lCs"/>
-                                                    <outlet property="PlayButton" destination="0I0-g0-HOG" id="i5b-4y-duM"/>
-                                                    <outlet property="Thumbnail" destination="GzT-xg-vG4" id="eb6-fH-CVb"/>
-                                                    <outlet property="UserProfileImage" destination="yC7-OF-q9K" id="CA3-Rv-R47"/>
-                                                    <outlet property="User_Name" destination="aD7-M1-EVF" id="UZT-Bu-dYL"/>
-                                                    <outlet property="ViewButton" destination="ydV-Mr-qa7" id="e1h-ax-FZg"/>
-                                                    <outlet property="ViewCountLabel" destination="9oa-5n-BEb" id="pfq-dV-2EA"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <sections/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="0aI-E4-THT" id="ynJ-E7-5mU"/>
-                                            <outlet property="delegate" destination="0aI-E4-THT" id="srE-GN-Baq"/>
-                                        </connections>
-                                    </tableView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Akz-fT-uZ3">
-                                        <rect key="frame" x="4" y="18" width="327" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="DOWNLOADED" image="star.png" id="dhn-LQ-HEI"/>
-                    <navigationItem key="navigationItem" id="K9P-L0-LGg"/>
-                    <connections>
-                        <outlet property="TopStarletyLogo" destination="Akz-fT-uZ3" id="VaU-E9-Te2"/>
-                        <outlet property="tableView" destination="FJ0-Zn-aEU" id="NJm-RU-QrF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EqK-Fz-qot" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1433" y="-193"/>
-        </scene>
-        <!--Downloaded Auditions View Controller - DOWNLOADED-->
         <scene sceneID="DxR-fi-6wJ">
             <objects>
                 <viewController storyboardIdentifier="DownloadedAuditionsViewController" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hdE-iZ-MAs" customClass="DownloadedAuditionsViewController" sceneMemberID="viewController">
@@ -894,10 +759,14 @@ You can visit www.starlety.com to  find out more about the contest </string>
                                             <outlet property="delegate" destination="hdE-iZ-MAs" id="kNE-XJ-sAz"/>
                                         </connections>
                                     </tableView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1v7-nN-oZW">
-                                        <rect key="frame" x="5" y="19" width="327" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                    <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" id="ox4-YX-urZ">
+                                        <rect key="frame" x="6" y="18" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" red="0.36843341149999997" green="0.82963003179999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <items>
+                                            <navigationItem title="DOWNLOADED" id="ewi-Jl-cUR"/>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -906,7 +775,6 @@ You can visit www.starlety.com to  find out more about the contest </string>
                     <tabBarItem key="tabBarItem" title="DOWNLOADED" image="star.png" id="3gn-Xr-Zed"/>
                     <navigationItem key="navigationItem" id="aEi-7k-scF"/>
                     <connections>
-                        <outlet property="TopStarletyLogo" destination="1v7-nN-oZW" id="wJC-ya-cQB"/>
                         <outlet property="tableView" destination="nmU-ZP-5GQ" id="hmA-am-rZn"/>
                     </connections>
                 </viewController>

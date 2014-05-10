@@ -46,7 +46,6 @@
 
 
 @property (retain, nonatomic) IBOutlet UIImageView *TopStarletyLogo;
-- (IBAction)download:(id)sender;
 
 @end
 
