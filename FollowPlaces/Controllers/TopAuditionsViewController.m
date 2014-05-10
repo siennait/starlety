@@ -14,6 +14,7 @@
 #import "User.h"
 #import "LoginInfo.h"
 
+
 #define kAPIHost @"http://api.starlety.com"
 #define kWEBHost @"http://starlety.com"
 
@@ -55,6 +56,8 @@
     [self loadData:true];
     [self addRefreshControl];
     [TopStarletyLogo setImage:[UIImage imageNamed: self.TopStarletyLogoFile]];
+    self.library = [[ALAssetsLibrary alloc] init];
+
 }
 
 
@@ -464,24 +467,43 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     
     NSURL *url = [NSURL fileURLWithPath:videoPath];
-    self.movieController = [[MPMoviePlayerController alloc] init];
-    [self.movieController setContentURL:url];
+    //UISaveVideoAtPathToSavedPhotosAlbum( videoPath, nil, NULL, NULL);
+    [self.library saveVideo:url toAlbum:@"Starlety" withCompletionBlock:^(NSError *error) {
+        if (error!=nil) {
+            NSLog(@"Big error: %@", [error description]);
+        }
+    }];
     
-    [self.movieController.view setFrame:CGRectMake( 0, 40, 320, 456)];
-    
-    [self.view addSubview:self.movieController.view];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(moviePlayBackDidFinish:)
-                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-                                               object:self.movieController];
-    [self.movieController prepareToPlay];
-    [self.movieController play];
+
+//    [self.library addAssetURL:url toAlbum:@"Touch Code Magazine" withCompletionBlock:^(NSError *error) {
+//                    if (error!=nil) {
+//                        NSLog(@"Big error: %@", [error description]);
+//                    }
+//                }];
+//    [self.library saveVideo:url toAlbum:@"Starlety" withCompletionBlock:^(NSError *error) {
+//        if (error!=nil) {
+//            NSLog(@"Big error: %@", [error description]);
+//        }
+//    }];
+//    self.movieController = [[MPMoviePlayerController alloc] init];
+//    [self.movieController setContentURL:url];
+//    
+//    [self.movieController.view setFrame:CGRectMake( 0, 40, 320, 456)];
+//    
+//    [self.view addSubview:self.movieController.view];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(moviePlayBackDidFinish:)
+//                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+//                                               object:self.movieController];
+//    [self.movieController prepareToPlay];
+//    [self.movieController play];
     
     [[LoginInfo sharedInstance].savedVideoData release];
     
    
 }
+//
 
 - (void)video:(NSString*)videoPath didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
 {
@@ -548,48 +570,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     return YES;
 }
 
-//// Preserve the text selection
-//
-//- (void) encodeRestorableStateWithCoder:(NSCoder *)coder {
-//    
-//    [super encodeRestorableStateWithCoder:coder];
-//    
-//    
-//    
-//    NSRange range = [self selectionRange];
-//    
-//    [coder encodeInt:range.length forKey:kMyTextViewSelectionRangeLength];
-//    
-//    [coder encodeInt:range.location forKey:kMyTextViewSelectionRangeLocation];
-//    
-//}
-//
-//
-//
-//// Restore the text selection.
-//
-//- (void) decodeRestorableStateWithCoder:(NSCoder *)coder {
-//    
-//    [super decodeRestorableStateWithCoder:coder];
-//    
-//    if ([coder containsValueForKey:kMyTextViewSelectionRangeLength] &&
-//        
-//        [coder containsValueForKey:kMyTextViewSelectionRangeLocation]) {
-//        
-//        NSRange range;
-//        
-//        range.length = [coder decodeIntForKey:kMyTextViewSelectionRangeLength];
-//        
-//        range.location = [coder decodeIntForKey:kMyTextViewSelectionRangeLocation];
-//        
-//        if (range.length > 0)
-//            
-//            [self setSelectionRange:range];
-//        
-//    }
-//    
-//}
-
 - (IBAction)download:(id)sender {
     UIButton *downloadButton = (UIButton *)sender;
     
@@ -612,95 +592,4 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-
-//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-//{
-//    HUD = [[MBProgressHUD showHUDAddedTo:self.view animated:YES] retain];
-//    HUD.delegate = self;
-//    
-//    expectedLength = [response expectedContentLength];
-//    currentLength = 0;
-//    HUD.mode = MBProgressHUDModeDeterminate;
-//    [LoginInfo sharedInstance].savedVideoData = [[NSMutableData alloc] retain];
-//    [[LoginInfo sharedInstance].savedVideoData setLength:0];
-//}
-//
-//- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-//    HUD.mode = MBProgressHUDModeDeterminate;
-//    currentLength += [data length];
-//    HUD.progress = currentLength / (float)expectedLength;
-//    [[LoginInfo sharedInstance].savedVideoData appendData:data];
-//    
-//    
-//}
-
-
-//- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-//    HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"/Images/37x-Checkmark.png"]] autorelease];
-//    HUD.mode = MBProgressHUDModeCustomView;
-//    [HUD hide:YES afterDelay:2];
-//    NSError *error = nil;
-//    
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    NSString *videoPath = [documentsDirectory stringByAppendingPathComponent:[@"tempMovie" stringByAppendingString:@".mov"]];
-//    
-//    [[LoginInfo sharedInstance].savedVideoData writeToFile:videoPath options:NSDataWritingAtomic error:&error];
-//    NSLog(@"Write returned error: %@", [error localizedDescription]);
-//    
-//    
-//    
-//    
-//    NSURL *url = [NSURL fileURLWithPath:videoPath];
-//    self.movieController = [[MPMoviePlayerController alloc] init];
-//    [self.movieController setContentURL:url];
-//    
-//    [self.movieController.view setFrame:CGRectMake( 0, 40, 320, 456)];
-//    
-//    [self.view addSubview:self.movieController.view];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(moviePlayBackDidFinish:)
-//                                                 name:MPMoviePlayerPlaybackDidFinishNotification
-//                                               object:self.movieController];
-//    [self.movieController prepareToPlay];
-//    [self.movieController play];
-//    
-//    [[LoginInfo sharedInstance].savedVideoData release];
-//    
-//    
-//}
-//
-//- (void)video:(NSString*)videoPath didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
-//{
-//    if (error)
-//    {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Photo/Video Saving Failed" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil, nil];
-//        [alert show];
-//    }
-//    else
-//    {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Photo/Video Saved" message:@"Saved To Photo Album" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-//        [alert show];
-//    }
-//}
-//- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-//    [HUD hide:YES];
-//    
-//    
-//    [[LoginInfo sharedInstance].savedVideoData release];
-//    
-//}
-//
-//
-//- (void)moviePlayBackDidFinish:(NSNotification *)notification {
-//    
-//    [[NSNotificationCenter defaultCenter]removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
-//    
-//    [self.movieController stop];
-//    [self.movieController.view removeFromSuperview];
-//    self.movieController = nil;
-//    
-//}
 @end

@@ -197,6 +197,8 @@
 		2CF719A117E64FEF00DDF05C /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF719A017E64FEF00DDF05C /* map-pin.png */; };
 		2CF7D4A21915C65D00F59883 /* DownloadedAuditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7D4A11915C65D00F59883 /* DownloadedAuditionsViewController.m */; };
 		2CF7D4E31915CA1900F59883 /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF7D4E21915CA1900F59883 /* download.png */; };
+		2CF7D536191E339600F59883 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF7D535191E339500F59883 /* AssetsLibrary.framework */; };
+		2CF7D539191E38B600F59883 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7D538191E38B600F59883 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		2CFCC1921905B3FF006E968F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFCC1911905B3FF006E968F /* star.png */; };
 		2CFCC1E51905B664006E968F /* film.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFCC1E41905B664006E968F /* film.png */; };
 		2CFCC1EB1905CC48006E968F /* quitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFCC1EA1905CC48006E968F /* quitar.png */; };
@@ -4633,6 +4635,9 @@
 		2CF7D4A01915C65D00F59883 /* DownloadedAuditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadedAuditionsViewController.h; sourceTree = "<group>"; };
 		2CF7D4A11915C65D00F59883 /* DownloadedAuditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadedAuditionsViewController.m; sourceTree = "<group>"; };
 		2CF7D4E21915CA1900F59883 /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
+		2CF7D535191E339500F59883 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		2CF7D537191E38B600F59883 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
+		2CF7D538191E38B600F59883 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		2CFCC1911905B3FF006E968F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		2CFCC1E41905B664006E968F /* film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = film.png; sourceTree = "<group>"; };
 		2CFCC1EA1905CC48006E968F /* quitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quitar.png; sourceTree = "<group>"; };
@@ -4645,6 +4650,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF7D536191E339600F59883 /* AssetsLibrary.framework in Frameworks */,
 				2CF69A9518CA2C200020BA4A /* AVFoundation.framework in Frameworks */,
 				2CB2C90018BC31EA0096B84D /* libCoreParse.a in Frameworks */,
 				2CB2C5A118BC15C00096B84D /* CoreImage.framework in Frameworks */,
@@ -13130,6 +13136,7 @@
 		2CD784CE16457AB200059330 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CF7D535191E339500F59883 /* AssetsLibrary.framework */,
 				2CF69A9418CA2C200020BA4A /* AVFoundation.framework */,
 				2CB2B3FD18BC151A0096B84D /* xcrm */,
 				2CB2B31218BC055F0096B84D /* QuartzCore.framework */,
@@ -13263,6 +13270,8 @@
 		2CF69A9718CAB54B0020BA4A /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				2CF7D537191E38B600F59883 /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				2CF7D538191E38B600F59883 /* ALAssetsLibrary+CustomPhotoAlbum.m */,
 				2CF69A9818CAB5830020BA4A /* CustomSlideSegue.h */,
 				2CF69A9918CAB5830020BA4A /* CustomSlideSegue.m */,
 			);
@@ -14343,6 +14352,7 @@
 				2C74EB7F165BD332006D6B21 /* AFImageRequestOperation.m in Sources */,
 				2C74EB80165BD332006D6B21 /* AFJSONRequestOperation.m in Sources */,
 				2C5DA7CC18E1DC2400D9C1BD /* NewAuditionsViewController.m in Sources */,
+				2CF7D539191E38B600F59883 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				2CB2C8F718BC2A000096B84D /* UITableViewCell+NUI.m in Sources */,
 				2CB2C8C218BC2A000096B84D /* NUIDeclaration.m in Sources */,
 				2CB2C8C818BC2A000096B84D /* NUISelectorSet.m in Sources */,
