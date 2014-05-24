@@ -5,7 +5,7 @@
 	<key>WebDomain</key>
 	<string>http://starlety.com</string>
 	<key>ApiDomain</key>
-	<string>http://api.starlety.com</string>
+	<string>https://api.starlety.com</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

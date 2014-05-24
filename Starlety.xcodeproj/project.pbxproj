@@ -15369,7 +15369,7 @@
 		2CD7850816457AB300059330 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SIENNA CRM SOFTWARE LTD (SBAPJ6UNQU)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/luchianchivoiu/Documents/FacebookSDK,
@@ -15385,7 +15385,7 @@
 				);
 				PRODUCT_NAME = Starlety;
 				PROVISIONING_PROFILE = "E4835004-06F7-4655-93C4-1CDAC1EE43C7";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -15393,7 +15393,7 @@
 		2CD7850916457AB300059330 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SIENNA CRM SOFTWARE LTD (SBAPJ6UNQU)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/luchianchivoiu/Documents/FacebookSDK,
@@ -15410,7 +15410,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Starlety;
 				PROVISIONING_PROFILE = "E4835004-06F7-4655-93C4-1CDAC1EE43C7";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

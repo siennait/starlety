@@ -23,5 +23,6 @@
 @property (retain, nonatomic) IBOutlet UILabel *ViewCountLabel;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *DownloadButton;
+@property (retain, nonatomic) IBOutlet UILabel *PlaceNumber;
 
 @end

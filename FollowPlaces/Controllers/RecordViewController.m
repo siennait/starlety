@@ -7,7 +7,7 @@
 //
 
 #import "RecordViewController.h"
-#define kAPIHost @"http://api.starlety.com"
+#define kAPIHost @"https://api.starlety.com"
 //#define kAPIHost @"https://starlety.com:4430"
 
 
@@ -152,6 +152,11 @@
      NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@&latitude=%@&longitude=%@&interfaceOrientation=%d", kAPIHost, @"/Api/Videos/?userId=",
         [LoginInfo sharedInstance].userId, latitude, longitude, interfaceOrientation]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
      [uploadRequest setHTTPMethod:@"POST"];
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"siennait",
+                         @"Sienna123"];
+    NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+    [uploadRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
      [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
      [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
      [uploadRequest setHTTPBody:postData];

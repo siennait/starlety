@@ -15,7 +15,7 @@
 #import "LoginInfo.h"
 
 
-#define kAPIHost @"http://api.starlety.com"
+#define kAPIHost @"https://api.starlety.com"
 #define kWEBHost @"http://starlety.com"
 
 
@@ -216,8 +216,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [cell.ApplauseButton setTag:appRecord.ID];
     [cell.ApplauseButton addTarget:self action:@selector(applause:) forControlEvents:UIControlEventTouchUpInside];
     [cell.DownloadButton setTag:indexPath.row];
-    [cell.DownloadButton addTarget:self action:@selector(download:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.DownloadButton addTarget:self action:@selector(download:) forControlEvents:
+     UIControlEventTouchUpInside];
     
+    cell.PlaceNumber.text = [NSString stringWithFormat: @"%d", indexPath.row+1];
     return cell;
     
     

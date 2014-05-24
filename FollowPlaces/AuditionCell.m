@@ -33,6 +33,7 @@
     [_UserProfileImage release];
     [_Thumbnail release];
     [_ApplauseButton release];
+    [_PlaceNumber release];
     [super dealloc];
 }
 @end

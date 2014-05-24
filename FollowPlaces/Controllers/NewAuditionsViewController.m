@@ -13,7 +13,7 @@
 #import "IconDownloader.h"
 #import "User.h"
 
-#define kAPIHost @"http://api.starlety.com"
+#define kAPIHost @"https://api.starlety.com"
 #define kWEBHost @"http://starlety.com"
 
 
