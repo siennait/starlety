@@ -15383,9 +15383,11 @@
 					"$(inherited)",
 					/Users/luchianchivoiu/Documents/xcrm/FollowPlaces/FollowPlaces,
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Starlety;
 				PROVISIONING_PROFILE = "E4835004-06F7-4655-93C4-1CDAC1EE43C7";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -15407,10 +15409,11 @@
 					"$(inherited)",
 					/Users/luchianchivoiu/Documents/xcrm/FollowPlaces/FollowPlaces,
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Starlety;
 				PROVISIONING_PROFILE = "E4835004-06F7-4655-93C4-1CDAC1EE43C7";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

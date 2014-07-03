@@ -28,14 +28,14 @@
 
 - (void)viewDidLoad
 {
-    if([LoginInfo sharedInstance].userId==nil || [[LoginInfo sharedInstance].userId  isEqual: @""])
-    {
-        [[LoginInfo sharedInstance] logout];
-        [self performSegueWithIdentifier: @"SettingsLogout" sender: self];
-        
-        [FBSession.activeSession closeAndClearTokenInformation];
-        
-    }
+//    if([LoginInfo sharedInstance].userId==nil || [[LoginInfo sharedInstance].userId  isEqual: @""])
+//    {
+//        [[LoginInfo sharedInstance] logout];
+//        [self performSegueWithIdentifier: @"SettingsLogout" sender: self];
+//        
+//        [FBSession.activeSession closeAndClearTokenInformation];
+//        
+//    }
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -241,13 +241,32 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 - (IBAction)RecordButtonTouchUp:(id)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
-    //picker.videoQuality = UIImagePickerControllerQualityTypeHigh;
-    picker.videoMaximumDuration = 120;
+//    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+//    {
+//        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    }
+//    else
+//    {
+//        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+//    }
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIAlertView *noCameraAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You don't have a camera for this device" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        //shows above alert if there's no camera
+        [noCameraAlert show];
+    }
     
-    [self presentViewController:picker animated:YES completion:NULL];
+    //otherwise, show a modal for taking a photo
+    else {
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+        //picker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+        picker.videoMaximumDuration = 120;
+        
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
+   
 }
 @end
