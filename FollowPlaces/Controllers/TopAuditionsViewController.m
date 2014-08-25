@@ -220,6 +220,30 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
      UIControlEventTouchUpInside];
     
     cell.PlaceNumber.text = [NSString stringWithFormat: @"%d", indexPath.row+1];
+    
+//    NSString *embedHTML = @"\
+//    <html><head>\
+//    <style type=\"text/css\">\
+//    body {\
+//    background-color: red;\
+//    color: red;\
+//    }\
+//    </style>\
+//    </head><body style=\"margin:0\">\
+//    <embed id=\"yt\" src=\"%@\" type=\"application/x-shockwave-mp4\" \
+//    width=\"%0.0f\" height=\"%0.0f\"></embed>\
+//    </body></html>";
+//    
+//    //cell.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 0.0, 520.0, 512.0)];
+//    
+//    [cell.webView setOpaque:NO];
+//    
+//    NSString *html = [NSString stringWithFormat:embedHTML, [NSString stringWithFormat:@"%@/Videos/%@.mp4", kWEBHost, [[[LoginInfo sharedInstance].topAuditionData objectAtIndex:indexPath.row] valueForKey:@"ID"]],  cell.webView.frame.size.width, cell.webView.frame.size.height];
+//     //[NSString stringWithFormat:@"%@/Api/StreamVideo/?videoId=%@&userId=%@", kAPIHost, [[[LoginInfo sharedInstance].topAuditionData objectAtIndex:indexPath.row] valueForKey:@"ID"], [LoginInfo sharedInstance].userId]
+//    [cell.webView loadHTMLString:html baseURL:nil];
+    
+    
+
     return cell;
     
     
@@ -228,19 +252,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 
 -(void) play:(id) sender{
+    
     UIButton *play = (UIButton *)sender;
     NSLog(@"Play %i" , play.tag);
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Videos/%@.mp4", kWEBHost, [[[LoginInfo sharedInstance].topAuditionData objectAtIndex:play.tag] valueForKey:@"ID"]]];
     MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
-
-
+    
+    
     mp.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
     [[NSNotificationCenter defaultCenter] addObserver:self
-
+     
                                              selector:@selector(moviePlayBackDidFinish:)
                                                  name:MPMoviePlayerPlaybackDidFinishNotification
                                                object:mp.moviePlayer];
-
+    
     [mp.moviePlayer prepareToPlay];
     [self presentMoviePlayerViewControllerAnimated:mp];
     [mp.moviePlayer play];
@@ -253,9 +278,41 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         if ([json valueForKey:@"error" ]) {
             [self showMessage:[json valueForKey:@"error" ] withTitle:@""];
         } else {
-            
-            
         }}];
+    
+//    
+//    UIButton *play = (UIButton *)sender;
+//    NSLog(@"Play %i" , play.tag);
+//    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/Api/StreamVideo/?videoId=%@&userId=%@", kAPIHost, [[[LoginInfo sharedInstance].topAuditionData objectAtIndex:play.tag] valueForKey:@"ID"], [LoginInfo sharedInstance].userId]];
+//    MPMoviePlayerViewController *mp = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+//    [mp.moviePlayer setShouldAutoplay:YES];
+//
+//    mp.moviePlayer.movieSourceType = MPMovieSourceTypeStreaming;
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//
+//                                             selector:@selector(moviePlayBackDidFinish:)
+//                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+//                                               object:mp.moviePlayer];
+//
+//    [mp.moviePlayer prepareToPlay];
+//    [self presentMoviePlayerViewControllerAnimated:mp];
+//    [mp.moviePlayer play];
+//    
+//    
+//    //MPMoviePlayerViewController *moviePlayerView = [[[MPMoviePlayerViewController alloc] initWithContentURL:url] autorelease];
+//    //[self presentMoviePlayerViewControllerAnimated:moviePlayerView];
+//    
+//    
+//    NSMutableDictionary* params =[NSMutableDictionary dictionaryWithObjectsAndKeys:[[[LoginInfo sharedInstance].topAuditionData objectAtIndex:play.tag] valueForKey:@"ID"], @"videoId",
+//                                  [LoginInfo sharedInstance].userId, @"userId", nil];
+//    
+//    [[API sharedInstance] getCommand:params  APIPath: @"/Api/ViewVideo"  onCompletion:^(NSDictionary *json)  {
+//        if ([json valueForKey:@"error" ]) {
+//            [self showMessage:[json valueForKey:@"error" ] withTitle:@""];
+//        } else {
+//            
+//            
+//        }}];
 }
 
 

@@ -35,6 +35,7 @@
 		2C74EB95165BF528006D6B21 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB91165BF528006D6B21 /* UIImage+RoundedCorner.m */; };
 		2C74EB96165BF528006D6B21 /* UIAlertView+error.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB92165BF528006D6B21 /* UIAlertView+error.m */; };
 		2C74EB99165E53A4006D6B21 /* UIImagescaleandrotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74EB98165E53A4006D6B21 /* UIImagescaleandrotate.m */; };
+		2C902A951975DC1F005762D6 /* PostVideoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C902A941975DC1F005762D6 /* PostVideoDelegate.m */; };
 		2CA2B44D186A1FDB00AC95F5 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA2B44C186A1FDB00AC95F5 /* MainTabBarController.m */; };
 		2CA6957B18AC188E0015084B /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6957518AC188E0015084B /* IconDownloader.m */; };
 		2CA6957C18AC188E0015084B /* LazyTableAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6957718AC188E0015084B /* LazyTableAppDelegate.m */; };
@@ -865,6 +866,8 @@
 		2C74EB92165BF528006D6B21 /* UIAlertView+error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+error.m"; sourceTree = "<group>"; };
 		2C74EB97165E53A4006D6B21 /* UIImagescaleandrotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImagescaleandrotate.h; sourceTree = "<group>"; };
 		2C74EB98165E53A4006D6B21 /* UIImagescaleandrotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImagescaleandrotate.m; sourceTree = "<group>"; };
+		2C902A931975DC1F005762D6 /* PostVideoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostVideoDelegate.h; sourceTree = "<group>"; };
+		2C902A941975DC1F005762D6 /* PostVideoDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostVideoDelegate.m; sourceTree = "<group>"; };
 		2CA2B44B186A1FDB00AC95F5 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		2CA2B44C186A1FDB00AC95F5 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		2CA6957518AC188E0015084B /* IconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
@@ -13242,6 +13245,8 @@
 				2C5DA77118E1B35600D9C1BD /* WelcomeViewController.m */,
 				2CDFECCE18CBCBE600FC2DB7 /* StartViewController.h */,
 				2CDFECCF18CBCBE600FC2DB7 /* StartViewController.m */,
+				2C902A931975DC1F005762D6 /* PostVideoDelegate.h */,
+				2C902A941975DC1F005762D6 /* PostVideoDelegate.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -13339,6 +13344,11 @@
 				CLASSPREFIX = sienna;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Luchian Chivoiu";
+				TargetAttributes = {
+					2CD784CA16457AB200059330 = {
+						DevelopmentTeam = SBAPJ6UNQU;
+					};
+				};
 			};
 			buildConfigurationList = 2CD784C516457AB200059330 /* Build configuration list for PBXProject "Starlety" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -14396,6 +14406,7 @@
 				2CB2C8C418BC2A000096B84D /* NUIMediaBlock.m in Sources */,
 				2C74EB96165BF528006D6B21 /* UIAlertView+error.m in Sources */,
 				2CB2C8BE18BC2A000096B84D /* NUISettings.m in Sources */,
+				2C902A951975DC1F005762D6 /* PostVideoDelegate.m in Sources */,
 				2CB2C8DA18BC2A000096B84D /* NUITableViewCellRenderer.m in Sources */,
 				2CB2C8CE18BC2A000096B84D /* NUIButtonRenderer.m in Sources */,
 				2CB2C8B918BC2A000096B84D /* NUIAppearance.m in Sources */,
@@ -15369,7 +15380,8 @@
 		2CD7850816457AB300059330 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SIENNA CRM SOFTWARE LTD (SBAPJ6UNQU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/luchianchivoiu/Documents/FacebookSDK,
@@ -15385,7 +15397,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Starlety;
-				PROVISIONING_PROFILE = "E4835004-06F7-4655-93C4-1CDAC1EE43C7";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -15395,7 +15407,8 @@
 		2CD7850916457AB300059330 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SIENNA CRM SOFTWARE LTD (SBAPJ6UNQU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/luchianchivoiu/Documents/FacebookSDK,
@@ -15411,7 +15424,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Starlety;
-				PROVISIONING_PROFILE = "E4835004-06F7-4655-93C4-1CDAC1EE43C7";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

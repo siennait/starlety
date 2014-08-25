@@ -106,7 +106,7 @@
 - (NSData *)generatePostDataForData:(NSData *)uploadData
 {
     // Generate the post header:
-    NSString *post = [NSString stringWithCString:"--AaB03x\r\nContent-Disposition: form-data; name=\"upload[file]\"; filename=\"somefile\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\n" encoding:NSASCIIStringEncoding];
+    NSString *post = [NSString stringWithCString:"--AaB03x\r\nContent-Disposition: form-data; name=\"upload[file]\";  filename=\"somefile\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\n" encoding:NSASCIIStringEncoding];
     
     // Get the post header int ASCII format:
     NSData *postHeaderData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -149,6 +149,122 @@
     NSString *longitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
     
   
+//     NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@&latitude=%@&longitude=%@&interfaceOrientation=%d", kAPIHost, @"/Api/Videos/?userId=",
+//        [LoginInfo sharedInstance].userId, latitude, longitude, interfaceOrientation]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+//     [uploadRequest setHTTPMethod:@"POST"];
+//    NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"siennait",
+//                         @"Sienna123"];
+//    NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
+//    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64Encoding]];
+//    [uploadRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+//     [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+//     [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
+//     [uploadRequest setHTTPBody:postData];
+//     
+//     // Execute the reqest:
+//     NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
+//     
+//     
+//     
+//     if (conn)
+//     {
+//         // Connection succeeded (even if a 404 or other non-200 range was returned).
+//         NSLog(@"sucess");
+//     }
+//     else
+//     {
+//         // Connection failed (cannot reach server).
+//         NSLog(@"fail");
+//     }
+
+    
+    if(1==0)
+    {
+    //SEND FILE UPLOAD REQUEST TO GET THE URL
+    
+    NSMutableURLRequest *uploadRequest2 = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString: @"https://api.dmcloud.net/api"] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+    [uploadRequest2 setHTTPMethod:@"POST"];
+    [uploadRequest2 setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [uploadRequest2 setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    // Generate the post header:
+    NSString *post2 = @"{\"call\": \"file.upload\", \"args\": {},\"auth\":\"53971f09947399318aa2eec4:127199a346b64bacf807a775b3a6661a22212549\"}";
+    
+    NSLog(@"jsonRequest is %@", post2);
+
+    NSError *error = [[NSError alloc] init];
+    NSHTTPURLResponse *responseCode = nil;
+
+    // Get the post header int ASCII format:
+    NSData *postHeaderData2 = [post2 dataUsingEncoding:NSUTF8StringEncoding ];
+    [uploadRequest2 setValue:[NSString stringWithFormat:@"%d", [postHeaderData2 length]] forHTTPHeaderField:@"Content-Length"];
+    [uploadRequest2 setHTTPBody:postHeaderData2];
+    
+    
+    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:uploadRequest2 returningResponse:&responseCode error:&error];
+    
+    if([responseCode statusCode] != 200){
+        NSLog(@"Error getting url, HTTP status code %i", [responseCode statusCode]);
+        return;
+    }
+    
+    
+
+    
+   
+    NSLog(@"Response data is %@", [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding]);
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:oResponseData options:0 error:&error];
+    NSLog(@"%@", jsonDict);
+
+    
+    
+    //--------POST FILE TO
+    
+//     NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString: [[jsonDict objectForKey:@"result"] objectForKey:@"url"]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
+    NSMutableURLRequest *uploadRequest = [[NSMutableURLRequest alloc] init];
+    [uploadRequest setURL:[NSURL URLWithString: [[jsonDict objectForKey:@"result"] objectForKey:@"url"]]];
+
+    
+     [uploadRequest setHTTPMethod:@"POST"];
+     [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+     [uploadRequest setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
+    [uploadRequest setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+    [uploadRequest setValue:@"ISO-8859-1,utf-8;q=0.7,*;q=0.7" forHTTPHeaderField:@"Accept-Charset"];
+//    [uploadRequest setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+//    [uploadRequest setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+//    [uploadRequest setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+//    [uploadRequest setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+//    [uploadRequest setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+//    [uploadRequest setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+    [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
+    [uploadRequest setValue:@"asdaqwre" forHTTPHeaderField:@"file"];
+    
+    [uploadRequest setHTTPBody:postData];
+
+     // Execute the reqest:
+     //NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
+
+
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:uploadRequest returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", returnString);
+
+//     if (conn)
+//     {
+//         // Connection succeeded (even if a 404 or other non-200 range was returned).
+//         NSLog(@"sucess");
+//     }
+//     else
+//     {
+//         // Connection failed (cannot reach server).
+//         NSLog(@"fail");
+//     }
+
+    }
+    
+    
+    
      NSMutableURLRequest *uploadRequest = [[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@&latitude=%@&longitude=%@&interfaceOrientation=%d", kAPIHost, @"/Api/Videos/?userId=",
         [LoginInfo sharedInstance].userId, latitude, longitude, interfaceOrientation]] cachePolicy: NSURLRequestReloadIgnoringLocalCacheData timeoutInterval: 60 ] autorelease];
      [uploadRequest setHTTPMethod:@"POST"];
@@ -160,12 +276,12 @@
      [uploadRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
      [uploadRequest setValue:@"multipart/form-data; boundary=AaB03x" forHTTPHeaderField:@"Content-Type"];
      [uploadRequest setHTTPBody:postData];
-     
+
      // Execute the reqest:
      NSURLConnection *conn=[[NSURLConnection alloc] initWithRequest:uploadRequest delegate:self];
-     
-     
-     
+
+
+
      if (conn)
      {
          // Connection succeeded (even if a 404 or other non-200 range was returned).
@@ -176,8 +292,11 @@
          // Connection failed (cannot reach server).
          NSLog(@"fail");
      }
+    
 
-     
+    
+    
+    //[[jsonDict objectForKey:@"result"] objectForKey:@"url"];
     
     
 }
@@ -263,7 +382,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
         //picker.videoQuality = UIImagePickerControllerQualityTypeHigh;
-        picker.videoMaximumDuration = 120;
+        picker.videoMaximumDuration = 30;
         
         [self presentViewController:picker animated:YES completion:NULL];
     }

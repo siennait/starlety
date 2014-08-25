@@ -24,5 +24,6 @@
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *DownloadButton;
 @property (retain, nonatomic) IBOutlet UILabel *PlaceNumber;
+@property (retain, nonatomic) IBOutlet UIWebView *webView;
 
 @end
